@@ -1,0 +1,108 @@
+{
+  "input_root": "data/stage1",
+  "record_count": 3,
+  "records": [
+    {
+      "authors_position": "Photographer",
+      "camera_make": "SONY",
+      "camera_model": "ILCE-7RM3",
+      "capture_time": "2024:12:15 16:22:51-08:00",
+      "create_time": "2024:12:15 16:22:51-08:00",
+      "creator": "Julian Buccat",
+      "credit": "Photo \u00a9 Julian Buccat",
+      "document_id": "395E789043E434C67A7D7AA00EFD7E7F",
+      "hierarchical_subject": [
+        "Educational Institutions|sacramento state university",
+        "Events|Graduation"
+      ],
+      "image_height": 5304,
+      "image_width": 7952,
+      "instance_id": "xmp.iid:c559c4bc-a9b4-4639-adff-3875241f6b69",
+      "metadata_time": "2026:04:24 16:33:28-07:00",
+      "original_document_id": "395E789043E434C67A7D7AA00EFD7E7F",
+      "original_raw_filename": "JB107456.ARW",
+      "rights": "\u00a9 2026 Julian Buccat",
+      "rights_marked": true,
+      "snapshot_path": "data/stage1/01_pre_identity",
+      "snapshot_stage": "01_pre_identity",
+      "source_file": "data/stage1/01_pre_identity/01_JB107456.xmp",
+      "subject": [
+        "Educational Institutions",
+        "Events",
+        "Graduation",
+        "sacramento state university"
+      ],
+      "usage_terms": "All rights reserved unless otherwise licensed. ",
+      "xmp_directory": "data/stage1/01_pre_identity",
+      "xmp_file_name": "01_JB107456.xmp"
+    },
+    {
+      "authors_position": "Photographer",
+      "camera_make": "SONY",
+      "camera_model": "ILCE-7RM3",
+      "capture_time": "2024:12:15 16:24:34-08:00",
+      "create_time": "2024:12:15 16:24:34-08:00",
+      "creator": "Julian Buccat",
+      "credit": "Photo \u00a9 Julian Buccat",
+      "document_id": "0E26196E5ABFFD03556E19182584CEE7",
+      "hierarchical_subject": [
+        "Educational Institutions|sacramento state university",
+        "Events|Graduation"
+      ],
+      "image_height": 5304,
+      "image_width": 7952,
+      "instance_id": "xmp.iid:89381ca4-5e91-4cd4-9f0f-6bc434098bdb",
+      "metadata_time": "2026:04:24 16:33:27-07:00",
+      "original_document_id": "0E26196E5ABFFD03556E19182584CEE7",
+      "original_raw_filename": "JB107468.ARW",
+      "rights": "\u00a9 2026 Julian Buccat",
+      "rights_marked": true,
+      "snapshot_path": "data/stage1/01_pre_identity",
+      "snapshot_stage": "01_pre_identity",
+      "source_file": "data/stage1/01_pre_identity/02_JB107468.xmp",
+      "subject": [
+        "Educational Institutions",
+        "Events",
+        "Graduation",
+        "sacramento state university"
+      ],
+      "usage_terms": "All rights reserved unless otherwise licensed. ",
+      "xmp_directory": "data/stage1/01_pre_identity",
+      "xmp_file_name": "02_JB107468.xmp"
+    },
+    {
+      "authors_position": "Photographer",
+      "camera_make": "SONY",
+      "camera_model": "ILCE-7RM3",
+      "capture_time": "2024:12:15 16:32:25-08:00",
+      "create_time": "2024:12:15 16:32:25-08:00",
+      "creator": "Julian Buccat",
+      "credit": "Photo \u00a9 Julian Buccat",
+      "document_id": "77FD4CB4046F16F25E453E90BAACA930",
+      "hierarchical_subject": [
+        "Educational Institutions|sacramento state university",
+        "Events|Graduation"
+      ],
+      "image_height": 5304,
+      "image_width": 7952,
+      "instance_id": "xmp.iid:14d5439a-7e21-4eef-8c8f-43096834b955",
+      "metadata_time": "2026:04:24 16:33:46-07:00",
+      "original_document_id": "77FD4CB4046F16F25E453E90BAACA930",
+      "original_raw_filename": "JB107504.ARW",
+      "rights": "\u00a9 2026 Julian Buccat",
+      "rights_marked": true,
+      "snapshot_path": "data/stage1/01_pre_identity",
+      "snapshot_stage": "01_pre_identity",
+      "source_file": "data/stage1/01_pre_identity/03_JB107504.xmp",
+      "subject": [
+        "Educational Institutions",
+        "Events",
+        "Graduation",
+        "sacramento state university"
+      ],
+      "usage_terms": "All rights reserved unless otherwise licensed. ",
+      "xmp_directory": "data/stage1/01_pre_identity",
+      "xmp_file_name": "03_JB107504.xmp"
+    }
+  ]
+}
