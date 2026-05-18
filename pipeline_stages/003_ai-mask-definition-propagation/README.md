@@ -241,16 +241,15 @@ For artificial ground, the source-definition comparison used:
 - artificial ground generated from a canonical image with strong ground signal
 - artificial ground generated from an alternate image with weaker ground signal
 
-The purpose of this comparison was not to establish a general rule that
-better source images are irrelevant. The purpose was to test whether, in
-this uncertain semantic category, stronger source-signal quality
-materially improved propagation outcomes on target images once Lightroom
-could already identify at least some usable source signal.
+The purpose of this comparison was to test whether, in this uncertain
+semantic category, stronger source-signal quality materially improved
+propagation outcomes on target images once Lightroom could already
+identify at least some usable source signal.
 
 The qualification test was organized into canonical-source,
-alternate-source, compare, and manual-source collection branches so the
-candidate definitions could be reviewed side by side rather than
-inferred from memory.
+alternate-source, and compare collection branches so the candidate
+definitions could be reviewed side by side rather than inferred from
+memory.
 
 The canonical-source branch propagated an artificial-ground definition
 created from the Stage 3 canonical image across the target set.
@@ -272,6 +271,13 @@ created from the Stage 3 canonical image across the target set.
 The alternate-source branch propagated an artificial-ground definition
 created from a different image with weaker visible ground signal across
 the same target set.
+
+That alternate source was chosen because the boardwalk surface appeared
+plausibly weaker as a source-definition candidate based on operator
+judgment rather than a prevalidated source-quality metric. The
+qualification comparison was used in part to test whether that
+perceived weakness materially affected propagated artificial-ground
+results.
 
 ![Artificial-ground alternate source target mask example](assets/images/011_artificial-ground-alternate-source-target-mask-example.png)
 
@@ -341,7 +347,10 @@ stronger source signal did not improve target-image segmentation quality
 once a usable source definition already existed. In practical terms, the
 artificial-ground test suggests that target-image signal is the more
 important determinant of propagation effectiveness after Lightroom has
-correctly identified even a minimal usable source definition.
+correctly identified even a minimal usable source definition. This is
+not meant to establish a general rule that stronger source images are
+irrelevant; it is a category-specific result from this qualification
+test.
 
 <br>
 
@@ -349,14 +358,16 @@ correctly identified even a minimal usable source definition.
 
 <br>
 
-## Worfklow Image Evidence/Example Application of Mask Propagation
+## General Batch Propagation Walkthrough
 
 <br>
 
-### Mask Definition Phase
+### Setup
+
+#### Mask Definition Phase
 On the canonical image, masks were created manually for each detected category.
 
-The canonical image generated 7 total masks, representing different semantic regions within the scene.
+The canonical image generated 9 total masks, representing different semantic regions within the scene.
 
 These masks serve as the procedural mask definitions used for the batch experiment.
 
@@ -364,7 +375,7 @@ Importantly, Lightroom stores these masks as instructions describing how to dete
 
 <br>
 
-### Batch Mask Application
+#### Batch Mask Application
 Only the mask definitions from the canonical image were copied. The
 Stage 2 tonal and hue adjustments were already complete and were not
 part of this paste operation.
@@ -385,12 +396,12 @@ No per-image adjustments were made prior to the batch paste operation.
 
 <br>
 
-### Expected Computational Workload
-The canonical image produced: 7 masks
+#### Expected Computational Workload
+The canonical image produced: 9 masks
 
 Applied across: 64 images
 
-This yields a theoretical maximum of: 7 × 64 = 448 mask-definition executions
+This yields a theoretical maximum of: 9 × 64 = 576 mask-definition executions
 
 Aggregate masks are tracked separately from individual semantic masks
 because they represent broader foreground or background control surfaces.
@@ -399,47 +410,48 @@ artificial-ground qualification experiments are rerun.
 
 <br>
 
-### Observed System Behavior
-During the paste operation, Lightroom displayed the progress indicator: `Updating AI Settings`
+### Review Questions
 
-This stage represents batch application of semantic segmentation models across the selected images.
+#### Batch-Run Indicator
+During the paste operation, Lightroom displayed the progress indicator:
+`Updating AI Settings`.
 
-Rather than copying mask pixels directly, Lightroom performs the following process for each image:
+That visible indicator is consistent with a batch recomputation step
+rather than a static pixel copy, but the interface alone does not prove
+the internal execution path. The example walkthroughs below are used to
+evaluate whether the visible outcomes match the expected per-image
+workflow:
 mask_definition → semantic segmentation → region binding
 
-This dynamically recomputes the mask boundaries based on the visual content of the target image.
+<br>
+
+#### Omission Behavior Under Review
+One evaluation question is how Lightroom behaves when a propagated mask
+definition does not correspond to a detectable region in a target image
+(for example, when fewer people are present).
+
+The specific case to review is whether Lightroom silently omits the mask
+for that image rather than producing an incorrect or forced result. If
+omission is the visible outcome, batch safety is preserved without
+requiring manual pre-filtering, although Lightroom's internal execution
+behavior remains unobservable.
 
 <br>
 
-### Fault-Tolerant Mask Binding
-To reiterate, when a mask definition does not correspond to a detectable region in a target image (for example, when fewer people are present), Lightroom does not generate that mask.
-
-Instead, the mask operation is silently omitted for that image, preserving batch safety without requiring manual pre-filtering. This may reduce unnecessary computation, but Lightroom's internal execution behavior is not directly observable.
-
-<br>
-
-This results in:
+The examples below are used to evaluate whether the propagated
+definitions resolve into the following two outcomes:
 
 - successful mask application where semantic regions exist
 - automatic omission where they do not
 
-This behavior demonstrates fault-tolerant mask generation, preventing erroneous mask application when a semantic category is absent.
-
 <br>
 
-### Result
-Only a subset of the theoretical 448 mask operations were generated.
+### Evidence
 
-The final mask set applied to each image depended entirely on the semantic content of that image, confirming that Lightroom’s masking pipeline copies procedural mask definitions and recomputes them per image using AI-driven segmentation.
+The following examples provide the evidence used to evaluate the batch
+indicator, omission behavior, and mask-binding outcomes described above.
 
-<br>
-
-## Example Walkthroughs
-
-The following examples document the observed behavior described in the
-technical design section above.
-
-### Example 1: Subject Masking
+#### Example 1: Subject Masking
 
 ![People mask aggregate](assets/images/001_people-mask-aggregation-overview.png)
 
@@ -492,10 +504,8 @@ Environmental masks generated
       ↓
 Does the needed edit apply to most or all environmental regions?
       ↓
-Yes → adjust the Environmental Mask aggregate
+Yes → adjust the Environmental Mask aggregate → Optionally refine individual regions after the aggregate edit
 No  → adjust only the needed region-specific mask(s)
-      ↓
-Optionally refine individual regions after the aggregate edit
 ```
 
 <br>
@@ -526,42 +536,52 @@ the selected images as a batch recomputation step.*
 <br>
 <br>
 
-The “Updating AI Settings” progress indicator represents the batch
-execution of these models across the selected photos.
+The “Updating AI Settings” progress indicator is the visible interface
+signal associated with the batch run across the selected photos.
 
-Lightroom copies mask definitions, not pixel masks. When pasted across
-multiple images, Lightroom runs AI-driven semantic segmentation on each
-image to recompute masks such as people, sky, and vegetation. This is
-necessary because the semantic regions are almost never identical
-between images, even when the compositions are very similar.
+The resulting behavior is consistent with Lightroom copying mask
+definitions rather than pixel masks. When pasted across multiple
+images, the visible outcomes suggest that Lightroom runs AI-driven
+semantic segmentation on each image to recompute masks such as people,
+sky, and vegetation. This is necessary because the semantic regions are
+almost never identical between images, even when the compositions are
+very similar.
 
 Conceptually, this resembles a machine learning inference pipeline:
 mask := detect_people(image)
 apply_adjustment(mask)
 
-Instead of copying results, the system copies the procedure and executes
-it across the gallery.
+At the visible-output level, the system appears to copy the procedure
+and execute it across the gallery rather than copying a fixed mask
+result.
 
 <br>
 <br>
 
-![Fault-tolerant omission example](assets/images/005_fault-tolerant-subject-mask-omission.png)
+![Fault-tolerant omission example](assets/images/005_fault-tolerant-subject-mask-omission-v2.png)
 
-*Figure: Omission is usually the correct outcome when the propagated
-semantic class is absent. Lightroom may still retain mask thumbnails
-even when no corresponding mask is meaningfully drawn in the image.*
+*Figure: Fault-tolerant omission example. The check marks indicate the
+generated masks that did bind successfully, while the person-mask
+definitions did not meaningfully bind to people in this image,
+including the negligible background figures. Lightroom may still retain
+mask thumbnails even when no corresponding mask is meaningfully drawn in
+the image.*
 
 <br>
 <br>
 
-In another image from the same gallery, Foliage, Sky, and Background
-were generated successfully after mask-definition propagation, while
-Mask 1-3 are not meaningfully present as editable subject regions. That
+In the image above, Foliage, Sky, and Background were generated
+successfully after mask-definition propagation, while
+Mask 1-3 are not meaningfully present as editable subject regions. The
+check marks in the screenshot indicate the masks that did resolve,
+which makes the omission easier to inspect: the propagated people-mask
+definitions did not apply to people in this frame, including the small
+background figures. That
 end state is expected and should be treated as success, not failure,
 because the target image does not contain the same subject structure
 seen in the source image. As an end user, I cannot verify Lightroom's
 internal execution path, but the visible result shows that omission here
-is fault-tolerant and carries no practical drawback.
+is fault-tolerant and carries no practical drawback. In the next images, we will see examples from the same gallery where propagated people-mask definitions bind to real people subjects as intended.
 
 ![Person subject mask propagation success example 1](assets/images/006_person-subject-mask-success-example-1.png)
 ![Person subject mask propagation success example 2](assets/images/007_person-subject-mask-success-example-2.png)
@@ -577,10 +597,22 @@ image requires its own recomputed semantic segmentation result.*
 In the three images above, batch mask propagation correctly identifies
 the most important person subjects as desired.
 
+<br>
+
+### Interpretation
+Across the examples above, only a subset of the theoretical 576 mask
+operations appears to have been generated.
+
+The visible end states indicate that the final mask set applied to each
+image depends on that image's semantic content rather than on a fixed
+pixel copy from the source. Within the bounds of observable interface
+evidence, the batch results are consistent with Lightroom copying
+procedural mask definitions and recomputing them per image through
+AI-driven segmentation.
 
 <br>
 
-## Back-of-the-Envelope Time Savings 
+### Back-of-the-Envelope Time Savings 
 
 **Manual Masking:**
 9 masks x 64 images = 576 potential mask operations

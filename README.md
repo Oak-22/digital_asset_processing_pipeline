@@ -159,6 +159,9 @@ The project is organized as a single multi-stage pipeline with supporting docume
 <br>
 
 ### Stage 1 – Metadata Application, Enrichment, and Query Pipeline
+
+Establishes the metadata and query foundation for the workflow.
+
 Location: [Stage 1](pipeline_stages/001_metadata-application-enrichment-query-pipeline/README.md)
 
 Focus areas:
@@ -166,8 +169,6 @@ Focus areas:
 - non-destructive metadata enrichment through non-overlapping field assignments
 - metadata-driven indexing and retrieval patterns enabling both rapid ad-hoc queries and declarative views over image records
 - stable metadata state before subjective culling or image transformation begins
-
-Establishes the metadata and query foundation for the workflow.
 
 - **Identity initialization:** Single-preset ingest establishes the protected authorship baseline
 - **Semantic enrichment:** Post-import presets and keywords add non-overlapping descriptive metadata
@@ -185,10 +186,11 @@ Establishes the metadata and query foundation for the workflow.
 <br>
 
 ### Stage 2 – Baseline Conditioning Pipeline
-Location: [Stage 2](pipeline_stages/002_baseline-conditioning-pipeline/README.md)
 
 Establishes the conditioned image baseline for downstream semantic
 operations.
+
+Location: [Stage 2](pipeline_stages/002_baseline-conditioning-pipeline/README.md)
 
 Focus areas:
 - local corrective cleanup and dataset-wide tonal normalization across heterogeneous images
@@ -212,6 +214,10 @@ Focus areas:
 <br>
 
 ### Stage 3 – AI Mask Definition Propagation
+
+Applies semantic mask definitions across the conditioned working set and
+introduces bounded review around probabilistic AI output.
+
 Location: [Stage 3](pipeline_stages/003_ai-mask-definition-propagation/README.md)
 
 
@@ -220,9 +226,6 @@ Focus areas:
 - dataset-scale application of AI-generated semantic masks to batch edit operations
 - qualitative evaluation of mask quality and workflow reliability against manual editing results
 - deterministic review boundaries around probabilistic AI segmentation behavior
-
-Applies semantic mask definitions across the conditioned working set and
-introduces bounded review around probabilistic AI output.
 
 - **Semantic operations:** Batch AI masking
 - **Qualification:** Semantic definitions are qualified before broad propagation
