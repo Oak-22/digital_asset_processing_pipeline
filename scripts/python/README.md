@@ -10,6 +10,11 @@ inspectable and reproducible by turning Lightroom-adjacent artifacts
 such as XMP sidecars, manifests, review sheets, and parameter exports
 into structured validation surfaces.
 
+Documentation screenshots and diagrams should remain in each stage's
+`assets/` tree. Machine-readable workflow artifacts should live
+separately so the scripts do not have to treat README evidence images as
+analysis inputs.
+
 <br>
 
 ## Evidence Role
@@ -33,6 +38,21 @@ bridge to mathematical or structured validation later.
 ## Layout
 
 ```text
+data/
+├── stage1/
+│   ├── sidecars/
+│   ├── exports/
+│   └── manifests/
+├── stage2/
+│   ├── sidecars/
+│   ├── raws/        # optional curated subset, not necessarily committed
+│   ├── renders/     # optional rendered exports for comparison
+│   └── manifests/
+└── stage3/
+    ├── sidecars/
+    ├── review_sheets/
+    └── manifests/
+
 scripts/python/
 ├── README.md
 ├── common/
@@ -68,6 +88,30 @@ scripts/python/
 
 These files are currently lightweight entrypoint stubs so the package
 structure exists before implementation details are filled in.
+
+<br>
+
+## Artifact Boundary
+
+- `pipeline_stages/.../assets/images/`: screenshots and workflow-image
+  evidence used in the prose
+- `pipeline_stages/.../assets/diagrams/`: explanatory diagrams for
+  documentation
+- `data/stage1/sidecars/`: XMP sidecars used for metadata
+  extraction and validation
+- `data/stage2/sidecars/`: XMP sidecars used for develop-setting
+  extraction and auditing
+- `data/stage2/raws/`: optional RAW subset for source-signal or
+  normalization analysis
+- `data/stage2/renders/`: optional JPEG/TIFF exports for rendered
+  output comparison
+- `data/stage3/sidecars/`: XMP sidecars or exports related to mask
+  propagation state when available
+- `data/stage3/review_sheets/`: human review inputs/outputs for
+  Stage 3 qualification and evaluation
+
+This keeps qualitative README evidence separate from script inputs and
+allows the Python utilities to target a stable artifact layout.
 
 <br>
 
@@ -139,6 +183,13 @@ Stage 2 is the strongest next candidate because it can eventually
 support both qualitative workflow claims and quantitative inspection of
 develop settings, scene grouping, tonal adjustments, and downstream
 parameter convergence.
+
+The cleanest initial strategy is:
+
+1. **Stage 1:** XMP sidecars first
+2. **Stage 2:** XMP sidecars plus an optional curated RAW subset
+3. **Stage 3:** XMP sidecars plus review manifests, with optional
+   rendered exports for side-by-side inspection
 
 <br>
 
