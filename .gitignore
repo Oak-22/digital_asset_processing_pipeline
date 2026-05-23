@@ -3,6 +3,8 @@ engineering_learning_workspace/engineering_learning_notes
 .DS_Store
 __pycache__/
 *.py[cod]
+*.tfvars
+!*.tfvars.example
 
 # Generated/local diagram sources and exports.
 docs/*.drawio

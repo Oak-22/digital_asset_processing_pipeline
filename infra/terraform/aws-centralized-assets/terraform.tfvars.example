@@ -1,0 +1,14 @@
+aws_region  = "us-east-1"
+bucket_name = "jb-photo-source-assets-example"
+
+environment = "research"
+
+raw_prefix  = "raw/"
+xmp_prefix  = "xmp/"
+jpeg_prefix = "jpeg/"
+
+force_destroy = false
+
+tags = {
+  Owner = "JB Photography"
+}
