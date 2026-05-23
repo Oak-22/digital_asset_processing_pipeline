@@ -1,10 +1,11 @@
-"""Quick terminal audit for likely JPEG/XMP pairing in a Stage 1 folder."""
+"""Quick terminal audit for likely JPEG/XMP pairing in a Stage 1 snapshot."""
 
 from __future__ import annotations
 
 import argparse
 import json
 import subprocess
+import tempfile
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
@@ -12,6 +13,17 @@ from pathlib import Path
 
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".JPG", ".JPEG"}
 XMP_EXTENSION = ".xmp"
+RAW_EXTENSIONS = {
+    ".arw",
+    ".cr2",
+    ".cr3",
+    ".dng",
+    ".nef",
+    ".orf",
+    ".raf",
+    ".raw",
+    ".rw2",
+}
 EXIFTOOL_FIELDS = [
     "-FileName",
     "-DateTimeOriginal",
@@ -54,17 +66,46 @@ class MatchCandidate:
 
 
 def parse_args() -> argparse.Namespace:
-    """Parse CLI arguments for the folder to inspect."""
+    """Parse CLI arguments for local-folder or S3-backed inspection."""
     parser = argparse.ArgumentParser(
-        description="Verify likely JPEG/XMP pairings inside a Stage 1 data folder."
+        description="Verify likely JPEG/XMP pairings inside a Stage 1 snapshot."
     )
     parser.add_argument(
         "folder",
         nargs="?",
         default="data/stage1/01_pre_identity",
-        help="Folder containing JPEGs and XMP sidecars to compare.",
+        help="Local folder containing JPEGs and XMP sidecars to compare.",
+    )
+    parser.add_argument(
+        "--bucket-uri",
+        help="Optional S3 bucket URI, e.g. s3://jb-photo-masters.",
+    )
+    parser.add_argument(
+        "--raw-prefix",
+        default="raw/",
+        help="RAW prefix inside the S3 bucket when --bucket-uri is used.",
+    )
+    parser.add_argument(
+        "--jpeg-prefix",
+        default="jpeg/",
+        help="JPEG prefix inside the S3 bucket when --bucket-uri is used.",
+    )
+    parser.add_argument(
+        "--xmp-prefix",
+        default="xmp/",
+        help="XMP prefix inside the S3 bucket when --bucket-uri is used.",
     )
     return parser.parse_args()
+
+
+def source_images_dir(snapshot_folder: Path) -> Path:
+    """Return the source-images subfolder for one local Stage 1 snapshot."""
+    return snapshot_folder / "source_images"
+
+
+def sidecars_dir(snapshot_folder: Path) -> Path:
+    """Return the sidecars subfolder for one local Stage 1 snapshot."""
+    return snapshot_folder / "sidecars"
 
 
 def run_exiftool(paths: list[Path]) -> list[MetadataRecord]:
@@ -209,16 +250,124 @@ def verdict_for(candidate: MatchCandidate) -> str:
     return "CONFLICT"
 
 
-def print_report(folder: Path, images: list[MetadataRecord], xmps: list[MetadataRecord]) -> None:
+def sync_s3_prefix(bucket_uri: str, prefix: str, destination: Path) -> None:
+    """Sync one S3 prefix into a local temporary directory."""
+    source = f"{bucket_uri.rstrip('/')}/{prefix.lstrip('/')}"
+    command = ["aws", "s3", "sync", source, str(destination), "--exclude", "*/"]
+    subprocess.run(command, check=True, capture_output=True, text=True)
+
+
+def gather_local_paths(folder: Path) -> tuple[list[Path], list[Path], int, str]:
+    """Collect local JPEG/XMP/RAW paths from one Stage 1 snapshot folder."""
+    image_root = source_images_dir(folder)
+    sidecar_root = sidecars_dir(folder)
+
+    if not image_root.is_dir():
+        raise SystemExit(f"Missing source_images/ in snapshot folder: {folder}")
+    if not sidecar_root.is_dir():
+        raise SystemExit(f"Missing sidecars/ in snapshot folder: {folder}")
+
+    image_files = [
+        path
+        for path in image_root.iterdir()
+        if path.is_file() and not path.name.startswith(".")
+    ]
+    sidecar_files = [
+        path
+        for path in sidecar_root.iterdir()
+        if path.is_file() and not path.name.startswith(".")
+    ]
+    images = sorted(
+        (path for path in image_files if path.suffix in IMAGE_EXTENSIONS),
+        key=lambda path: path.name,
+    )
+    xmps = sorted(
+        (path for path in sidecar_files if path.suffix.lower() == XMP_EXTENSION),
+        key=lambda path: path.name,
+    )
+    raw_count = sum(1 for path in image_files if path.suffix.lower() in RAW_EXTENSIONS)
+    return images, xmps, raw_count, str(folder)
+
+
+def gather_s3_paths(args: argparse.Namespace) -> tuple[list[Path], list[Path], int, str]:
+    """Download S3-backed snapshot assets into a temporary local workspace."""
+    if not args.bucket_uri:
+        raise SystemExit("Missing required --bucket-uri for S3-backed verification.")
+
+    temp_root = Path(tempfile.mkdtemp(prefix="stage1_verify_"))
+    raw_dir = temp_root / "raw"
+    jpeg_dir = temp_root / "jpeg"
+    xmp_dir = temp_root / "xmp"
+    raw_dir.mkdir(parents=True, exist_ok=True)
+    jpeg_dir.mkdir(parents=True, exist_ok=True)
+    xmp_dir.mkdir(parents=True, exist_ok=True)
+
+    sync_s3_prefix(args.bucket_uri, args.raw_prefix, raw_dir)
+    sync_s3_prefix(args.bucket_uri, args.jpeg_prefix, jpeg_dir)
+    sync_s3_prefix(args.bucket_uri, args.xmp_prefix, xmp_dir)
+
+    images = sorted(
+        (path for path in jpeg_dir.iterdir() if path.is_file() and path.suffix in IMAGE_EXTENSIONS),
+        key=lambda path: path.name,
+    )
+    xmps = sorted(
+        (path for path in xmp_dir.iterdir() if path.is_file() and path.suffix == XMP_EXTENSION),
+        key=lambda path: path.name,
+    )
+    raw_count = sum(
+        1
+        for path in raw_dir.iterdir()
+        if path.is_file() and path.suffix.lower() in RAW_EXTENSIONS
+    )
+    source_label = (
+        f"{args.bucket_uri.rstrip('/')}"
+        f" [raw={args.raw_prefix}, jpeg={args.jpeg_prefix}, xmp={args.xmp_prefix}]"
+    )
+    return images, xmps, raw_count, source_label
+
+
+def print_report(
+    source_label: str,
+    images: list[MetadataRecord],
+    xmps: list[MetadataRecord],
+    raw_count: int,
+) -> None:
     """Print a concise folder audit report."""
     print()
-    print(f"Folder: {folder}")
+    print(f"Source: {source_label}")
+    print(f"RAWs: {raw_count}")
     print(f"JPEGs: {len(images)}")
     print(f"XMPs: {len(xmps)}")
     print()
 
-    if not images or not xmps:
-        print("Need at least one JPEG and one XMP to compare.")
+    if not images and not xmps:
+        print("No JPEG or XMP assets found in this snapshot.")
+        return
+
+    if not xmps:
+        print("No XMP found.")
+        if raw_count:
+            print(
+                "Interpretation: this looks like a raw-backed pre-identity "
+                "snapshot candidate (`01_pre_identity`)."
+            )
+            print(
+                "Suggested handling: treat RAW metadata as authoritative for "
+                "this stage and skip XMP pair verification."
+            )
+        else:
+            print("Need at least one XMP to run sidecar verification.")
+        return
+
+    if not images:
+        if raw_count:
+            print("JPEG companions not found.")
+            print(
+                "Interpretation: this snapshot may still be valid for "
+                "preferred RAW+XMP verification once that path is implemented."
+            )
+        else:
+            print("Need at least one JPEG to run JPEG/XMP pair verification.")
         return
 
     candidates = find_candidates(images, xmps)
@@ -252,25 +401,19 @@ def print_report(folder: Path, images: list[MetadataRecord], xmps: list[Metadata
 
 
 def main() -> None:
-    """Run a quick pairing audit for one Stage 1 data folder."""
+    """Run pairing audit for one local or S3-backed Stage 1 snapshot."""
     args = parse_args()
-    folder = Path(args.folder)
-    if not folder.is_dir():
-        raise SystemExit(f"Folder not found: {folder}")
-
-    files = [path for path in folder.iterdir() if path.is_file() and not path.name.startswith(".")]
-    images = sorted(
-        (path for path in files if path.suffix in IMAGE_EXTENSIONS),
-        key=lambda path: path.name,
-    )
-    xmps = sorted(
-        (path for path in files if path.suffix == XMP_EXTENSION),
-        key=lambda path: path.name,
-    )
+    if args.bucket_uri:
+        images, xmps, raw_count, source_label = gather_s3_paths(args)
+    else:
+        folder = Path(args.folder)
+        if not folder.is_dir():
+            raise SystemExit(f"Folder not found: {folder}")
+        images, xmps, raw_count, source_label = gather_local_paths(folder)
 
     image_records = run_exiftool(images)
     xmp_records = run_exiftool(xmps)
-    print_report(folder, image_records, xmp_records)
+    print_report(source_label, image_records, xmp_records, raw_count)
 
 
 if __name__ == "__main__":

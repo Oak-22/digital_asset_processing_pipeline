@@ -40,9 +40,18 @@ bridge to mathematical or structured validation later.
 ```text
 data/
 ├── stage1/
-│   ├── sidecars/
-│   ├── exports/
-│   └── manifests/
+│   ├── 01_pre_identity/
+│   │   ├── source_images/
+│   │   └── sidecars/
+│   ├── 02_post_identity/
+│   │   ├── source_images/
+│   │   └── sidecars/
+│   ├── 03_post_domain/
+│   │   ├── source_images/
+│   │   └── sidecars/
+│   └── 04_post_keywords/
+│       ├── source_images/
+│       └── sidecars/
 ├── stage2/
 │   ├── sidecars/
 │   ├── raws/        # optional curated subset, not necessarily committed
@@ -60,7 +69,7 @@ scripts/python/
 │   └── io_utils.py
 ├── stage1/
 │   ├── __init__.py
-│   ├── extract_xmp_metadata.py
+│   ├── extract_stage1_snapshot_metadata.py
 │   ├── verify_stage1_xmp-source_pairs.py
 │   ├── validate_stage1_metadata.py
 │   └── build_stage1_manifest.py
@@ -98,8 +107,11 @@ structure exists before implementation details are filled in.
   evidence used in the prose
 - `pipeline_stages/.../assets/diagrams/`: explanatory diagrams for
   documentation
-- `data/stage1/sidecars/`: XMP sidecars used for metadata
-  extraction and validation
+- `data/stage1/<snapshot_stage>/source_images/`: RAW and optional JPEG
+  companions used as source-image evidence for Stage 1 snapshots
+- `data/stage1/<snapshot_stage>/sidecars/`: XMP sidecars used for
+  metadata extraction and validation once snapshot-specific sidecars
+  exist
 - `data/stage2/sidecars/`: XMP sidecars used for develop-setting
   extraction and auditing
 - `data/stage2/raws/`: optional RAW subset for source-signal or

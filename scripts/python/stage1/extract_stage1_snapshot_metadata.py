@@ -93,18 +93,24 @@ def list_snapshot_folders(input_root: Path) -> list[Path]:
 
 def list_xmps(folder: Path) -> list[Path]:
     """List XMP sidecars inside one snapshot folder."""
+    sidecar_root = folder / "sidecars"
+    if not sidecar_root.is_dir():
+        return []
     return sorted(
         path
-        for path in folder.iterdir()
+        for path in sidecar_root.iterdir()
         if path.is_file() and path.suffix.lower() == ".xmp"
     )
 
 
 def list_raws(folder: Path) -> list[Path]:
     """List RAW source files inside one snapshot folder."""
+    image_root = folder / "source_images"
+    if not image_root.is_dir():
+        return []
     return sorted(
         path
-        for path in folder.iterdir()
+        for path in image_root.iterdir()
         if path.is_file() and path.suffix.lower() in RAW_EXTENSIONS
     )
 
