@@ -47,8 +47,9 @@ without reading every stage writeup in full:
 1. [Shared terminology](docs/terminology.md)
 2. [Pipeline Overview Diagram](docs/creative-workflow-pipeline-overview-diagram.png)
 3. [Project Abstract](docs/abstract.md)
-4. [Batchability Cost Model](docs/batchability-cost-model.md)
-5. [Scripts](scripts) and [Tests](tests) for runnable validation support
+4. [Product Requirements](docs/product-requirements.md)
+5. [Batchability Cost Model](docs/batchability-cost-model.md)
+6. [Scripts](scripts) and [Tests](tests) for runnable validation support
 
 ### Extensive Path (30 mins)
 
@@ -58,11 +59,13 @@ evidence, and implementation rationale:
 1. [Shared terminology](docs/terminology.md)
 2. [Pipeline Overview Diagram](docs/creative-workflow-pipeline-overview-diagram.png)
 3. [Project Abstract](docs/abstract.md)
-4. [Stage 1](pipeline_stages/001_metadata-application-enrichment-query-pipeline/README.md)
-5. [Stage 2](pipeline_stages/002_baseline-conditioning-pipeline/README.md)
-6. [Stage 3](pipeline_stages/003_ai-mask-definition-propagation/README.md)
-7. [Batchability Cost Model](docs/batchability-cost-model.md)
-8. [Scripts](scripts) and [Tests](tests)
+4. [Product Requirements](docs/product-requirements.md)
+5. [Stage 1](pipeline_stages/001_metadata-application-enrichment-query-pipeline/README.md)
+6. [Stage 2](pipeline_stages/002_baseline-conditioning-pipeline/README.md)
+7. [Stage 3](pipeline_stages/003_ai-mask-definition-propagation/README.md)
+8. [Batchability Cost Model](docs/batchability-cost-model.md)
+9. [Scripts](scripts) and [Tests](tests)
+10. [Architecture Decision Records](docs/adr)
 
 <br>
 
@@ -73,11 +76,20 @@ The project is structured as two parts:
 `a) Workflow System Design`
 - **Stage prose:** primary system-design artifact
 - **Workflow evidence:** visual and operational proof carried by the documented stages
+- **Product requirements:** project-level problem, constraints, non-goals, and success criteria
 
 `b) Scripting to validate Design in Operation`
 - **Scripts/tests:** validation and reproducibility support
 
-This pipeline is **Not a packaged application:**. It augments an existing application (Adobe Lightroom)
+This pipeline is **not a packaged application**. It augments an
+existing application: Adobe Lightroom.
+
+<br>
+
+## Decision Records
+
+Architecture and workflow-structure decisions that need stronger
+long-lived rationale are recorded under [docs/adr](docs/adr).
 
 <br>
 
@@ -159,6 +171,31 @@ design themes are:
 - bounded handling of probabilistic outputs
 - reproducibility through clear validation checkpoints
 - human review at defined boundaries
+
+<br>
+
+## Cross-Cutting Engineering Concepts
+
+Some of the strongest engineering and software-engineering concepts in
+this repository are broader than any one stage's governing principles
+or engineering concepts demonstrated. They shape the architecture of the
+whole project rather than only one transformation step.
+
+- business-goal-driven system design rather than isolated tool usage
+- tacit workflow knowledge converted into explicit evidence and
+  operational rules
+- deterministic orchestration around uncertain inputs and probabilistic
+  tool behavior
+- external checkpointing added where the underlying tool only provides
+  rolling mutable state
+- cost-shape modeling used to justify why batchability matters
+- stage-bounded validation and rollback logic instead of monolithic
+  editing flow
+- hybrid evidence model combining prose, diagrams, experiments,
+  artifacts, and scripts
+
+These project-level concerns are summarized more directly in
+[docs/product-requirements.md](docs/product-requirements.md).
 
 <br>
 
