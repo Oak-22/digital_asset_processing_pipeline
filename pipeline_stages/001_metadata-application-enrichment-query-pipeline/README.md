@@ -65,6 +65,14 @@ such as `Wedding Photographer`. Once enriched, the metadata supports
 query-driven retrieval, including Smart Collections treated as
 declarative views over image records.
 
+> [!IMPORTANT]
+> **Governing Principle:** Establish protected metadata state first, then
+> layer revisable semantic enrichment and query logic on top of it.
+>
+> **Governing Principle:** Each metadata field should have one default
+> write owner. Overlap is allowed only as an explicit refinement
+> exception.
+
 <br>
 
 ---
@@ -563,12 +571,6 @@ over enriched metadata.
   checkpoint
 - Smart Collections as saved declarative views 
 - Ad-hoc library filtering as exploratory one-off querying
-
-<br>
-
-> [!IMPORTANT]
-> **Governing Principle:** Establish protected metadata state first, then
-> layer revisable semantic enrichment and query logic on top of it.
 
 <br>
 

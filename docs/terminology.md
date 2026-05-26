@@ -130,8 +130,9 @@ timeline while referencing the same underlying source image.
 
 The process of writing ownership, authorship, classification, or
 descriptive fields onto image records. In Stage 1, identity metadata is
-applied during ingest, while semantic enrichment is applied after
-import.
+applied during ingest/import, while semantic enrichment is applied
+later in the post-import phase. In this project, `ingest` and `import`
+refer to the same Lightroom operation.
 
 ### Smart Collection
 
