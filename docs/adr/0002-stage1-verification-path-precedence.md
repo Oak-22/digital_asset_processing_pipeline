@@ -63,7 +63,7 @@ every case as one generic JPEG/XMP comparison.
 
 ## Notes
 
-This decision does not require mutating existing XMP sidecars. When
-clean Stage 1 snapshots are rebuilt in order, `01_pre_identity` should
-be RAW-backed while `02_post_identity`, `03_post_domain`, and
-`04_post_keywords` carry the XMP-backed metadata checkpoints.
+This decision does not require mutating existing XMP sidecars. In the
+current repo model, Lightroom-like rolling state lives in one mixed
+`data/stage1/live_workspace/` folder, while audit checkpoints are
+captured as extracted JSON snapshots under `outputs/stage1/snapshots/`.

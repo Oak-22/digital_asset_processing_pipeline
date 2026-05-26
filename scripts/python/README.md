@@ -40,18 +40,7 @@ bridge to mathematical or structured validation later.
 ```text
 data/
 ├── stage1/
-│   ├── 01_pre_identity/
-│   │   ├── source_images/
-│   │   └── sidecars/
-│   ├── 02_post_identity/
-│   │   ├── source_images/
-│   │   └── sidecars/
-│   ├── 03_post_domain/
-│   │   ├── source_images/
-│   │   └── sidecars/
-│   └── 04_post_keywords/
-│       ├── source_images/
-│       └── sidecars/
+│   └── live_workspace/   # mixed RAW/XMP rolling Lightroom-sidecar state
 ├── stage2/
 │   ├── sidecars/
 │   ├── raws/        # optional curated subset, not necessarily committed
@@ -69,7 +58,7 @@ scripts/python/
 │   └── io_utils.py
 ├── stage1/
 │   ├── __init__.py
-│   ├── extract_stage1_snapshot_metadata.py
+│   ├── extract_and_report_stage1_metadata_state.py
 │   ├── verify_stage1_xmp-source_pairs.py
 │   ├── validate_stage1_metadata.py
 │   └── build_stage1_manifest.py
@@ -107,11 +96,10 @@ structure exists before implementation details are filled in.
   evidence used in the prose
 - `pipeline_stages/.../assets/diagrams/`: explanatory diagrams for
   documentation
-- `data/stage1/<snapshot_stage>/source_images/`: RAW and optional JPEG
-  companions used as source-image evidence for Stage 1 snapshots
-- `data/stage1/<snapshot_stage>/sidecars/`: XMP sidecars used for
-  metadata extraction and validation once snapshot-specific sidecars
-  exist
+- `data/stage1/live_workspace/`: canonical Stage 1 input folder holding
+  mixed RAW and XMP files as one rolling Lightroom-sidecar workspace
+- `outputs/stage1/snapshots/`: per-checkpoint extracted JSON snapshots
+  captured from the live workspace for auditability
 - `data/stage2/sidecars/`: XMP sidecars used for develop-setting
   extraction and auditing
 - `data/stage2/raws/`: optional RAW subset for source-signal or
@@ -124,7 +112,7 @@ structure exists before implementation details are filled in.
   Stage 3 qualification and evaluation
 
 This keeps qualitative README evidence separate from script inputs and
-allows the Python utilities to target a stable artifact layout.
+allows the Python utilities to target a realistic live-workspace model.
 
 <br>
 
@@ -133,8 +121,8 @@ allows the Python utilities to target a stable artifact layout.
 The scripts in this directory are expected to support several distinct
 validation surfaces over time:
 
-- **XMP and metadata extraction:** prove what Lightroom wrote into
-  sidecars or exports
+- **XMP and metadata extraction:** prove what Lightroom wrote into a
+  rolling live workspace and what each extracted checkpoint captured
 - **Edit-parameter auditing:** quantify how adjustment settings change
   across a dataset or scene group
 - **Manifest generation:** produce stable external records of stage
@@ -165,9 +153,10 @@ Future outputs may include:
 - review sheets
 - summary reports
 
-Example future output locations:
+Example output locations:
 
-- `outputs/stage1/`
+- `outputs/stage1/extracted_stage1_metadata.json`
+- `outputs/stage1/snapshots/`
 - `outputs/stage2/`
 - `outputs/stage3/`
 
@@ -197,9 +186,10 @@ support both qualitative workflow claims and quantitative inspection of
 develop settings, scene grouping, tonal adjustments, and downstream
 parameter convergence.
 
-The cleanest initial strategy is:
+The cleanest current strategy is:
 
-1. **Stage 1:** XMP sidecars first
+1. **Stage 1:** mixed RAW+XMP live workspace first, with extracted
+   snapshot JSONs for auditability
 2. **Stage 2:** XMP sidecars plus an optional curated RAW subset
 3. **Stage 3:** XMP sidecars plus review manifests, with optional
    rendered exports for side-by-side inspection
