@@ -55,7 +55,7 @@
    xmp:CreatorTool="ILCE-7RM3 v3.10"
    xmp:ModifyDate="2024-12-15T16:27:17-08:00"
    xmp:CreateDate="2024-12-15T16:27:17-08:00"
-   xmp:MetadataDate="2026-05-24T14:29:30-07:00"
+   xmp:MetadataDate="2026-05-27T12:16:11-07:00"
    aux:LensInfo="350/10 1500/10 20/10 28/10"
    aux:Lens="E 35-150mm F2.0-F2.8 A058"
    aux:LensDistortInfo="32776/32768 -21014852/1073741824 -2097735/1073741824 22826355/1073741824"
@@ -70,7 +70,7 @@
    xmpMM:DocumentID="F8F584AB7F39A22E3432FEB191832261"
    xmpMM:PreservedFileName="JB107513.ARW"
    xmpMM:OriginalDocumentID="F8F584AB7F39A22E3432FEB191832261"
-   xmpMM:InstanceID="xmp.iid:33632322-7558-4e3d-acec-23bd69eee32c"
+   xmpMM:InstanceID="xmp.iid:ef5ecd6f-6966-4424-8c9f-433362787a41"
    dc:format="image/x-sony-arw"
    crd:CameraProfile="Camera Standard"
    crd:LookName=""
@@ -104,8 +104,8 @@
     <rdf:Seq>
      <rdf:li
       stEvt:action="saved"
-      stEvt:instanceID="xmp.iid:33632322-7558-4e3d-acec-23bd69eee32c"
-      stEvt:when="2026-05-24T14:29:30-07:00"
+      stEvt:instanceID="xmp.iid:ef5ecd6f-6966-4424-8c9f-433362787a41"
+      stEvt:when="2026-05-27T12:16:11-07:00"
       stEvt:softwareAgent="Adobe Photoshop Lightroom Classic 15.1 (Macintosh)"
       stEvt:changed="/metadata"/>
     </rdf:Seq>
@@ -122,23 +122,16 @@
    </dc:rights>
    <dc:subject>
     <rdf:Bag>
-     <rdf:li>California</rdf:li>
-     <rdf:li>Educational Institutions</rdf:li>
-     <rdf:li>Events</rdf:li>
-     <rdf:li>Geography</rdf:li>
      <rdf:li>Graduation</rdf:li>
-     <rdf:li>Hornets</rdf:li>
-     <rdf:li>Location</rdf:li>
      <rdf:li>Portraits</rdf:li>
      <rdf:li>Sacramento</rdf:li>
-     <rdf:li>USA</rdf:li>
+     <rdf:li>Sacramento State University</rdf:li>
      <rdf:li>backlit</rdf:li>
-     <rdf:li>cap and gown</rdf:li>
      <rdf:li>celebration</rdf:li>
-     <rdf:li>diploma</rdf:li>
+     <rdf:li>graduate</rdf:li>
      <rdf:li>individual portrait</rdf:li>
-     <rdf:li>sacramento state university</rdf:li>
-     <rdf:li>senior photos</rdf:li>
+     <rdf:li>outdoor</rdf:li>
+     <rdf:li>school</rdf:li>
     </rdf:Bag>
    </dc:subject>
    <dc:description>
@@ -164,14 +157,10 @@
     <rdf:Bag>
      <rdf:li>Graduation</rdf:li>
      <rdf:li>Events</rdf:li>
-     <rdf:li>cap and gown</rdf:li>
-     <rdf:li>sacramento state university</rdf:li>
+     <rdf:li>Sacramento State University</rdf:li>
      <rdf:li>Educational Institutions</rdf:li>
-     <rdf:li>Hornets</rdf:li>
      <rdf:li>celebration</rdf:li>
      <rdf:li>Moments</rdf:li>
-     <rdf:li>senior photos</rdf:li>
-     <rdf:li>diploma</rdf:li>
      <rdf:li>backlit</rdf:li>
      <rdf:li>Lighting</rdf:li>
      <rdf:li>Sacramento</rdf:li>
@@ -181,19 +170,24 @@
      <rdf:li>Location</rdf:li>
      <rdf:li>individual portrait</rdf:li>
      <rdf:li>Portraits</rdf:li>
+     <rdf:li>outdoor</rdf:li>
+     <rdf:li>Environment</rdf:li>
+     <rdf:li>school</rdf:li>
+     <rdf:li>Venue Type</rdf:li>
+     <rdf:li>graduate</rdf:li>
+     <rdf:li>People</rdf:li>
     </rdf:Bag>
    </lr:weightedFlatSubject>
    <lr:hierarchicalSubject>
     <rdf:Bag>
-     <rdf:li>Educational Institutions|sacramento state university</rdf:li>
-     <rdf:li>Educational Institutions|sacramento state university|Hornets</rdf:li>
+     <rdf:li>Educational Institutions|Sacramento State University</rdf:li>
      <rdf:li>Events|Graduation</rdf:li>
-     <rdf:li>Events|Graduation|cap and gown</rdf:li>
-     <rdf:li>Events|Graduation|diploma</rdf:li>
-     <rdf:li>Events|Graduation|senior photos</rdf:li>
      <rdf:li>Lighting|backlit</rdf:li>
+     <rdf:li>Location|Environment|outdoor</rdf:li>
      <rdf:li>Location|Geography|USA|California|Sacramento</rdf:li>
+     <rdf:li>Location|Venue Type|school</rdf:li>
      <rdf:li>Moments|celebration</rdf:li>
+     <rdf:li>People|graduate</rdf:li>
      <rdf:li>Portraits|individual portrait</rdf:li>
     </rdf:Bag>
    </lr:hierarchicalSubject>
