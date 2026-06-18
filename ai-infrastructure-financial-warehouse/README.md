@@ -1,10 +1,10 @@
-AI Infrastructure Financial Warehouse
+# AI Infrastructure Financial Warehouse
 
 A data engineering platform that ingests, models, and analyzes financial, operational, and AI-related disclosures from major cloud and AI infrastructure companies.
 
 The project transforms raw public data sources—including SEC filings, earnings reports, earnings call transcripts, and company disclosures—into a structured analytics warehouse that can be queried for trends in AI spending, cloud growth, capital expenditures, and infrastructure investment.
 
-Motivation
+## Motivation
 
 Artificial intelligence is driving one of the largest infrastructure buildouts in modern history.
 
@@ -26,9 +26,9 @@ This project consolidates those sources into a centralized analytics platform de
 * Which companies are discussing AI inference most frequently?
 * How are AI-related business segments performing financially?
 
-Project Goals
+## Project Goals
 
-Data Engineering
+### Data Engineering
 
 Build a production-style batch data platform that demonstrates:
 
@@ -40,7 +40,7 @@ Build a production-style batch data platform that demonstrates:
 * Orchestration and scheduling
 * Cloud-native storage patterns
 
-Financial Analytics
+### Financial Analytics
 
 Create a structured warehouse capable of analyzing:
 
@@ -51,7 +51,7 @@ Create a structured warehouse capable of analyzing:
 * Cloud segment performance
 * AI-related disclosures
 
-Industry Research
+### Industry Research
 
 Develop a deeper understanding of:
 
@@ -61,7 +61,7 @@ Develop a deeper understanding of:
 * GPU demand trends
 * Enterprise AI adoption
 
-Architecture
+## Architecture
 
 Raw Data Sources
 ↓
@@ -75,7 +75,7 @@ Analytics Warehouse
 ↓
 Dashboards & Research Queries
 
-Source Layer
+### Source Layer
 
 The platform ingests data from public sources including:
 
@@ -85,7 +85,7 @@ The platform ingests data from public sources including:
 * Investor presentations
 * Public market datasets
 
-Storage Layer
+### Storage Layer
 
 Raw datasets are stored in a centralized data lake format for historical reproducibility and auditability.
 
@@ -95,7 +95,7 @@ Example formats:
 * JSON
 * Parquet
 
-Transformation Layer
+### Transformation Layer
 
 Transformations standardize:
 
@@ -105,20 +105,20 @@ Transformations standardize:
 * Segment reporting
 * AI-related disclosures
 
-Warehouse Layer
+### Warehouse Layer
 
 The warehouse exposes analytics-ready tables.
 
 Example tables:
 
-Dimensional Tables
+#### Dimensional Tables
 
 * dim_company
 * dim_date
 * dim_quarter
 * dim_business_segment
 
-Fact Tables
+#### Fact Tables
 
 * fact_financial_metrics
 * fact_capex
@@ -127,17 +127,17 @@ Fact Tables
 * fact_ai_mentions
 * fact_earnings_transcripts
 
-Example Analytics
+## Example Analytics
 
-Infrastructure Investment
+### Infrastructure Investment
 
 Which companies increased capital expenditures the most year-over-year?
 
-Cloud Growth
+### Cloud Growth
 
 How does cloud revenue growth compare across providers?
 
-AI Adoption Signals
+### AI Adoption Signals
 
 Which companies are increasing references to:
 
@@ -147,13 +147,13 @@ Which companies are increasing references to:
 * Inference
 * GPU infrastructure
 
-Financial Efficiency
+### Financial Efficiency
 
 Is infrastructure spending translating into revenue growth and profitability?
 
-Technology Stack
+## Technology Stack
 
-Data Engineering
+### Data Engineering
 
 * Python
 * SQL
@@ -161,33 +161,34 @@ Data Engineering
 * DuckDB
 * Pandas / Polars
 
-Orchestration
+### Orchestration
 
 * Airflow or Kestra
 
-Data Transformation
+### Data Transformation
 
 * dbt
 
-Storage
+### Storage
 
 * AWS S3
 * Parquet
 
-Analytics
+### Analytics
 
 * Streamlit
 * Power BI
 * SQL dashboards
 
-Infrastructure
+### Infrastructure
 
 * Docker
 * GitHub Actions
 * AWS
 
-Repository Structure
+## Repository Structure
 
+```text
 ai-infrastructure-financial-warehouse/
 ├── data/
 │   ├── raw/
@@ -213,36 +214,37 @@ ai-infrastructure-financial-warehouse/
 ├── tests/
 │
 └── docs/
+```
 
-Roadmap
+## Roadmap
 
-Phase 1
+### Phase 1
 
 * Build ingestion pipelines
 * Load company financial data
 * Create PostgreSQL warehouse
 * Produce baseline dashboards
 
-Phase 2
+### Phase 2
 
 * Introduce orchestration
 * Add dimensional modeling
 * Improve data quality testing
 * Automate refresh schedules
 
-Phase 3
+### Phase 3
 
 * Implement S3 data lake
 * Store historical datasets as Parquet
 * Add cloud-native analytics workflows
 
-Phase 4
+### Phase 4
 
 * Process earnings call transcripts
 * Extract AI-related topics using LLMs
 * Track inference and infrastructure trends
 * Build executive-level research dashboards
 
-Key Takeaway
+## Key Takeaway
 
 This project combines data engineering, cloud infrastructure, finance, and AI industry analysis into a single end-to-end platform. It demonstrates the ability to ingest messy real-world datasets, transform them into trustworthy analytical models, and generate business insights from large-scale public company data.
