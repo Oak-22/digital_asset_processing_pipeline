@@ -47,9 +47,11 @@ without reading every stage writeup in full:
 1. [Shared terminology](docs/terminology.md)
 2. [Pipeline Overview Diagram](docs/creative-workflow-pipeline-overview-diagram-v02.png)
 3. [Project Abstract](docs/abstract.md)
-4. [Product Requirements](docs/product-requirements.md)
-5. [Batchability Cost Model](docs/batchability-cost-model.md)
-6. [Scripts](scripts) and [Tests](tests) for runnable validation support
+4. [Batchability Cost Model](docs/batchability-cost-model.md)
+5. [Stage 1](pipeline_stages/001_metadata-application-enrichment-query-pipeline/README.md)
+6. [Stage 2](pipeline_stages/002_baseline-conditioning-pipeline/README.md)
+7. [Stage 3](pipeline_stages/003_ai-mask-definition-propagation/README.md)
+8. [Scripts](scripts) and [Tests](tests)
 
 ### Extensive Path (30 mins)
 
@@ -78,8 +80,10 @@ The project is structured as two parts:
 - **Workflow evidence:** visual and operational proof carried by the documented stages
 - **Product requirements:** project-level problem, constraints, non-goals, and success criteria
 
-`b) Scripting to validate Design in Operation`
-- **Scripts/tests:** validation and reproducibility support
+`b) Executable Workflow Analysis`
+- **Scripts/tests:** co-equal analytic and validation artifacts that
+  make the workflow inspectable, reproducible, and operational in
+  structured form
 
 This pipeline is **not a packaged application**. It augments an
 existing application: Adobe Lightroom.
@@ -140,7 +144,8 @@ effort.
 
 This repository is documented as an applied systems-design case study.
 Its claims are supported through two complementary evidence modes: one
-for explaining the design and one for showing runnable operation.
+for explaining the design and one for expressing the workflow in
+executable analytic form.
 
 - **A) Workflow System Design Evidence:** the stage prose, workflow
   image evidence, workflow operational evidence, and any stage-specific
@@ -150,9 +155,10 @@ for explaining the design and one for showing runnable operation.
   `Operational note:` callouts or as `Figure` sections with embedded
   images.
   
-- **B) Runnable Script/Test Evidence:** scripts, tests, and sample-data
-  execution support that make the pipeline operable, inspectable, and
-  reproducible in practice rather than only described in prose.
+- **B) Script/Test Evidence:** scripts, tests, and sample-data
+  execution paths that serve as co-equal workflow artifacts. They make
+  the pipeline operable, inspectable, and reproducible in practice
+  rather than only described in prose.
 
 These materials are used to justify workflow behavior and design
 choices. They are not presented as controlled benchmarks or as claims of

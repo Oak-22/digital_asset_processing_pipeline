@@ -353,6 +353,34 @@ also function as cross-event moments in the broader taxonomy.
 
 <br>
 
+**Exported Keyword Evidence**
+
+The keyword taxonomy improvement was validated by comparing the archived
+pre-tightening snapshot against the tightened Stage 1 keyword snapshot:
+
+```bash
+diff -u \
+  outputs/stage1/snapshots/04_post_keywords_before_keyword_tightening.json \
+  outputs/stage1/snapshots/04_post_keywords.json
+```
+
+That comparison showed that keyword tightening reduced avoidable
+metadata noise in the Stage 1 output. The tightened snapshot narrows the
+evidence surface to the keyworded college-graduation assets and removes
+unrelated descriptive fields from the keyword-focused output.
+
+The remaining repetition between `subject` and `hierarchical_subject`
+reflects Lightroom's native keyword export behavior rather than a
+taxonomy design failure. Lightroom serializes both flat keyword terms
+and hierarchical keyword paths, so parent categories and terminal
+keywords can appear redundantly across records even when the intended
+keyword tree is well-structured. For example, a hierarchical path such
+as `Location|Geography|USA|California|Sacramento` can also appear as
+individual flat `subject` terms: `Location`, `Geography`, `USA`,
+`California`, and `Sacramento`.
+
+<br>
+
 ---
 
 <br>
