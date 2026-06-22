@@ -4,13 +4,14 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import json
 from pathlib import Path
 import sys
 
 if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
 
-from scripts.python.common import read_json, write_json
+from scripts.python.common import ensure_parent_dir, read_json
 
 
 STAGE_NAME = "stage1_metadata_application_enrichment_query"
@@ -253,6 +254,15 @@ def print_summary(manifest: dict[str, object], output_path: Path) -> None:
     print(f"Wrote: {output_path}")
 
 
+def write_manifest(path: Path, manifest: dict[str, object]) -> Path:
+    """Write manifest JSON while preserving semantic field order."""
+    target = ensure_parent_dir(path)
+    with target.open("w", encoding="utf-8") as handle:
+        json.dump(manifest, handle, indent=2)
+        handle.write("\n")
+    return target
+
+
 def main() -> None:
     """Build a Stage 1 manifest from validated extraction artifacts."""
     args = parse_args()
@@ -280,7 +290,7 @@ def main() -> None:
         metadata,
         validation_report,
     )
-    write_json(output_path, manifest)
+    write_manifest(output_path, manifest)
     print_summary(manifest, output_path)
 
 
