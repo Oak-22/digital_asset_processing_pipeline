@@ -156,6 +156,8 @@ Future outputs may include:
 Example output locations:
 
 - `outputs/stage1/extracted_stage1_metadata.json`
+- `outputs/stage1/stage1_metadata_validation_report.json`
+- `outputs/stage1/stage1_manifest.json`
 - `outputs/stage1/snapshots/`
 - `outputs/stage2/`
 - `outputs/stage3/`

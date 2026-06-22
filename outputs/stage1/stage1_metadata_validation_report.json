@@ -1,0 +1,7 @@
+{
+  "error_count": 0,
+  "findings": [],
+  "input": "outputs/stage1/extracted_stage1_metadata.json",
+  "status": "pass",
+  "warning_count": 0
+}
