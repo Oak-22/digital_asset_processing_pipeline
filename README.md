@@ -45,7 +45,7 @@ Use this path if you want a condensed, high-level view of the project
 without reading every stage writeup in full:
 
 1. [Shared terminology](docs/terminology.md)
-2. [Pipeline Overview Diagram](docs/creative-workflow-pipeline-overview-diagram.png)
+2. [Pipeline Overview Diagram](docs/creative-workflow-pipeline-overview-diagram-v02.png)
 3. [Project Abstract](docs/abstract.md)
 4. [Product Requirements](docs/product-requirements.md)
 5. [Batchability Cost Model](docs/batchability-cost-model.md)
@@ -57,7 +57,7 @@ Use this path if you want the full systems-design argument, stage
 evidence, and implementation rationale:
 
 1. [Shared terminology](docs/terminology.md)
-2. [Pipeline Overview Diagram](docs/creative-workflow-pipeline-overview-diagram.png)
+2. [Pipeline Overview Diagram](docs/creative-workflow-pipeline-overview-diagram-v02.png)
 3. [Project Abstract](docs/abstract.md)
 4. [Product Requirements](docs/product-requirements.md)
 5. [Stage 1](pipeline_stages/001_metadata-application-enrichment-query-pipeline/README.md)
