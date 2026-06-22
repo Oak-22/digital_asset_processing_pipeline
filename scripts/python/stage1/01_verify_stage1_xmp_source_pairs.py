@@ -1,4 +1,4 @@
-"""Quick terminal audit for preferred RAW/XMP or fallback JPEG/XMP pairing.
+"""Stage 1 step 01: audit preferred RAW/XMP or fallback JPEG/XMP pairing.
 
 RAW/XMP deterministic matching rules:
 1. Prefer XMP records whose `PreservedFileName` exactly matches the RAW filename.

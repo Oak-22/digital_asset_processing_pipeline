@@ -1,4 +1,4 @@
-"""Extract and report normalized Stage 1 metadata state from live assets."""
+"""Stage 1 step 02: extract normalized metadata state from live assets."""
 
 from __future__ import annotations
 

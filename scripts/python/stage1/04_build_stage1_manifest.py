@@ -1,4 +1,4 @@
-"""Build a Stage 1 manifest from extracted metadata artifacts."""
+"""Stage 1 step 04: build a manifest from validated metadata artifacts."""
 
 
 def main() -> None:

@@ -58,10 +58,10 @@ scripts/python/
 │   └── io_utils.py
 ├── stage1/
 │   ├── __init__.py
-│   ├── extract_and_report_stage1_metadata_state.py
-│   ├── verify_stage1_xmp-source_pairs.py
-│   ├── validate_stage1_metadata.py
-│   └── build_stage1_manifest.py
+│   ├── 01_verify_stage1_xmp_source_pairs.py
+│   ├── 02_extract_and_report_stage1_metadata_state.py
+│   ├── 03_validate_stage1_metadata.py
+│   └── 04_build_stage1_manifest.py
 ├── stage2/
 │   ├── __init__.py
 │   ├── extract_develop_settings.py
@@ -198,11 +198,26 @@ The cleanest current strategy is:
 
 ## Data Flow
 
+Stage 1 scripts are numbered because their execution order is part of
+the workflow contract:
+
+1. `01_verify_stage1_xmp_source_pairs.py`
+   confirms RAW/XMP identity before any derived evidence is trusted.
+2. `02_extract_and_report_stage1_metadata_state.py`
+   normalizes the verified workspace into JSON evidence.
+3. `03_validate_stage1_metadata.py`
+   applies Stage 1 assertion rules to the extracted JSON.
+4. `04_build_stage1_manifest.py`
+   packages the validated Stage 1 evidence into a manifest.
+
+Later stages may adopt the same numbering convention when their script
+order becomes operationally significant.
+
 Phase 1
 
+- verify source/sidecar pairing
 - parse XMP files
-- normalize into dataframe / CSV
-- document schema
+- normalize Stage 1 metadata into JSON evidence
 
 Phase 2
 

@@ -1,4 +1,4 @@
-"""Validate Stage 1 metadata expectations against extracted records."""
+"""Stage 1 step 03: validate metadata expectations against extracted records."""
 
 
 def main() -> None:
