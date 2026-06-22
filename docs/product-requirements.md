@@ -140,24 +140,3 @@ The project is successful if it demonstrates that:
   workflow without replacing the workflow itself
 - the resulting system is easier to explain, reproduce, and evolve than
   an undocumented editing habit
-
-<br>
-
-## Why This Counts As Engineering
-
-The project is not only documenting a workflow. It is engineering a
-system around real tool behavior and real operating constraints.
-
-At the project level, that includes:
-
-- converting tacit operator knowledge into explicit workflow evidence
-- modeling repeated labor through the batchability cost framework
-- identifying native tool behavior versus externally imposed control
-  mechanisms
-- designing checkpoint logic that the underlying tool does not provide
-  natively
-- building validation surfaces that connect system design to operation
-
-These concerns are broader than any single stage's governing principles
-or engineering concepts demonstrated. They are cross-cutting product and
-systems concerns that shape the architecture as a whole.
