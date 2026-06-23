@@ -6,7 +6,7 @@ Accepted
 
 ## Context
 
-Stage 1 snapshot verification originally centered on JPEG/XMP pairing
+Stage 1 verification originally centered on JPEG/XMP pairing
 because JPEG companions were easy to inspect visually and easy to
 co-locate with XMP sidecars. As the Stage 1 data model matured, this
 became too narrow.
@@ -14,7 +14,7 @@ became too narrow.
 The project now distinguishes between:
 
 - RAW-backed `01_pre_identity` evidence
-- later XMP-backed metadata snapshots
+- later XMP-backed metadata states
 - optional JPEG companions used mainly for human-friendly inspection
 
 This requires an explicit verification precedence model so the verifier
@@ -28,7 +28,7 @@ Stage 1 verification should follow this precedence:
 1. `RAW + XMP` when both are present: preferred verification path
 2. `JPEG + XMP` when RAW is unavailable: fallback verification path
 3. `RAW only`: pre-identity source evidence, not a sidecar pairing case
-4. `XMP only`: extractable snapshot artifact but weak for provenance
+4. `XMP only`: extractable metadata artifact but weak for provenance
 
 The verifier should report which path is being used rather than treating
 every case as one generic JPEG/XMP comparison.
@@ -65,5 +65,6 @@ every case as one generic JPEG/XMP comparison.
 
 This decision does not require mutating existing XMP sidecars. In the
 current repo model, Lightroom-like rolling state lives in one mixed
-`data/stage1/live_workspace/` folder, while audit checkpoints are
-captured as extracted JSON snapshots under `outputs/stage1/snapshots/`.
+`data/stage1/live_workspace/` folder. Durable Stage 1 audit evidence is
+captured as extracted metadata, validation, and manifest artifacts under
+`outputs/stage1/`.

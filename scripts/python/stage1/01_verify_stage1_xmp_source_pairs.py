@@ -393,9 +393,9 @@ def gather_local_paths(folder: Path) -> tuple[list[Path], list[Path], list[Path]
 
     if image_root.is_dir() or sidecar_root.is_dir():
         if not image_root.is_dir():
-            raise SystemExit(f"Missing source_images/ in snapshot folder: {folder}")
+            raise SystemExit(f"Missing source_images/ in checkpoint folder: {folder}")
         if not sidecar_root.is_dir():
-            raise SystemExit(f"Missing sidecars/ in snapshot folder: {folder}")
+            raise SystemExit(f"Missing sidecars/ in checkpoint folder: {folder}")
         image_files = [
             path
             for path in image_root.iterdir()
@@ -431,7 +431,7 @@ def gather_local_paths(folder: Path) -> tuple[list[Path], list[Path], list[Path]
 
 
 def gather_s3_paths(args: argparse.Namespace) -> tuple[list[Path], list[Path], list[Path], str]:
-    """Download S3-backed snapshot assets into a temporary local workspace."""
+    """Download S3-backed checkpoint assets into a temporary local workspace."""
     if not args.bucket_uri:
         raise SystemExit("Missing required --bucket-uri for S3-backed verification.")
 
@@ -560,7 +560,7 @@ def print_report(
     print()
 
     if not raws and not images and not xmps:
-        print("No RAW, JPEG, or XMP assets found in this snapshot.")
+        print("No RAW, JPEG, or XMP assets found in this checkpoint.")
         return
 
     if not xmps:
@@ -568,7 +568,7 @@ def print_report(
         if raws:
             print(
                 "Interpretation: this looks like a raw-backed pre-identity "
-                "snapshot candidate (`01_pre_identity`)."
+                "checkpoint candidate (`01_pre_identity`)."
             )
             print(
                 "Suggested handling: treat RAW metadata as authoritative for "

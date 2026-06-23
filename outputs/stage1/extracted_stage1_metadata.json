@@ -1,14 +1,14 @@
 {
   "notes": {
-    "structure": "Assets are grouped under one header per inferred snapshot_stage; records remain grouped by input location and asset_key.",
+    "structure": "Assets are grouped under one header per inferred metadata_state; records remain grouped by input location and asset_key.",
     "record_order": "Within each asset group, RAW metadata appears before XMP metadata when both exist.",
     "record_source_values": {
       "raw": "Metadata extracted directly from the RAW master file.",
       "xmp": "Metadata extracted from the Lightroom-generated XMP sidecar."
     },
     "asset_key_meaning": "asset_key is the normalized native raw identity stem used to keep related RAW and XMP records together.",
-    "snapshot_stage_meaning": "snapshot_stage is inferred from each asset pair: no XMP, identity XMP, identity+domain XMP, or identity+domain+keywording XMP.",
-    "snapshot_stage_values": {
+    "metadata_state_meaning": "metadata_state is inferred from each asset pair: no XMP, identity XMP, identity+domain XMP, or identity+domain+keywording XMP.",
+    "metadata_state_values": {
       "stage1_pre-identity": "RAW has no matching XMP sidecar.",
       "stage1_post-identity": "XMP contains identity/contact/copyright metadata but no content-domain fields.",
       "stage1_identity_domain": "XMP contains identity metadata plus content-domain fields such as headline, description, or category.",
@@ -17,18 +17,18 @@
     "input_model": "The canonical Stage 1 input is one mixed live workspace."
   },
   "input_root": "data/stage1/live_workspace",
-  "snapshot_stage_argument": null,
+  "metadata_state_argument": null,
   "record_count": 21,
   "asset_count": 12,
-  "snapshot_stage_counts": {
+  "metadata_state_counts": {
     "stage1_pre-identity": 3,
     "stage1_post-identity": 3,
     "stage1_identity_domain": 3,
     "stage1_identity_domain_keywords": 3
   },
-  "snapshot_stage_groups": [
+  "metadata_state_groups": [
     {
-      "snapshot_stage": "stage1_pre-identity",
+      "metadata_state": "stage1_pre-identity",
       "asset_count": 3,
       "assets": [
         {
@@ -39,8 +39,8 @@
           "stage_asset_position": "1/3",
           "records": [
             {
-              "snapshot_stage": "stage1_pre-identity",
-              "snapshot_path": "data/stage1/live_workspace",
+              "metadata_state": "stage1_pre-identity",
+              "metadata_source_path": "data/stage1/live_workspace",
               "record_source": "raw",
               "source_file": "data/stage1/live_workspace/JB107505.ARW",
               "raw_file_name": "JB107505.ARW",
@@ -63,8 +63,8 @@
           "stage_asset_position": "2/3",
           "records": [
             {
-              "snapshot_stage": "stage1_pre-identity",
-              "snapshot_path": "data/stage1/live_workspace",
+              "metadata_state": "stage1_pre-identity",
+              "metadata_source_path": "data/stage1/live_workspace",
               "record_source": "raw",
               "source_file": "data/stage1/live_workspace/JB107506.ARW",
               "raw_file_name": "JB107506.ARW",
@@ -87,8 +87,8 @@
           "stage_asset_position": "3/3",
           "records": [
             {
-              "snapshot_stage": "stage1_pre-identity",
-              "snapshot_path": "data/stage1/live_workspace",
+              "metadata_state": "stage1_pre-identity",
+              "metadata_source_path": "data/stage1/live_workspace",
               "record_source": "raw",
               "source_file": "data/stage1/live_workspace/JB107507.ARW",
               "raw_file_name": "JB107507.ARW",
@@ -106,7 +106,7 @@
       ]
     },
     {
-      "snapshot_stage": "stage1_post-identity",
+      "metadata_state": "stage1_post-identity",
       "asset_count": 3,
       "assets": [
         {
@@ -118,8 +118,8 @@
           "stage_asset_position": "1/3",
           "records": [
             {
-              "snapshot_stage": "stage1_post-identity",
-              "snapshot_path": "data/stage1/live_workspace",
+              "metadata_state": "stage1_post-identity",
+              "metadata_source_path": "data/stage1/live_workspace",
               "record_source": "raw",
               "source_file": "data/stage1/live_workspace/JB107456.ARW",
               "raw_file_name": "JB107456.ARW",
@@ -133,8 +133,8 @@
               "image_height": 5320
             },
             {
-              "snapshot_stage": "stage1_post-identity",
-              "snapshot_path": "data/stage1/live_workspace",
+              "metadata_state": "stage1_post-identity",
+              "metadata_source_path": "data/stage1/live_workspace",
               "record_source": "xmp",
               "source_file": "data/stage1/live_workspace/JB107456.xmp",
               "xmp_file_name": "JB107456.xmp",
@@ -182,8 +182,8 @@
           "stage_asset_position": "2/3",
           "records": [
             {
-              "snapshot_stage": "stage1_post-identity",
-              "snapshot_path": "data/stage1/live_workspace",
+              "metadata_state": "stage1_post-identity",
+              "metadata_source_path": "data/stage1/live_workspace",
               "record_source": "raw",
               "source_file": "data/stage1/live_workspace/JB107468.ARW",
               "raw_file_name": "JB107468.ARW",
@@ -197,8 +197,8 @@
               "image_height": 5320
             },
             {
-              "snapshot_stage": "stage1_post-identity",
-              "snapshot_path": "data/stage1/live_workspace",
+              "metadata_state": "stage1_post-identity",
+              "metadata_source_path": "data/stage1/live_workspace",
               "record_source": "xmp",
               "source_file": "data/stage1/live_workspace/JB107468.xmp",
               "xmp_file_name": "JB107468.xmp",
@@ -246,8 +246,8 @@
           "stage_asset_position": "3/3",
           "records": [
             {
-              "snapshot_stage": "stage1_post-identity",
-              "snapshot_path": "data/stage1/live_workspace",
+              "metadata_state": "stage1_post-identity",
+              "metadata_source_path": "data/stage1/live_workspace",
               "record_source": "raw",
               "source_file": "data/stage1/live_workspace/JB107504.ARW",
               "raw_file_name": "JB107504.ARW",
@@ -261,8 +261,8 @@
               "image_height": 5320
             },
             {
-              "snapshot_stage": "stage1_post-identity",
-              "snapshot_path": "data/stage1/live_workspace",
+              "metadata_state": "stage1_post-identity",
+              "metadata_source_path": "data/stage1/live_workspace",
               "record_source": "xmp",
               "source_file": "data/stage1/live_workspace/JB107504.xmp",
               "xmp_file_name": "JB107504.xmp",
@@ -304,7 +304,7 @@
       ]
     },
     {
-      "snapshot_stage": "stage1_identity_domain",
+      "metadata_state": "stage1_identity_domain",
       "asset_count": 3,
       "assets": [
         {
@@ -316,8 +316,8 @@
           "stage_asset_position": "1/3",
           "records": [
             {
-              "snapshot_stage": "stage1_identity_domain",
-              "snapshot_path": "data/stage1/live_workspace",
+              "metadata_state": "stage1_identity_domain",
+              "metadata_source_path": "data/stage1/live_workspace",
               "record_source": "raw",
               "source_file": "data/stage1/live_workspace/JB107508.ARW",
               "raw_file_name": "JB107508.ARW",
@@ -331,8 +331,8 @@
               "image_height": 5320
             },
             {
-              "snapshot_stage": "stage1_identity_domain",
-              "snapshot_path": "data/stage1/live_workspace",
+              "metadata_state": "stage1_identity_domain",
+              "metadata_source_path": "data/stage1/live_workspace",
               "record_source": "xmp",
               "source_file": "data/stage1/live_workspace/JB107508.xmp",
               "xmp_file_name": "JB107508.xmp",
@@ -380,8 +380,8 @@
           "stage_asset_position": "2/3",
           "records": [
             {
-              "snapshot_stage": "stage1_identity_domain",
-              "snapshot_path": "data/stage1/live_workspace",
+              "metadata_state": "stage1_identity_domain",
+              "metadata_source_path": "data/stage1/live_workspace",
               "record_source": "raw",
               "source_file": "data/stage1/live_workspace/JB107509.ARW",
               "raw_file_name": "JB107509.ARW",
@@ -395,8 +395,8 @@
               "image_height": 5320
             },
             {
-              "snapshot_stage": "stage1_identity_domain",
-              "snapshot_path": "data/stage1/live_workspace",
+              "metadata_state": "stage1_identity_domain",
+              "metadata_source_path": "data/stage1/live_workspace",
               "record_source": "xmp",
               "source_file": "data/stage1/live_workspace/JB107509.xmp",
               "xmp_file_name": "JB107509.xmp",
@@ -444,8 +444,8 @@
           "stage_asset_position": "3/3",
           "records": [
             {
-              "snapshot_stage": "stage1_identity_domain",
-              "snapshot_path": "data/stage1/live_workspace",
+              "metadata_state": "stage1_identity_domain",
+              "metadata_source_path": "data/stage1/live_workspace",
               "record_source": "raw",
               "source_file": "data/stage1/live_workspace/JB107510.ARW",
               "raw_file_name": "JB107510.ARW",
@@ -459,8 +459,8 @@
               "image_height": 5320
             },
             {
-              "snapshot_stage": "stage1_identity_domain",
-              "snapshot_path": "data/stage1/live_workspace",
+              "metadata_state": "stage1_identity_domain",
+              "metadata_source_path": "data/stage1/live_workspace",
               "record_source": "xmp",
               "source_file": "data/stage1/live_workspace/JB107510.xmp",
               "xmp_file_name": "JB107510.xmp",
@@ -502,7 +502,7 @@
       ]
     },
     {
-      "snapshot_stage": "stage1_identity_domain_keywords",
+      "metadata_state": "stage1_identity_domain_keywords",
       "asset_count": 3,
       "assets": [
         {
@@ -514,8 +514,8 @@
           "stage_asset_position": "1/3",
           "records": [
             {
-              "snapshot_stage": "stage1_identity_domain_keywords",
-              "snapshot_path": "data/stage1/live_workspace",
+              "metadata_state": "stage1_identity_domain_keywords",
+              "metadata_source_path": "data/stage1/live_workspace",
               "record_source": "raw",
               "source_file": "data/stage1/live_workspace/JB107511.ARW",
               "raw_file_name": "JB107511.ARW",
@@ -529,8 +529,8 @@
               "image_height": 5320
             },
             {
-              "snapshot_stage": "stage1_identity_domain_keywords",
-              "snapshot_path": "data/stage1/live_workspace",
+              "metadata_state": "stage1_identity_domain_keywords",
+              "metadata_source_path": "data/stage1/live_workspace",
               "record_source": "xmp",
               "source_file": "data/stage1/live_workspace/JB107511.xmp",
               "xmp_file_name": "JB107511.xmp",
@@ -599,8 +599,8 @@
           "stage_asset_position": "2/3",
           "records": [
             {
-              "snapshot_stage": "stage1_identity_domain_keywords",
-              "snapshot_path": "data/stage1/live_workspace",
+              "metadata_state": "stage1_identity_domain_keywords",
+              "metadata_source_path": "data/stage1/live_workspace",
               "record_source": "raw",
               "source_file": "data/stage1/live_workspace/JB107512.ARW",
               "raw_file_name": "JB107512.ARW",
@@ -614,8 +614,8 @@
               "image_height": 5320
             },
             {
-              "snapshot_stage": "stage1_identity_domain_keywords",
-              "snapshot_path": "data/stage1/live_workspace",
+              "metadata_state": "stage1_identity_domain_keywords",
+              "metadata_source_path": "data/stage1/live_workspace",
               "record_source": "xmp",
               "source_file": "data/stage1/live_workspace/JB107512.xmp",
               "xmp_file_name": "JB107512.xmp",
@@ -684,8 +684,8 @@
           "stage_asset_position": "3/3",
           "records": [
             {
-              "snapshot_stage": "stage1_identity_domain_keywords",
-              "snapshot_path": "data/stage1/live_workspace",
+              "metadata_state": "stage1_identity_domain_keywords",
+              "metadata_source_path": "data/stage1/live_workspace",
               "record_source": "raw",
               "source_file": "data/stage1/live_workspace/JB107513.ARW",
               "raw_file_name": "JB107513.ARW",
@@ -699,8 +699,8 @@
               "image_height": 5320
             },
             {
-              "snapshot_stage": "stage1_identity_domain_keywords",
-              "snapshot_path": "data/stage1/live_workspace",
+              "metadata_state": "stage1_identity_domain_keywords",
+              "metadata_source_path": "data/stage1/live_workspace",
               "record_source": "xmp",
               "source_file": "data/stage1/live_workspace/JB107513.xmp",
               "xmp_file_name": "JB107513.xmp",

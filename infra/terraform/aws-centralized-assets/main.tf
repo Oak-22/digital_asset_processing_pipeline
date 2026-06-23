@@ -3,7 +3,7 @@ locals {
   # not resource prefixes or directory namespaces.
   common_tags = merge(
     {
-      Project      = "creative-workflow-batch-transformation-pipeline"
+      Project      = "digital_asset_processing_pipeline"
       Architecture = "centralized-source-assets-local-analytic-outputs"
       ManagedBy    = "terraform"
       Environment  = var.environment

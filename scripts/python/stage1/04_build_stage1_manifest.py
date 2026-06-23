@@ -43,11 +43,6 @@ def parse_args() -> argparse.Namespace:
         help="Stage 1 validation report produced by step 03.",
     )
     parser.add_argument(
-        "--snapshots-dir",
-        default="outputs/stage1/snapshots",
-        help="Directory containing supporting Stage 1 snapshot artifacts.",
-    )
-    parser.add_argument(
         "--output",
         default="outputs/stage1/stage1_manifest.json",
         help="Destination Stage 1 manifest JSON.",
@@ -78,30 +73,17 @@ def sha256_file(path: Path) -> str:
     return digest.hexdigest()
 
 
-def list_snapshot_artifacts(snapshots_dir: Path) -> list[dict[str, object]]:
-    """List supporting snapshot artifacts in deterministic path order."""
-    if not snapshots_dir.exists():
-        return []
-    if not snapshots_dir.is_dir():
-        raise SystemExit(f"Snapshots path is not a directory: {snapshots_dir}")
-    return [
-        file_artifact(path)
-        for path in sorted(snapshots_dir.rglob("*"))
-        if path.is_file() and not path.name.startswith(".")
-    ]
-
-
 def build_asset_manifest(metadata: dict[str, object]) -> list[dict[str, object]]:
     """Summarize grouped Stage 1 assets without duplicating full metadata records."""
-    groups = metadata.get("snapshot_stage_groups")
+    groups = metadata.get("metadata_state_groups")
     if not isinstance(groups, list):
-        raise SystemExit("Extracted metadata is missing snapshot_stage_groups.")
+        raise SystemExit("Extracted metadata is missing metadata_state_groups.")
 
     assets: list[dict[str, object]] = []
     for group in groups:
         if not isinstance(group, dict):
             continue
-        stage = str(group.get("snapshot_stage", ""))
+        stage = str(group.get("metadata_state", ""))
         stage_assets = group.get("assets", [])
         if not isinstance(stage_assets, list):
             continue
@@ -112,7 +94,7 @@ def build_asset_manifest(metadata: dict[str, object]) -> list[dict[str, object]]
     return sorted(
         assets,
         key=lambda asset: (
-            stage_sort_rank(str(asset["snapshot_stage"])),
+            stage_sort_rank(str(asset["metadata_state"])),
             str(asset["asset_key"]),
         ),
     )
@@ -136,7 +118,7 @@ def summarize_asset(stage: str, asset: dict[str, object]) -> dict[str, object]:
     ]
     return {
         "asset_key": asset.get("asset_key"),
-        "snapshot_stage": stage,
+        "metadata_state": stage,
         "stage_asset_position": asset.get("stage_asset_position"),
         "source_summary": asset.get("source_summary", {}),
         "raw_source_files": [
@@ -194,10 +176,10 @@ def has_value(value: object) -> bool:
     return True
 
 
-def stage_sort_rank(snapshot_stage: str) -> int:
+def stage_sort_rank(metadata_state: str) -> int:
     """Return the intended Stage 1 sequence rank for manifest ordering."""
     try:
-        return STAGE_ORDER.index(snapshot_stage)
+        return STAGE_ORDER.index(metadata_state)
     except ValueError:
         return len(STAGE_ORDER)
 
@@ -205,12 +187,10 @@ def stage_sort_rank(snapshot_stage: str) -> int:
 def build_manifest(
     metadata_path: Path,
     validation_path: Path,
-    snapshots_dir: Path,
     metadata: dict[str, object],
     validation_report: dict[str, object],
 ) -> dict[str, object]:
     """Build the stable Stage 1 manifest payload."""
-    snapshot_artifacts = list_snapshot_artifacts(snapshots_dir)
     return {
         "stage": STAGE_NAME,
         "status": manifest_status(validation_report),
@@ -218,7 +198,6 @@ def build_manifest(
         "inputs": {
             "metadata": file_artifact(metadata_path),
             "validation_report": file_artifact(validation_path),
-            "snapshot_artifacts": snapshot_artifacts,
         },
         "validation": {
             "status": validation_report.get("status"),
@@ -229,8 +208,7 @@ def build_manifest(
             "input_root": metadata.get("input_root"),
             "asset_count": metadata.get("asset_count"),
             "record_count": metadata.get("record_count"),
-            "snapshot_stage_counts": metadata.get("snapshot_stage_counts", {}),
-            "snapshot_artifact_count": len(snapshot_artifacts),
+            "metadata_state_counts": metadata.get("metadata_state_counts", {}),
         },
         "assets": build_asset_manifest(metadata),
     }
@@ -268,7 +246,6 @@ def main() -> None:
     args = parse_args()
     metadata_path = Path(args.metadata)
     validation_path = Path(args.validation_report)
-    snapshots_dir = Path(args.snapshots_dir)
     output_path = Path(args.output)
 
     metadata = read_json(metadata_path)
@@ -286,7 +263,6 @@ def main() -> None:
     manifest = build_manifest(
         metadata_path,
         validation_path,
-        snapshots_dir,
         metadata,
         validation_report,
     )

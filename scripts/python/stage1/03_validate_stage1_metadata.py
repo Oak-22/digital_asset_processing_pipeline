@@ -46,7 +46,7 @@ class Finding:
     code: str
     message: str
     asset_key: str | None = None
-    snapshot_stage: str | None = None
+    metadata_state: str | None = None
 
     def as_dict(self) -> dict[str, object]:
         """Serialize the finding into a stable JSON shape."""
@@ -57,8 +57,8 @@ class Finding:
         }
         if self.asset_key is not None:
             payload["asset_key"] = self.asset_key
-        if self.snapshot_stage is not None:
-            payload["snapshot_stage"] = self.snapshot_stage
+        if self.metadata_state is not None:
+            payload["metadata_state"] = self.metadata_state
         return payload
 
 
@@ -102,7 +102,7 @@ def require(
     message: str,
     *,
     asset_key: str | None = None,
-    snapshot_stage: str | None = None,
+    metadata_state: str | None = None,
 ) -> None:
     """Append an error finding when an assertion fails."""
     if condition:
@@ -113,7 +113,7 @@ def require(
             code=code,
             message=message,
             asset_key=asset_key,
-            snapshot_stage=snapshot_stage,
+            metadata_state=metadata_state,
         )
     )
 
@@ -121,12 +121,12 @@ def require(
 def validate_payload(payload: dict[str, object]) -> list[Finding]:
     """Validate top-level report structure and every Stage 1 asset bundle."""
     findings: list[Finding] = []
-    groups = payload.get("snapshot_stage_groups")
+    groups = payload.get("metadata_state_groups")
     require(
         findings,
         isinstance(groups, list),
         "missing_stage_groups",
-        "Expected snapshot_stage_groups to be a list.",
+        "Expected metadata_state_groups to be a list.",
     )
     if not isinstance(groups, list):
         return findings
@@ -143,26 +143,26 @@ def validate_payload(payload: dict[str, object]) -> list[Finding]:
                 Finding(
                     severity="error",
                     code="invalid_stage_group",
-                    message="Each snapshot_stage_group entry must be an object.",
+                    message="Each metadata_state_group entry must be an object.",
                 )
             )
             continue
 
-        stage = str(group.get("snapshot_stage", ""))
+        stage = str(group.get("metadata_state", ""))
         assets = group.get("assets")
         require(
             findings,
             stage in STAGE_ORDER,
             "unknown_stage",
-            f"Unknown Stage 1 snapshot_stage: {stage}",
-            snapshot_stage=stage,
+            f"Unknown Stage 1 metadata_state: {stage}",
+            metadata_state=stage,
         )
         require(
             findings,
             isinstance(assets, list),
             "invalid_assets",
             "Stage group assets must be a list.",
-            snapshot_stage=stage,
+            metadata_state=stage,
         )
         if stage in STAGE_ORDER:
             seen_stages.append(stage)
@@ -175,7 +175,7 @@ def validate_payload(payload: dict[str, object]) -> list[Finding]:
             group.get("asset_count") == len(assets),
             "asset_count_mismatch",
             f"asset_count={group.get('asset_count')} does not match {len(assets)} assets.",
-            snapshot_stage=stage,
+            metadata_state=stage,
         )
         for asset in assets:
             if isinstance(asset, dict):
@@ -193,7 +193,7 @@ def validate_payload(payload: dict[str, object]) -> list[Finding]:
                         severity="error",
                         code="invalid_asset",
                         message="Each asset entry must be an object.",
-                        snapshot_stage=stage,
+                        metadata_state=stage,
                     )
                 )
 
@@ -225,19 +225,19 @@ def validate_stage_counts(
     payload: dict[str, object],
     groups: list[object],
 ) -> None:
-    """Validate snapshot_stage_counts against the grouped asset counts."""
-    counts = payload.get("snapshot_stage_counts")
+    """Validate metadata_state_counts against the grouped asset counts."""
+    counts = payload.get("metadata_state_counts")
     require(
         findings,
         isinstance(counts, dict),
         "invalid_stage_counts",
-        "snapshot_stage_counts must be an object.",
+        "metadata_state_counts must be an object.",
     )
     if not isinstance(counts, dict):
         return
 
     grouped_counts = {
-        str(group.get("snapshot_stage")): len(group.get("assets", []))
+        str(group.get("metadata_state")): len(group.get("assets", []))
         for group in groups
         if isinstance(group, dict) and isinstance(group.get("assets"), list)
     }
@@ -247,10 +247,10 @@ def validate_stage_counts(
             counts.get(stage, 0) == grouped_counts.get(stage, 0),
             "stage_count_mismatch",
             (
-                f"snapshot_stage_counts[{stage}]={counts.get(stage, 0)} "
+                f"metadata_state_counts[{stage}]={counts.get(stage, 0)} "
                 f"does not match {grouped_counts.get(stage, 0)} grouped assets."
             ),
-            snapshot_stage=stage,
+            metadata_state=stage,
         )
 
 
@@ -271,7 +271,7 @@ def validate_asset(
         bool(asset_key),
         "missing_asset_key",
         "Asset is missing asset_key.",
-        snapshot_stage=stage,
+        metadata_state=stage,
     )
     if asset_key:
         key = (stage, asset_key)
@@ -281,7 +281,7 @@ def validate_asset(
             "duplicate_stage_asset",
             f"Asset key {asset_key} appears more than once in {stage}.",
             asset_key=asset_key,
-            snapshot_stage=stage,
+            metadata_state=stage,
         )
         seen_stage_asset_keys.add(key)
 
@@ -291,7 +291,7 @@ def validate_asset(
         "missing_records",
         "Asset must contain at least one record.",
         asset_key=asset_key,
-        snapshot_stage=stage,
+        metadata_state=stage,
     )
     require(
         findings,
@@ -299,7 +299,7 @@ def validate_asset(
         "invalid_source_summary",
         "Asset source_summary must be an object.",
         asset_key=asset_key,
-        snapshot_stage=stage,
+        metadata_state=stage,
     )
     if not isinstance(records, list):
         return
@@ -314,7 +314,7 @@ def validate_asset(
         "raw_record_count",
         f"Expected exactly one RAW record, found {len(raw_records)}.",
         asset_key=asset_key,
-        snapshot_stage=stage,
+        metadata_state=stage,
     )
     if stage == STAGE_PRE_IDENTITY:
         require(
@@ -323,7 +323,7 @@ def validate_asset(
             "pre_identity_has_xmp",
             "Pre-identity assets should not have XMP sidecars.",
             asset_key=asset_key,
-            snapshot_stage=stage,
+            metadata_state=stage,
         )
     else:
         require(
@@ -332,7 +332,7 @@ def validate_asset(
             "xmp_record_count",
             f"Expected exactly one XMP record, found {len(xmp_records)}.",
             asset_key=asset_key,
-            snapshot_stage=stage,
+            metadata_state=stage,
         )
 
     for record in records:
@@ -343,7 +343,7 @@ def validate_asset(
                     code="invalid_record",
                     message="Each record must be an object.",
                     asset_key=asset_key,
-                    snapshot_stage=stage,
+                    metadata_state=stage,
                 )
             )
             continue
@@ -384,7 +384,7 @@ def validate_source_summary(
         "source_summary_mismatch",
         f"source_summary={source_summary} does not match records={expected}.",
         asset_key=asset_key,
-        snapshot_stage=stage,
+        metadata_state=stage,
     )
 
 
@@ -404,15 +404,15 @@ def validate_record_identity(
         "unknown_record_source",
         f"Unknown record_source: {record_source}",
         asset_key=asset_key,
-        snapshot_stage=stage,
+        metadata_state=stage,
     )
     require(
         findings,
-        record.get("snapshot_stage") == stage,
+        record.get("metadata_state") == stage,
         "record_stage_mismatch",
-        f"Record snapshot_stage={record.get('snapshot_stage')} does not match group {stage}.",
+        f"Record metadata_state={record.get('metadata_state')} does not match group {stage}.",
         asset_key=asset_key,
-        snapshot_stage=stage,
+        metadata_state=stage,
     )
     require(
         findings,
@@ -420,7 +420,7 @@ def validate_record_identity(
         "record_asset_key_mismatch",
         f"Record asset_key={record.get('asset_key')} does not match asset {asset_key}.",
         asset_key=asset_key,
-        snapshot_stage=stage,
+        metadata_state=stage,
     )
     require(
         findings,
@@ -428,7 +428,7 @@ def validate_record_identity(
         "missing_source_file",
         "Record is missing source_file.",
         asset_key=asset_key,
-        snapshot_stage=stage,
+        metadata_state=stage,
     )
     if source_file:
         require(
@@ -437,7 +437,7 @@ def validate_record_identity(
             "duplicate_source_file",
             f"source_file appears more than once: {source_file}",
             asset_key=asset_key,
-            snapshot_stage=stage,
+            metadata_state=stage,
         )
         seen_source_files.add(source_file)
 
@@ -461,7 +461,7 @@ def validate_raw_xmp_consistency(
             f"asset_key={asset_key}."
         ),
         asset_key=asset_key,
-        snapshot_stage=stage,
+        metadata_state=stage,
     )
     require(
         findings,
@@ -469,7 +469,7 @@ def validate_raw_xmp_consistency(
         "raw_filename_mismatch",
         f"raw_file_name={raw_file_name} does not match asset_key={asset_key}.",
         asset_key=asset_key,
-        snapshot_stage=stage,
+        metadata_state=stage,
     )
     for raw_field, xmp_field in (
         ("camera_make", "camera_make"),
@@ -484,7 +484,7 @@ def validate_raw_xmp_consistency(
                 f"XMP {xmp_field}={xmp_record.get(xmp_field)}."
             ),
             asset_key=asset_key,
-            snapshot_stage=stage,
+            metadata_state=stage,
         )
     require(
         findings,
@@ -496,7 +496,7 @@ def validate_raw_xmp_consistency(
             f"XMP capture_time={xmp_record.get('capture_time')}."
         ),
         asset_key=asset_key,
-        snapshot_stage=stage,
+        metadata_state=stage,
     )
 
 
@@ -545,7 +545,7 @@ def require_fields(
             "missing_required_metadata",
             f"Required metadata field is empty: {field}",
             asset_key=asset_key,
-            snapshot_stage=stage,
+            metadata_state=stage,
         )
 
 
@@ -564,7 +564,7 @@ def forbid_fields(
             "unexpected_metadata",
             f"Metadata field should not be populated at this stage: {field}",
             asset_key=asset_key,
-            snapshot_stage=stage,
+            metadata_state=stage,
         )
 
 

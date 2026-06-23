@@ -27,7 +27,7 @@ downstream analytic outputs should be materialized locally.
 The intended target architecture is:
 
 - centralized storage for RAW masters
-- centralized storage for XMP sidecars or exported metadata snapshots
+- centralized storage for XMP sidecars or exported metadata state
 - local repository storage for scripts, tests, extracted JSON outputs,
   manifests, and validation artifacts
 

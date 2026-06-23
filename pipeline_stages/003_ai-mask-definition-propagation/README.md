@@ -1,6 +1,6 @@
 # Production Workflow System Design & Implementation: AI Mask Definition Propagation
 
-Part of the **Creative Workflow Batch Transformation Pipeline** umbrella project.
+Part of the **Digital Asset Processing Pipeline** umbrella project.
 
 <br>
 

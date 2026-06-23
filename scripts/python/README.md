@@ -98,8 +98,8 @@ structure exists before implementation details are filled in.
   documentation
 - `data/stage1/live_workspace/`: canonical Stage 1 input folder holding
   mixed RAW and XMP files as one rolling Lightroom-sidecar workspace
-- `outputs/stage1/snapshots/`: per-checkpoint extracted JSON snapshots
-  captured from the live workspace for auditability
+- `outputs/stage1/`: durable Stage 1 analysis artifacts, including the
+  extracted metadata report, validation report, and manifest
 - `data/stage2/sidecars/`: XMP sidecars used for develop-setting
   extraction and auditing
 - `data/stage2/raws/`: optional RAW subset for source-signal or
@@ -158,7 +158,6 @@ Example output locations:
 - `outputs/stage1/extracted_stage1_metadata.json`
 - `outputs/stage1/stage1_metadata_validation_report.json`
 - `outputs/stage1/stage1_manifest.json`
-- `outputs/stage1/snapshots/`
 - `outputs/stage2/`
 - `outputs/stage3/`
 
@@ -191,7 +190,7 @@ parameter convergence.
 The cleanest current strategy is:
 
 1. **Stage 1:** mixed RAW+XMP live workspace first, with extracted
-   snapshot JSONs for auditability
+   metadata, validation, and manifest artifacts for auditability
 2. **Stage 2:** XMP sidecars plus an optional curated RAW subset
 3. **Stage 3:** XMP sidecars plus review manifests, with optional
    rendered exports for side-by-side inspection

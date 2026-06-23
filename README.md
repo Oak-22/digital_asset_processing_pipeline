@@ -1,4 +1,4 @@
-# Creative Workflow Batch Transformation Pipeline
+# Digital Asset Processing Pipeline
 
 Systems engineering project showing how ambiguous, ad hoc creative production workflows can be structured as deterministic, scalable pipelines.  
 
@@ -48,8 +48,8 @@ without reading every stage writeup in full:
 2. [Pipeline Overview Diagram](docs/creative-workflow-pipeline-overview-diagram-v02.png)
 3. [Project Abstract](docs/abstract.md)
 4. [Batchability Cost Model](docs/batchability-cost-model.md)
-5. [Stage 1](pipeline_stages/001_metadata-application-enrichment-query-pipeline/README.md)
-6. [Stage 2](pipeline_stages/002_baseline-conditioning-pipeline/README.md)
+5. [Stage 1](pipeline_stages/001_metadata-application-enrichment-query/README.md)
+6. [Stage 2](pipeline_stages/002_baseline-conditioning/README.md)
 7. [Stage 3](pipeline_stages/003_ai-mask-definition-propagation/README.md)
 8. [Scripts](scripts) and [Tests](tests)
 
@@ -62,8 +62,8 @@ evidence, and implementation rationale:
 2. [Pipeline Overview Diagram](docs/creative-workflow-pipeline-overview-diagram-v02.png)
 3. [Project Abstract](docs/abstract.md)
 4. [Product Requirements](docs/product-requirements.md)
-5. [Stage 1](pipeline_stages/001_metadata-application-enrichment-query-pipeline/README.md)
-6. [Stage 2](pipeline_stages/002_baseline-conditioning-pipeline/README.md)
+5. [Stage 1](pipeline_stages/001_metadata-application-enrichment-query/README.md)
+6. [Stage 2](pipeline_stages/002_baseline-conditioning/README.md)
 7. [Stage 3](pipeline_stages/003_ai-mask-definition-propagation/README.md)
 8. [Batchability Cost Model](docs/batchability-cost-model.md)
 9. [Scripts](scripts) and [Tests](tests)
@@ -211,11 +211,11 @@ The project is organized as a single multi-stage pipeline with supporting docume
 
 <br>
 
-### Stage 1 – Metadata Application, Enrichment, and Query Pipeline
+### Stage 1 – Metadata Application, Enrichment, and Query
 
 Establishes the metadata and query foundation for the workflow.
 
-Location: [Stage 1](pipeline_stages/001_metadata-application-enrichment-query-pipeline/README.md)
+Location: [Stage 1](pipeline_stages/001_metadata-application-enrichment-query/README.md)
 
 Focus areas:
 - deterministic ingest behavior under single-preset constraints
@@ -238,12 +238,12 @@ Focus areas:
 
 <br>
 
-### Stage 2 – Baseline Conditioning Pipeline
+### Stage 2 – Baseline Conditioning
 
 Establishes the conditioned image baseline for downstream semantic
 operations.
 
-Location: [Stage 2](pipeline_stages/002_baseline-conditioning-pipeline/README.md)
+Location: [Stage 2](pipeline_stages/002_baseline-conditioning/README.md)
 
 Focus areas:
 - local corrective cleanup and dataset-wide tonal normalization across heterogeneous images

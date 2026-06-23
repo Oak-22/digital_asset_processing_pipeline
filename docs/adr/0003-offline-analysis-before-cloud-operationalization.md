@@ -104,7 +104,7 @@ The cloud layer does not own:
 
 - parsing Lightroom metadata payloads for creative meaning
 - inferring Stage 1 semantic boundaries from metadata fields
-- generating local evidence snapshots
+- generating local evidence artifacts
 - documenting workflow behavior
 - deciding whether an edit state is creatively or analytically valid
 - replacing the editor-in-the-loop Lightroom workflow

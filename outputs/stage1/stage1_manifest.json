@@ -5,26 +5,14 @@
   "inputs": {
     "metadata": {
       "path": "outputs/stage1/extracted_stage1_metadata.json",
-      "sha256": "fd320fa8518584cdc989a5b713bd35affd05f811bf31ea65b5a00ea6b5a6f52c",
-      "size_bytes": 32412
+      "sha256": "7192291eb03d89f4b23814a1fa4976d8c4867b0f8039babe908f9cefdd0c8e80",
+      "size_bytes": 32559
     },
     "validation_report": {
       "path": "outputs/stage1/stage1_metadata_validation_report.json",
       "sha256": "f75f3dcabe6197268064221f390f263ab294bcddc580252a28fd0a86cb7463fe",
       "size_bytes": 143
-    },
-    "snapshot_artifacts": [
-      {
-        "path": "outputs/stage1/snapshots/04_post_keywords.json",
-        "sha256": "1b4755599360271e1a76b6937ed41d63e2fcef5c32948e614fde2131b0433b28",
-        "size_bytes": 9908
-      },
-      {
-        "path": "outputs/stage1/snapshots/04_post_keywords_before_keyword_tightening.json",
-        "sha256": "e37d0df7806b2a9e6cd84c3b0dd21397ba7441ef658e7e51c6f0126b498f71ca",
-        "size_bytes": 33357
-      }
-    ]
+    }
   },
   "validation": {
     "status": "pass",
@@ -35,18 +23,17 @@
     "input_root": "data/stage1/live_workspace",
     "asset_count": 12,
     "record_count": 21,
-    "snapshot_stage_counts": {
+    "metadata_state_counts": {
       "stage1_pre-identity": 3,
       "stage1_post-identity": 3,
       "stage1_identity_domain": 3,
       "stage1_identity_domain_keywords": 3
-    },
-    "snapshot_artifact_count": 2
+    }
   },
   "assets": [
     {
       "asset_key": "JB107505",
-      "snapshot_stage": "stage1_pre-identity",
+      "metadata_state": "stage1_pre-identity",
       "stage_asset_position": "1/3",
       "source_summary": {
         "raw": 1
@@ -62,7 +49,7 @@
     },
     {
       "asset_key": "JB107506",
-      "snapshot_stage": "stage1_pre-identity",
+      "metadata_state": "stage1_pre-identity",
       "stage_asset_position": "2/3",
       "source_summary": {
         "raw": 1
@@ -78,7 +65,7 @@
     },
     {
       "asset_key": "JB107507",
-      "snapshot_stage": "stage1_pre-identity",
+      "metadata_state": "stage1_pre-identity",
       "stage_asset_position": "3/3",
       "source_summary": {
         "raw": 1
@@ -94,7 +81,7 @@
     },
     {
       "asset_key": "JB107456",
-      "snapshot_stage": "stage1_post-identity",
+      "metadata_state": "stage1_post-identity",
       "stage_asset_position": "1/3",
       "source_summary": {
         "raw": 1,
@@ -113,7 +100,7 @@
     },
     {
       "asset_key": "JB107468",
-      "snapshot_stage": "stage1_post-identity",
+      "metadata_state": "stage1_post-identity",
       "stage_asset_position": "2/3",
       "source_summary": {
         "raw": 1,
@@ -132,7 +119,7 @@
     },
     {
       "asset_key": "JB107504",
-      "snapshot_stage": "stage1_post-identity",
+      "metadata_state": "stage1_post-identity",
       "stage_asset_position": "3/3",
       "source_summary": {
         "raw": 1,
@@ -151,7 +138,7 @@
     },
     {
       "asset_key": "JB107508",
-      "snapshot_stage": "stage1_identity_domain",
+      "metadata_state": "stage1_identity_domain",
       "stage_asset_position": "1/3",
       "source_summary": {
         "raw": 1,
@@ -170,7 +157,7 @@
     },
     {
       "asset_key": "JB107509",
-      "snapshot_stage": "stage1_identity_domain",
+      "metadata_state": "stage1_identity_domain",
       "stage_asset_position": "2/3",
       "source_summary": {
         "raw": 1,
@@ -189,7 +176,7 @@
     },
     {
       "asset_key": "JB107510",
-      "snapshot_stage": "stage1_identity_domain",
+      "metadata_state": "stage1_identity_domain",
       "stage_asset_position": "3/3",
       "source_summary": {
         "raw": 1,
@@ -208,7 +195,7 @@
     },
     {
       "asset_key": "JB107511",
-      "snapshot_stage": "stage1_identity_domain_keywords",
+      "metadata_state": "stage1_identity_domain_keywords",
       "stage_asset_position": "1/3",
       "source_summary": {
         "raw": 1,
@@ -227,7 +214,7 @@
     },
     {
       "asset_key": "JB107512",
-      "snapshot_stage": "stage1_identity_domain_keywords",
+      "metadata_state": "stage1_identity_domain_keywords",
       "stage_asset_position": "2/3",
       "source_summary": {
         "raw": 1,
@@ -246,7 +233,7 @@
     },
     {
       "asset_key": "JB107513",
-      "snapshot_stage": "stage1_identity_domain_keywords",
+      "metadata_state": "stage1_identity_domain_keywords",
       "stage_asset_position": "3/3",
       "source_summary": {
         "raw": 1,
