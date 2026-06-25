@@ -191,7 +191,11 @@ The cleanest current strategy is:
 
 1. **Stage 1:** mixed RAW+XMP live workspace first, with extracted
    metadata, validation, and manifest artifacts for auditability
-2. **Stage 2:** XMP sidecars plus an optional curated RAW subset
+2. **Stage 2:** XMP sidecars plus an optional curated RAW subset.
+   Stage 2 extraction can run against any explicit XMP sidecar set,
+   including the Stage 1 `live_workspace/`. The input model label records
+   whether the extracted values represent an upstream reference state, a
+   conditioned Stage 2 state, or another workflow boundary.
 3. **Stage 3:** XMP sidecars plus review manifests, with optional
    rendered exports for side-by-side inspection
 
