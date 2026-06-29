@@ -63,6 +63,7 @@ scripts/python/
 │   └── 04_build_stage1_manifest.py
 ├── stage2/
 │   ├── __init__.py
+│   ├── build_checkpoint_manifest.py
 │   ├── extract_develop_settings.py
 │   ├── audit_stage2_parameters.py
 │   └── build_stage2_manifest.py
@@ -122,6 +123,9 @@ validation surfaces over time:
 
 - **XMP and metadata extraction:** prove what Lightroom wrote into a
   rolling live workspace and what each extracted checkpoint captured
+- **Checkpoint manifesting:** hash frozen checkpoint folders so later
+  extraction and comparison artifacts can prove which sidecar snapshots
+  they used
 - **Edit-parameter auditing:** quantify how adjustment settings change
   across a dataset or scene group
 - **Manifest generation:** produce stable external records of stage
@@ -157,8 +161,28 @@ Example output locations:
 - `outputs/stage1/extracted_stage1_metadata.json`
 - `outputs/stage1/stage1_metadata_validation_report.json`
 - `outputs/stage1/stage1_manifest.json`
-- `outputs/stage2/`
+- `outputs/stage2/stage2_preconditioning_checkpoint_manifest.json`
+- `outputs/stage2/stage2_postconditioning_checkpoint_manifest.json`
+- `outputs/stage2/stage2_extracted_preconditioning_develop_settings.json`
 - `outputs/stage3/`
+
+Stage 2 checkpoint manifests can be regenerated with:
+
+```bash
+python3 scripts/python/stage2/build_checkpoint_manifest.py
+```
+
+After Lightroom Develop edits are applied and postconditioning sidecars
+are copied into `data/stage2/conditioned_state/xmp_postconditioning/`,
+generate the postconditioning manifest with:
+
+```bash
+python3 scripts/python/stage2/build_checkpoint_manifest.py \
+  --checkpoint-root data/stage2/conditioned_state/xmp_postconditioning \
+  --checkpoint-label stage2_postconditioning_state \
+  --mutable-origin-root data/live_workspace \
+  --output outputs/stage2/stage2_postconditioning_checkpoint_manifest.json
+```
 
 <br>
 

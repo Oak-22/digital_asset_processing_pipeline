@@ -3,6 +3,8 @@
   "comparison_model": "preconditioning_vs_postconditioning_develop_settings",
   "status": "pending_postconditioning_extract",
   "inputs": {
+    "preconditioning_checkpoint_manifest": "outputs/stage2/stage2_preconditioning_checkpoint_manifest.json",
+    "postconditioning_checkpoint_manifest": "outputs/stage2/stage2_postconditioning_checkpoint_manifest.json",
     "preconditioning": "outputs/stage2/stage2_extracted_preconditioning_develop_settings.json",
     "postconditioning": "outputs/stage2/stage2_extracted_postconditioning_develop_settings.json"
   },

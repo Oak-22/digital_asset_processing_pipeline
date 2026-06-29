@@ -23,6 +23,16 @@ Recommended artifact model:
 - `sidecar/`: optional working input location for ad hoc extraction runs
   against an explicit sidecar set
 
+Checkpoint folders should be treated as evidence snapshots, not as
+Lightroom working folders. Build hash manifests for checkpoint folders
+before deriving durable comparison claims from them.
+
+Example:
+
+```bash
+python3 scripts/python/stage2/build_checkpoint_manifest.py
+```
+
 Derived analysis artifacts belong under `outputs/stage2/`, including
-develop-setting extracts, parameter audit reports, comparison reports,
-and the Stage 2 manifest.
+checkpoint manifests, develop-setting extracts, parameter audit reports,
+comparison reports, and the Stage 2 manifest.
