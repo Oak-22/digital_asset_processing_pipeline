@@ -1,0 +1,115 @@
+{
+  "stage": "stage2_baseline_conditioning",
+  "checkpoint_label": "stage2_postconditioning_state",
+  "checkpoint_root": "data/stage2/conditioned_state/xmp_postconditioning",
+  "mutable_origin_root": "data/live_workspace",
+  "generated_at_utc": "2026-06-29T22:48:07+00:00",
+  "purpose": "Preserve artifact integrity for a frozen Stage 2 XMP checkpoint copied from Lightroom's mutable live workspace.",
+  "summary": {
+    "artifact_count": 9,
+    "matching_mutable_origin_count_at_manifest_time": 9,
+    "missing_mutable_origin_count_at_manifest_time": 0,
+    "mismatched_mutable_origin_count_at_manifest_time": 0
+  },
+  "artifacts": [
+    {
+      "asset_key": "JB107456",
+      "checkpoint_path": "data/stage2/conditioned_state/xmp_postconditioning/JB107456.xmp",
+      "checkpoint_size_bytes": 11144,
+      "checkpoint_sha256": "684ddaba8cab973d40824e93502c4fa5d9fde2501c1bd3f4c6775ba09302dfb4",
+      "mutable_origin_path": "data/live_workspace/JB107456.xmp",
+      "mutable_origin_exists_at_manifest_time": true,
+      "mutable_origin_size_bytes_at_manifest_time": 11144,
+      "mutable_origin_sha256_at_manifest_time": "684ddaba8cab973d40824e93502c4fa5d9fde2501c1bd3f4c6775ba09302dfb4",
+      "mutable_origin_matches_checkpoint_at_manifest_time": true
+    },
+    {
+      "asset_key": "JB107468",
+      "checkpoint_path": "data/stage2/conditioned_state/xmp_postconditioning/JB107468.xmp",
+      "checkpoint_size_bytes": 11151,
+      "checkpoint_sha256": "22bb5d49cef13406d7fec0fb81b4e081054f5250fecce058152bc27e7838682d",
+      "mutable_origin_path": "data/live_workspace/JB107468.xmp",
+      "mutable_origin_exists_at_manifest_time": true,
+      "mutable_origin_size_bytes_at_manifest_time": 11151,
+      "mutable_origin_sha256_at_manifest_time": "22bb5d49cef13406d7fec0fb81b4e081054f5250fecce058152bc27e7838682d",
+      "mutable_origin_matches_checkpoint_at_manifest_time": true
+    },
+    {
+      "asset_key": "JB107504",
+      "checkpoint_path": "data/stage2/conditioned_state/xmp_postconditioning/JB107504.xmp",
+      "checkpoint_size_bytes": 10927,
+      "checkpoint_sha256": "33b5367456c3a6518574f5582231f67b124db80aa6d47a2537deebadabaec12a",
+      "mutable_origin_path": "data/live_workspace/JB107504.xmp",
+      "mutable_origin_exists_at_manifest_time": true,
+      "mutable_origin_size_bytes_at_manifest_time": 10927,
+      "mutable_origin_sha256_at_manifest_time": "33b5367456c3a6518574f5582231f67b124db80aa6d47a2537deebadabaec12a",
+      "mutable_origin_matches_checkpoint_at_manifest_time": true
+    },
+    {
+      "asset_key": "JB107508",
+      "checkpoint_path": "data/stage2/conditioned_state/xmp_postconditioning/JB107508.xmp",
+      "checkpoint_size_bytes": 11728,
+      "checkpoint_sha256": "4034b2fc28b38fcfdbd7e7fc475d9ccb9b81602e9944a96907cd67dc46446146",
+      "mutable_origin_path": "data/live_workspace/JB107508.xmp",
+      "mutable_origin_exists_at_manifest_time": true,
+      "mutable_origin_size_bytes_at_manifest_time": 11728,
+      "mutable_origin_sha256_at_manifest_time": "4034b2fc28b38fcfdbd7e7fc475d9ccb9b81602e9944a96907cd67dc46446146",
+      "mutable_origin_matches_checkpoint_at_manifest_time": true
+    },
+    {
+      "asset_key": "JB107509",
+      "checkpoint_path": "data/stage2/conditioned_state/xmp_postconditioning/JB107509.xmp",
+      "checkpoint_size_bytes": 11724,
+      "checkpoint_sha256": "46a8ef572867c902470555329f478080ff208e933966e6dfa161b79b3ffa6d9e",
+      "mutable_origin_path": "data/live_workspace/JB107509.xmp",
+      "mutable_origin_exists_at_manifest_time": true,
+      "mutable_origin_size_bytes_at_manifest_time": 11724,
+      "mutable_origin_sha256_at_manifest_time": "46a8ef572867c902470555329f478080ff208e933966e6dfa161b79b3ffa6d9e",
+      "mutable_origin_matches_checkpoint_at_manifest_time": true
+    },
+    {
+      "asset_key": "JB107510",
+      "checkpoint_path": "data/stage2/conditioned_state/xmp_postconditioning/JB107510.xmp",
+      "checkpoint_size_bytes": 11727,
+      "checkpoint_sha256": "b661b6d96c9a9e99d515165673bdf5fdc73f62a9a61f3e83209fc416e9b97cde",
+      "mutable_origin_path": "data/live_workspace/JB107510.xmp",
+      "mutable_origin_exists_at_manifest_time": true,
+      "mutable_origin_size_bytes_at_manifest_time": 11727,
+      "mutable_origin_sha256_at_manifest_time": "b661b6d96c9a9e99d515165673bdf5fdc73f62a9a61f3e83209fc416e9b97cde",
+      "mutable_origin_matches_checkpoint_at_manifest_time": true
+    },
+    {
+      "asset_key": "JB107511",
+      "checkpoint_path": "data/stage2/conditioned_state/xmp_postconditioning/JB107511.xmp",
+      "checkpoint_size_bytes": 13425,
+      "checkpoint_sha256": "77900b9cea8b7f4c3f92ba2819b785b0415668258f08897f335804edca1e1c41",
+      "mutable_origin_path": "data/live_workspace/JB107511.xmp",
+      "mutable_origin_exists_at_manifest_time": true,
+      "mutable_origin_size_bytes_at_manifest_time": 13425,
+      "mutable_origin_sha256_at_manifest_time": "77900b9cea8b7f4c3f92ba2819b785b0415668258f08897f335804edca1e1c41",
+      "mutable_origin_matches_checkpoint_at_manifest_time": true
+    },
+    {
+      "asset_key": "JB107512",
+      "checkpoint_path": "data/stage2/conditioned_state/xmp_postconditioning/JB107512.xmp",
+      "checkpoint_size_bytes": 13408,
+      "checkpoint_sha256": "fae984f08cf32178ee26507e3d7aaa4dab1f50d6ea6d8a3de7472049cf19459b",
+      "mutable_origin_path": "data/live_workspace/JB107512.xmp",
+      "mutable_origin_exists_at_manifest_time": true,
+      "mutable_origin_size_bytes_at_manifest_time": 13408,
+      "mutable_origin_sha256_at_manifest_time": "fae984f08cf32178ee26507e3d7aaa4dab1f50d6ea6d8a3de7472049cf19459b",
+      "mutable_origin_matches_checkpoint_at_manifest_time": true
+    },
+    {
+      "asset_key": "JB107513",
+      "checkpoint_path": "data/stage2/conditioned_state/xmp_postconditioning/JB107513.xmp",
+      "checkpoint_size_bytes": 13537,
+      "checkpoint_sha256": "a442299b02c787f2467c5ccb597bd5349c46bfef8cd38ff5ddc3197d97bc0c71",
+      "mutable_origin_path": "data/live_workspace/JB107513.xmp",
+      "mutable_origin_exists_at_manifest_time": true,
+      "mutable_origin_size_bytes_at_manifest_time": 13537,
+      "mutable_origin_sha256_at_manifest_time": "a442299b02c787f2467c5ccb597bd5349c46bfef8cd38ff5ddc3197d97bc0c71",
+      "mutable_origin_matches_checkpoint_at_manifest_time": true
+    }
+  ]
+}
