@@ -67,9 +67,10 @@ evidence, and implementation rationale:
 6. [Stage 2](pipeline_stages/002_baseline-conditioning/README.md)
 7. [Stage 3](pipeline_stages/003_ai-mask-definition-propagation/README.md)
 8. [Batchability Cost Model](docs/batchability-cost-model.md)
-9. [Case Studies](docs/case-studies)
-10. [Scripts](scripts) and [Tests](tests)
-11. [Architecture Decision Records](docs/adr)
+9. [Future Work](docs/future-work)
+10. [Case Studies](docs/case-studies)
+11. [Scripts](scripts) and [Tests](tests)
+12. [Architecture Decision Records](docs/adr)
 
 <br>
 
@@ -101,6 +102,9 @@ Related implementation and governance incidents are recorded under
 [docs/case-studies](docs/case-studies). These are smaller than ADRs:
 they preserve concrete evidence, remediation steps, and lessons that may
 later roll up into a separate AI agent governance case-study repository.
+
+Scoped extensions that are not yet active workflow stages are recorded
+under [docs/future-work](docs/future-work).
 
 <br>
 

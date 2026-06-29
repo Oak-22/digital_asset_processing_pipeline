@@ -204,3 +204,7 @@ baseline conditioning reduces visual comparison work, and semantic mask
 propagation reduces repeated local editing effort. The safest way to
 present that cumulative value is to first show each stage's savings on
 its own terms, then describe the combined workflow effect second.
+
+Future work may extend this cost model from operator-time savings into
+compute-shape optimization for downstream ML workflows. See
+[Smart Conditioning For ML Compute Optimization](future-work/smart-conditioning-ml-compute-optimization.md).
