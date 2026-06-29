@@ -101,7 +101,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "folder",
         nargs="?",
-        default="data/stage1/live_workspace",
+        default="data/live_workspace",
         help="Local mixed workspace folder to compare.",
     )
     parser.add_argument(

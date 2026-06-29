@@ -1,8 +1,8 @@
 {
-  "input_model": "stage1_live_workspace_reference",
-  "input_root": "data/stage1/live_workspace",
+  "input_model": "stage2_preconditioning_reference",
+  "input_root": "data/stage2/reference_state/xmp_preconditioning",
   "notes": {
-    "input_boundary": "The extractor can run against any explicit XMP sidecar set. The default input references Stage 1 live_workspace XMPs and the input_model label records how the extracted values should be interpreted.",
+    "input_boundary": "The extractor can run against any explicit XMP sidecar set. The default input references the frozen Stage 2 preconditioning checkpoint. The input_model label records how the extracted values should be interpreted.",
     "missing_values": "Lightroom/Camera Raw develop settings absent from source XMPs are represented as null; coverage is summarized so each input boundary can be evaluated on its own terms."
   },
   "records": [
@@ -58,8 +58,8 @@
         "whites_2012": null
       },
       "document_id": "52A698FD4CF9BC2AAE67F1F35B7FBB30",
-      "input_model": "stage1_live_workspace_reference",
-      "input_root": "data/stage1/live_workspace",
+      "input_model": "stage2_preconditioning_reference",
+      "input_root": "data/stage2/reference_state/xmp_preconditioning",
       "instance_id": "xmp.iid:f1279b4d-43a4-4b4e-b7eb-5673a873b16e",
       "metadata_time": "2026:05:24 14:06:11-07:00",
       "original_document_id": "52A698FD4CF9BC2AAE67F1F35B7FBB30",
@@ -75,8 +75,8 @@
         "crop_right",
         "crop_top"
       ],
-      "source_file": "data/stage1/live_workspace/JB107456.xmp",
-      "xmp_directory": "data/stage1/live_workspace",
+      "source_file": "data/stage2/reference_state/xmp_preconditioning/JB107456.xmp",
+      "xmp_directory": "data/stage2/reference_state/xmp_preconditioning",
       "xmp_file_name": "JB107456.xmp"
     },
     {
@@ -131,8 +131,8 @@
         "whites_2012": null
       },
       "document_id": "2424E5FC1D82352F7BC05439F8F0F255",
-      "input_model": "stage1_live_workspace_reference",
-      "input_root": "data/stage1/live_workspace",
+      "input_model": "stage2_preconditioning_reference",
+      "input_root": "data/stage2/reference_state/xmp_preconditioning",
       "instance_id": "xmp.iid:e764672a-c926-4731-8144-e3c32c760649",
       "metadata_time": "2026:05:24 14:06:11-07:00",
       "original_document_id": "2424E5FC1D82352F7BC05439F8F0F255",
@@ -148,8 +148,8 @@
         "crop_right",
         "crop_top"
       ],
-      "source_file": "data/stage1/live_workspace/JB107468.xmp",
-      "xmp_directory": "data/stage1/live_workspace",
+      "source_file": "data/stage2/reference_state/xmp_preconditioning/JB107468.xmp",
+      "xmp_directory": "data/stage2/reference_state/xmp_preconditioning",
       "xmp_file_name": "JB107468.xmp"
     },
     {
@@ -204,8 +204,8 @@
         "whites_2012": null
       },
       "document_id": "E351A43FCC5F2CBC3FEB1C92F36EFAE5",
-      "input_model": "stage1_live_workspace_reference",
-      "input_root": "data/stage1/live_workspace",
+      "input_model": "stage2_preconditioning_reference",
+      "input_root": "data/stage2/reference_state/xmp_preconditioning",
       "instance_id": "xmp.iid:b259cd34-481a-43cd-90af-de3d1917d671",
       "metadata_time": "2026:05:24 14:06:11-07:00",
       "original_document_id": "E351A43FCC5F2CBC3FEB1C92F36EFAE5",
@@ -221,8 +221,8 @@
         "crop_right",
         "crop_top"
       ],
-      "source_file": "data/stage1/live_workspace/JB107504.xmp",
-      "xmp_directory": "data/stage1/live_workspace",
+      "source_file": "data/stage2/reference_state/xmp_preconditioning/JB107504.xmp",
+      "xmp_directory": "data/stage2/reference_state/xmp_preconditioning",
       "xmp_file_name": "JB107504.xmp"
     },
     {
@@ -277,8 +277,8 @@
         "whites_2012": null
       },
       "document_id": "73B2B157EEEA7529E4532885ABE85B17",
-      "input_model": "stage1_live_workspace_reference",
-      "input_root": "data/stage1/live_workspace",
+      "input_model": "stage2_preconditioning_reference",
+      "input_root": "data/stage2/reference_state/xmp_preconditioning",
       "instance_id": "xmp.iid:85925cee-d6d7-497d-9b79-770d6e458e31",
       "metadata_time": "2026:05:24 14:22:27-07:00",
       "original_document_id": "73B2B157EEEA7529E4532885ABE85B17",
@@ -294,8 +294,8 @@
         "crop_right",
         "crop_top"
       ],
-      "source_file": "data/stage1/live_workspace/JB107508.xmp",
-      "xmp_directory": "data/stage1/live_workspace",
+      "source_file": "data/stage2/reference_state/xmp_preconditioning/JB107508.xmp",
+      "xmp_directory": "data/stage2/reference_state/xmp_preconditioning",
       "xmp_file_name": "JB107508.xmp"
     },
     {
@@ -350,8 +350,8 @@
         "whites_2012": null
       },
       "document_id": "B537BE98825BFE118D06C90B3C6BB546",
-      "input_model": "stage1_live_workspace_reference",
-      "input_root": "data/stage1/live_workspace",
+      "input_model": "stage2_preconditioning_reference",
+      "input_root": "data/stage2/reference_state/xmp_preconditioning",
       "instance_id": "xmp.iid:1071cfe1-baa3-4972-91ef-05542ddc05d7",
       "metadata_time": "2026:05:24 14:22:27-07:00",
       "original_document_id": "B537BE98825BFE118D06C90B3C6BB546",
@@ -367,8 +367,8 @@
         "crop_right",
         "crop_top"
       ],
-      "source_file": "data/stage1/live_workspace/JB107509.xmp",
-      "xmp_directory": "data/stage1/live_workspace",
+      "source_file": "data/stage2/reference_state/xmp_preconditioning/JB107509.xmp",
+      "xmp_directory": "data/stage2/reference_state/xmp_preconditioning",
       "xmp_file_name": "JB107509.xmp"
     },
     {
@@ -423,8 +423,8 @@
         "whites_2012": null
       },
       "document_id": "2ACD1DF651D4668849898F253160F991",
-      "input_model": "stage1_live_workspace_reference",
-      "input_root": "data/stage1/live_workspace",
+      "input_model": "stage2_preconditioning_reference",
+      "input_root": "data/stage2/reference_state/xmp_preconditioning",
       "instance_id": "xmp.iid:60fb4116-fe84-481c-9167-1ff94b81b169",
       "metadata_time": "2026:05:24 14:22:27-07:00",
       "original_document_id": "2ACD1DF651D4668849898F253160F991",
@@ -440,8 +440,8 @@
         "crop_right",
         "crop_top"
       ],
-      "source_file": "data/stage1/live_workspace/JB107510.xmp",
-      "xmp_directory": "data/stage1/live_workspace",
+      "source_file": "data/stage2/reference_state/xmp_preconditioning/JB107510.xmp",
+      "xmp_directory": "data/stage2/reference_state/xmp_preconditioning",
       "xmp_file_name": "JB107510.xmp"
     },
     {
@@ -496,8 +496,8 @@
         "whites_2012": null
       },
       "document_id": "7BE5F6E3D0B79788812AFCB7EC019F06",
-      "input_model": "stage1_live_workspace_reference",
-      "input_root": "data/stage1/live_workspace",
+      "input_model": "stage2_preconditioning_reference",
+      "input_root": "data/stage2/reference_state/xmp_preconditioning",
       "instance_id": "xmp.iid:c24c96ac-06cc-43c5-a17a-3e5c562dab0f",
       "metadata_time": "2026:05:27 12:16:11-07:00",
       "original_document_id": "7BE5F6E3D0B79788812AFCB7EC019F06",
@@ -513,8 +513,8 @@
         "crop_right",
         "crop_top"
       ],
-      "source_file": "data/stage1/live_workspace/JB107511.xmp",
-      "xmp_directory": "data/stage1/live_workspace",
+      "source_file": "data/stage2/reference_state/xmp_preconditioning/JB107511.xmp",
+      "xmp_directory": "data/stage2/reference_state/xmp_preconditioning",
       "xmp_file_name": "JB107511.xmp"
     },
     {
@@ -569,8 +569,8 @@
         "whites_2012": null
       },
       "document_id": "47CAFDCD14A8FF076B6361BE98EC6DEB",
-      "input_model": "stage1_live_workspace_reference",
-      "input_root": "data/stage1/live_workspace",
+      "input_model": "stage2_preconditioning_reference",
+      "input_root": "data/stage2/reference_state/xmp_preconditioning",
       "instance_id": "xmp.iid:55f0dc86-aaef-498b-a678-b1f795bd17f9",
       "metadata_time": "2026:05:27 12:16:11-07:00",
       "original_document_id": "47CAFDCD14A8FF076B6361BE98EC6DEB",
@@ -586,8 +586,8 @@
         "crop_right",
         "crop_top"
       ],
-      "source_file": "data/stage1/live_workspace/JB107512.xmp",
-      "xmp_directory": "data/stage1/live_workspace",
+      "source_file": "data/stage2/reference_state/xmp_preconditioning/JB107512.xmp",
+      "xmp_directory": "data/stage2/reference_state/xmp_preconditioning",
       "xmp_file_name": "JB107512.xmp"
     },
     {
@@ -642,8 +642,8 @@
         "whites_2012": null
       },
       "document_id": "F8F584AB7F39A22E3432FEB191832261",
-      "input_model": "stage1_live_workspace_reference",
-      "input_root": "data/stage1/live_workspace",
+      "input_model": "stage2_preconditioning_reference",
+      "input_root": "data/stage2/reference_state/xmp_preconditioning",
       "instance_id": "xmp.iid:ef5ecd6f-6966-4424-8c9f-433362787a41",
       "metadata_time": "2026:05:27 12:16:11-07:00",
       "original_document_id": "F8F584AB7F39A22E3432FEB191832261",
@@ -659,8 +659,8 @@
         "crop_right",
         "crop_top"
       ],
-      "source_file": "data/stage1/live_workspace/JB107513.xmp",
-      "xmp_directory": "data/stage1/live_workspace",
+      "source_file": "data/stage2/reference_state/xmp_preconditioning/JB107513.xmp",
+      "xmp_directory": "data/stage2/reference_state/xmp_preconditioning",
       "xmp_file_name": "JB107513.xmp"
     }
   ],

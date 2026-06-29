@@ -1,0 +1,20 @@
+{
+  "stage": "stage2_baseline_conditioning",
+  "comparison_model": "preconditioning_vs_postconditioning_develop_settings",
+  "status": "pending_postconditioning_extract",
+  "inputs": {
+    "preconditioning": "outputs/stage2/stage2_extracted_preconditioning_develop_settings.json",
+    "postconditioning": "outputs/stage2/stage2_extracted_postconditioning_develop_settings.json"
+  },
+  "notes": {
+    "comparison_boundary": "This artifact should compare frozen preconditioning XMP settings against frozen postconditioning XMP settings after Lightroom Develop edits are applied.",
+    "placeholder": "This file is intentionally empty until the postconditioning extract contains real records."
+  },
+  "summary": {
+    "asset_count": 0,
+    "changed_asset_count": 0,
+    "unchanged_asset_count": 0,
+    "changed_develop_settings": []
+  },
+  "records": []
+}

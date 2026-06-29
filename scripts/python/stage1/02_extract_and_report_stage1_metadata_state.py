@@ -107,8 +107,8 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--input-root",
-        default="data/stage1/live_workspace",
-        help="Stage 1 mixed workspace folder.",
+        default="data/live_workspace",
+        help="Shared mixed Lightroom workspace folder observed by Stage 1.",
     )
     parser.add_argument(
         "--metadata-state",

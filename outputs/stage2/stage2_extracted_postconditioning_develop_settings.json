@@ -1,0 +1,17 @@
+{
+  "stage": "stage2_baseline_conditioning",
+  "input_model": "stage2_postconditioning_state",
+  "input_root": "data/stage2/conditioned_state/xmp_postconditioning",
+  "status": "pending_lightroom_develop_edits",
+  "notes": {
+    "input_boundary": "Populate data/stage2/conditioned_state/xmp_postconditioning with frozen XMP sidecars copied after Stage 2 baseline conditioning is complete, then rerun scripts/python/stage2/extract_develop_settings.py against that input root.",
+    "placeholder": "This file is intentionally empty until postconditioning XMP sidecars exist."
+  },
+  "summary": {
+    "asset_count": 0,
+    "develop_setting_coverage": {},
+    "fully_absent_develop_settings": [],
+    "populated_develop_settings": []
+  },
+  "records": []
+}

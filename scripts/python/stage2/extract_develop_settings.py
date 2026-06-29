@@ -14,9 +14,9 @@ if __package__ in {None, ""}:
 from scripts.python.common import write_json
 
 
-DEFAULT_INPUT_ROOT = "data/stage1/live_workspace"
-DEFAULT_OUTPUT = "outputs/stage2/extracted_stage2_develop_settings.json"
-INPUT_MODEL = "stage1_live_workspace_reference"
+DEFAULT_INPUT_ROOT = "data/stage2/reference_state/xmp_preconditioning"
+DEFAULT_OUTPUT = "outputs/stage2/stage2_extracted_preconditioning_develop_settings.json"
+INPUT_MODEL = "stage2_preconditioning_reference"
 DEVELOP_FIELDS = [
     "-FileName",
     "-Directory",
@@ -175,9 +175,8 @@ def parse_args() -> argparse.Namespace:
         "--input-root",
         default=DEFAULT_INPUT_ROOT,
         help=(
-            "Directory containing XMP sidecars. Defaults to the Stage 1 live "
-            "workspace so Stage 2 parsing can be developed before a separate "
-            "conditioned sidecar export exists."
+            "Directory containing XMP sidecars. Defaults to the frozen "
+            "Stage 2 preconditioning checkpoint."
         ),
     )
     parser.add_argument(
@@ -332,9 +331,9 @@ def main() -> None:
         "notes": {
             "input_boundary": (
                 "The extractor can run against any explicit XMP sidecar set. "
-                "The default input references Stage 1 live_workspace XMPs and "
-                "the input_model label records how the extracted values should "
-                "be interpreted."
+                "The default input references the frozen Stage 2 "
+                "preconditioning checkpoint. The input_model label records "
+                "how the extracted values should be interpreted."
             ),
             "missing_values": (
                 "Lightroom/Camera Raw develop settings absent from source XMPs "

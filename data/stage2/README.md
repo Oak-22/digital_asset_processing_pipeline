@@ -14,6 +14,8 @@ alone.
 
 Recommended artifact model:
 
+- `../live_workspace/`: mutable Lightroom working set shared by the
+  pipeline and not owned by any single stage
 - `reference_state/xmp_preconditioning/`: frozen XMP sidecars copied
   before Stage 2 Develop edits begin
 - `conditioned_state/xmp_postconditioning/`: frozen XMP sidecars copied

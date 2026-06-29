@@ -51,7 +51,8 @@ without reading every stage writeup in full:
 5. [Stage 1](pipeline_stages/001_metadata-application-enrichment-query/README.md)
 6. [Stage 2](pipeline_stages/002_baseline-conditioning/README.md)
 7. [Stage 3](pipeline_stages/003_ai-mask-definition-propagation/README.md)
-8. [Scripts](scripts) and [Tests](tests)
+8. [Case Studies](docs/case-studies)
+9. [Scripts](scripts) and [Tests](tests)
 
 ### Extensive Path (30 mins)
 
@@ -66,8 +67,9 @@ evidence, and implementation rationale:
 6. [Stage 2](pipeline_stages/002_baseline-conditioning/README.md)
 7. [Stage 3](pipeline_stages/003_ai-mask-definition-propagation/README.md)
 8. [Batchability Cost Model](docs/batchability-cost-model.md)
-9. [Scripts](scripts) and [Tests](tests)
-10. [Architecture Decision Records](docs/adr)
+9. [Case Studies](docs/case-studies)
+10. [Scripts](scripts) and [Tests](tests)
+11. [Architecture Decision Records](docs/adr)
 
 <br>
 
@@ -94,6 +96,11 @@ existing application: Adobe Lightroom.
 
 Architecture and workflow-structure decisions that need stronger
 long-lived rationale are recorded under [docs/adr](docs/adr).
+
+Related implementation and governance incidents are recorded under
+[docs/case-studies](docs/case-studies). These are smaller than ADRs:
+they preserve concrete evidence, remediation steps, and lessons that may
+later roll up into a separate AI agent governance case-study repository.
 
 <br>
 

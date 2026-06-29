@@ -5,8 +5,8 @@
   "inputs": {
     "metadata": {
       "path": "outputs/stage1/extracted_stage1_metadata.json",
-      "sha256": "7192291eb03d89f4b23814a1fa4976d8c4867b0f8039babe908f9cefdd0c8e80",
-      "size_bytes": 32559
+      "sha256": "5a5251f097cc3e7eb78b30e72fcaeafe543530e690a903165c453333d2ec1bd0",
+      "size_bytes": 32111
     },
     "validation_report": {
       "path": "outputs/stage1/stage1_metadata_validation_report.json",
@@ -20,7 +20,7 @@
     "warning_count": 0
   },
   "summary": {
-    "input_root": "data/stage1/live_workspace",
+    "input_root": "data/live_workspace",
     "asset_count": 12,
     "record_count": 21,
     "metadata_state_counts": {
@@ -39,7 +39,7 @@
         "raw": 1
       },
       "raw_source_files": [
-        "data/stage1/live_workspace/JB107505.ARW"
+        "data/live_workspace/JB107505.ARW"
       ],
       "xmp_source_files": [],
       "record_count": 1,
@@ -55,7 +55,7 @@
         "raw": 1
       },
       "raw_source_files": [
-        "data/stage1/live_workspace/JB107506.ARW"
+        "data/live_workspace/JB107506.ARW"
       ],
       "xmp_source_files": [],
       "record_count": 1,
@@ -71,7 +71,7 @@
         "raw": 1
       },
       "raw_source_files": [
-        "data/stage1/live_workspace/JB107507.ARW"
+        "data/live_workspace/JB107507.ARW"
       ],
       "xmp_source_files": [],
       "record_count": 1,
@@ -88,10 +88,10 @@
         "xmp": 1
       },
       "raw_source_files": [
-        "data/stage1/live_workspace/JB107456.ARW"
+        "data/live_workspace/JB107456.ARW"
       ],
       "xmp_source_files": [
-        "data/stage1/live_workspace/JB107456.xmp"
+        "data/live_workspace/JB107456.xmp"
       ],
       "record_count": 2,
       "has_identity_metadata": true,
@@ -107,10 +107,10 @@
         "xmp": 1
       },
       "raw_source_files": [
-        "data/stage1/live_workspace/JB107468.ARW"
+        "data/live_workspace/JB107468.ARW"
       ],
       "xmp_source_files": [
-        "data/stage1/live_workspace/JB107468.xmp"
+        "data/live_workspace/JB107468.xmp"
       ],
       "record_count": 2,
       "has_identity_metadata": true,
@@ -126,10 +126,10 @@
         "xmp": 1
       },
       "raw_source_files": [
-        "data/stage1/live_workspace/JB107504.ARW"
+        "data/live_workspace/JB107504.ARW"
       ],
       "xmp_source_files": [
-        "data/stage1/live_workspace/JB107504.xmp"
+        "data/live_workspace/JB107504.xmp"
       ],
       "record_count": 2,
       "has_identity_metadata": true,
@@ -145,10 +145,10 @@
         "xmp": 1
       },
       "raw_source_files": [
-        "data/stage1/live_workspace/JB107508.ARW"
+        "data/live_workspace/JB107508.ARW"
       ],
       "xmp_source_files": [
-        "data/stage1/live_workspace/JB107508.xmp"
+        "data/live_workspace/JB107508.xmp"
       ],
       "record_count": 2,
       "has_identity_metadata": true,
@@ -164,10 +164,10 @@
         "xmp": 1
       },
       "raw_source_files": [
-        "data/stage1/live_workspace/JB107509.ARW"
+        "data/live_workspace/JB107509.ARW"
       ],
       "xmp_source_files": [
-        "data/stage1/live_workspace/JB107509.xmp"
+        "data/live_workspace/JB107509.xmp"
       ],
       "record_count": 2,
       "has_identity_metadata": true,
@@ -183,10 +183,10 @@
         "xmp": 1
       },
       "raw_source_files": [
-        "data/stage1/live_workspace/JB107510.ARW"
+        "data/live_workspace/JB107510.ARW"
       ],
       "xmp_source_files": [
-        "data/stage1/live_workspace/JB107510.xmp"
+        "data/live_workspace/JB107510.xmp"
       ],
       "record_count": 2,
       "has_identity_metadata": true,
@@ -202,10 +202,10 @@
         "xmp": 1
       },
       "raw_source_files": [
-        "data/stage1/live_workspace/JB107511.ARW"
+        "data/live_workspace/JB107511.ARW"
       ],
       "xmp_source_files": [
-        "data/stage1/live_workspace/JB107511.xmp"
+        "data/live_workspace/JB107511.xmp"
       ],
       "record_count": 2,
       "has_identity_metadata": true,
@@ -221,10 +221,10 @@
         "xmp": 1
       },
       "raw_source_files": [
-        "data/stage1/live_workspace/JB107512.ARW"
+        "data/live_workspace/JB107512.ARW"
       ],
       "xmp_source_files": [
-        "data/stage1/live_workspace/JB107512.xmp"
+        "data/live_workspace/JB107512.xmp"
       ],
       "record_count": 2,
       "has_identity_metadata": true,
@@ -240,10 +240,10 @@
         "xmp": 1
       },
       "raw_source_files": [
-        "data/stage1/live_workspace/JB107513.ARW"
+        "data/live_workspace/JB107513.ARW"
       ],
       "xmp_source_files": [
-        "data/stage1/live_workspace/JB107513.xmp"
+        "data/live_workspace/JB107513.xmp"
       ],
       "record_count": 2,
       "has_identity_metadata": true,

@@ -1,0 +1,196 @@
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 7.0-c000 1.000000, 0000/00/00-00:00:00        ">
+ <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <rdf:Description rdf:about=""
+    xmlns:tiff="http://ns.adobe.com/tiff/1.0/"
+    xmlns:exif="http://ns.adobe.com/exif/1.0/"
+    xmlns:xmp="http://ns.adobe.com/xap/1.0/"
+    xmlns:aux="http://ns.adobe.com/exif/1.0/aux/"
+    xmlns:exifEX="http://cipa.jp/exif/1.0/"
+    xmlns:photoshop="http://ns.adobe.com/photoshop/1.0/"
+    xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"
+    xmlns:stEvt="http://ns.adobe.com/xap/1.0/sType/ResourceEvent#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:crd="http://ns.adobe.com/camera-raw-defaults/1.0/"
+    xmlns:xmpRights="http://ns.adobe.com/xap/1.0/rights/"
+    xmlns:xmpDM="http://ns.adobe.com/xmp/1.0/DynamicMedia/"
+    xmlns:crs="http://ns.adobe.com/camera-raw-settings/1.0/"
+    xmlns:Iptc4xmpCore="http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/"
+    xmlns:lr="http://ns.adobe.com/lightroom/1.0/"
+   tiff:Make="SONY"
+   tiff:Model="ILCE-7RM3"
+   tiff:Orientation="8"
+   tiff:ImageWidth="7952"
+   tiff:ImageLength="5304"
+   exif:ExifVersion="0231"
+   exif:ExposureTime="1/250"
+   exif:ShutterSpeedValue="7965784/1000000"
+   exif:FNumber="35/10"
+   exif:ApertureValue="361471/100000"
+   exif:ExposureProgram="1"
+   exif:SensitivityType="2"
+   exif:RecommendedExposureIndex="250"
+   exif:BrightnessValue="13214/2560"
+   exif:ExposureBiasValue="0/10"
+   exif:MaxApertureValue="676/256"
+   exif:MeteringMode="1"
+   exif:LightSource="0"
+   exif:FocalLength="630/10"
+   exif:FileSource="3"
+   exif:SceneType="1"
+   exif:FocalLengthIn35mmFilm="63"
+   exif:CustomRendered="0"
+   exif:ExposureMode="1"
+   exif:WhiteBalance="0"
+   exif:SceneCaptureType="0"
+   exif:Contrast="0"
+   exif:Saturation="0"
+   exif:Sharpness="0"
+   exif:DigitalZoomRatio="16/16"
+   exif:FocalPlaneXResolution="70924134/32768"
+   exif:FocalPlaneYResolution="70924134/32768"
+   exif:FocalPlaneResolutionUnit="3"
+   exif:DateTimeOriginal="2024-12-15T16:22:54-08:00"
+   exif:PixelXDimension="7952"
+   exif:PixelYDimension="5304"
+   xmp:CreatorTool="ILCE-7RM3 v3.10"
+   xmp:ModifyDate="2024-12-15T16:22:54-08:00"
+   xmp:CreateDate="2024-12-15T16:22:54-08:00"
+   xmp:MetadataDate="2026-05-27T12:16:11-07:00"
+   aux:LensInfo="350/10 1500/10 20/10 28/10"
+   aux:Lens="E 35-150mm F2.0-F2.8 A058"
+   aux:LensDistortInfo="1031443830/1073741824 33784237/1073741824 507119/1073741824 7991493/1073741824"
+   exifEX:LensModel="E 35-150mm F2.0-F2.8 A058"
+   photoshop:DateCreated="2024-12-15T16:22:54-08:00"
+   photoshop:AuthorsPosition="Photographer"
+   photoshop:Credit="Photo © Julian Buccat"
+   photoshop:Category="Graduation."
+   photoshop:Headline="College Graduation Photos."
+   photoshop:SidecarForExtension="ARW"
+   photoshop:EmbeddedXMPDigest="00000000000000000000000000000000"
+   xmpMM:DocumentID="47CAFDCD14A8FF076B6361BE98EC6DEB"
+   xmpMM:PreservedFileName="JB107512.ARW"
+   xmpMM:OriginalDocumentID="47CAFDCD14A8FF076B6361BE98EC6DEB"
+   xmpMM:InstanceID="xmp.iid:55f0dc86-aaef-498b-a678-b1f795bd17f9"
+   dc:format="image/x-sony-arw"
+   crd:CameraProfile="Camera Standard"
+   crd:LookName=""
+   xmpRights:Marked="True"
+   xmpDM:pick="0"
+   crs:CropTop="0"
+   crs:CropLeft="0"
+   crs:CropBottom="1"
+   crs:CropRight="1"
+   crs:CropAngle="0"
+   crs:CropConstrainToWarp="0"
+   crs:CropConstrainToUnitSquare="1"
+   crs:RawFileName="JB107512.ARW">
+   <exif:ISOSpeedRatings>
+    <rdf:Seq>
+     <rdf:li>250</rdf:li>
+    </rdf:Seq>
+   </exif:ISOSpeedRatings>
+   <exif:Flash
+    exif:Fired="False"
+    exif:Return="0"
+    exif:Mode="2"
+    exif:Function="False"
+    exif:RedEyeMode="False"/>
+   <exif:UserComment>
+    <rdf:Alt>
+     <rdf:li xml:lang="x-repair">College Graduation Photoshoot session by JB Photography</rdf:li>
+    </rdf:Alt>
+   </exif:UserComment>
+   <xmpMM:History>
+    <rdf:Seq>
+     <rdf:li
+      stEvt:action="saved"
+      stEvt:instanceID="xmp.iid:55f0dc86-aaef-498b-a678-b1f795bd17f9"
+      stEvt:when="2026-05-27T12:16:11-07:00"
+      stEvt:softwareAgent="Adobe Photoshop Lightroom Classic 15.1 (Macintosh)"
+      stEvt:changed="/metadata"/>
+    </rdf:Seq>
+   </xmpMM:History>
+   <dc:creator>
+    <rdf:Seq>
+     <rdf:li>Julian Buccat</rdf:li>
+    </rdf:Seq>
+   </dc:creator>
+   <dc:rights>
+    <rdf:Alt>
+     <rdf:li xml:lang="x-default">© 2026 Julian Buccat. All Rights.</rdf:li>
+    </rdf:Alt>
+   </dc:rights>
+   <dc:subject>
+    <rdf:Bag>
+     <rdf:li>Graduation</rdf:li>
+     <rdf:li>Portraits</rdf:li>
+     <rdf:li>Sacramento</rdf:li>
+     <rdf:li>Sacramento State University</rdf:li>
+     <rdf:li>backlit</rdf:li>
+     <rdf:li>celebration</rdf:li>
+     <rdf:li>graduate</rdf:li>
+     <rdf:li>individual portrait</rdf:li>
+     <rdf:li>outdoor</rdf:li>
+     <rdf:li>school</rdf:li>
+    </rdf:Bag>
+   </dc:subject>
+   <dc:description>
+    <rdf:Alt>
+     <rdf:li xml:lang="x-default">College Graduation Photoshoot at Sacramento State University.</rdf:li>
+    </rdf:Alt>
+   </dc:description>
+   <xmpRights:UsageTerms>
+    <rdf:Alt>
+     <rdf:li xml:lang="x-default">All rights reserved unless otherwise licensed. </rdf:li>
+    </rdf:Alt>
+   </xmpRights:UsageTerms>
+   <Iptc4xmpCore:CreatorContactInfo
+    Iptc4xmpCore:CiEmailWork="julianbuccatphotography@gmail.com"
+    Iptc4xmpCore:CiAdrCtry="USA"
+    Iptc4xmpCore:CiUrlWork="https://buccatjulian.myportfolio.com"/>
+   <Iptc4xmpCore:AltTextAccessibility>
+    <rdf:Alt>
+     <rdf:li xml:lang="x-default">Graduating student celebrating at Sacramento State University.</rdf:li>
+    </rdf:Alt>
+   </Iptc4xmpCore:AltTextAccessibility>
+   <lr:weightedFlatSubject>
+    <rdf:Bag>
+     <rdf:li>Graduation</rdf:li>
+     <rdf:li>Events</rdf:li>
+     <rdf:li>Sacramento State University</rdf:li>
+     <rdf:li>Educational Institutions</rdf:li>
+     <rdf:li>celebration</rdf:li>
+     <rdf:li>Moments</rdf:li>
+     <rdf:li>backlit</rdf:li>
+     <rdf:li>Lighting</rdf:li>
+     <rdf:li>Sacramento</rdf:li>
+     <rdf:li>California</rdf:li>
+     <rdf:li>USA</rdf:li>
+     <rdf:li>Geography</rdf:li>
+     <rdf:li>Location</rdf:li>
+     <rdf:li>individual portrait</rdf:li>
+     <rdf:li>Portraits</rdf:li>
+     <rdf:li>outdoor</rdf:li>
+     <rdf:li>Environment</rdf:li>
+     <rdf:li>school</rdf:li>
+     <rdf:li>Venue Type</rdf:li>
+     <rdf:li>graduate</rdf:li>
+     <rdf:li>People</rdf:li>
+    </rdf:Bag>
+   </lr:weightedFlatSubject>
+   <lr:hierarchicalSubject>
+    <rdf:Bag>
+     <rdf:li>Educational Institutions|Sacramento State University</rdf:li>
+     <rdf:li>Events|Graduation</rdf:li>
+     <rdf:li>Lighting|backlit</rdf:li>
+     <rdf:li>Location|Environment|outdoor</rdf:li>
+     <rdf:li>Location|Geography|USA|California|Sacramento</rdf:li>
+     <rdf:li>Location|Venue Type|school</rdf:li>
+     <rdf:li>Moments|celebration</rdf:li>
+     <rdf:li>People|graduate</rdf:li>
+     <rdf:li>Portraits|individual portrait</rdf:li>
+    </rdf:Bag>
+   </lr:hierarchicalSubject>
+  </rdf:Description>
+ </rdf:RDF>
+</x:xmpmeta>

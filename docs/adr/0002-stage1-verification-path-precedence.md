@@ -64,7 +64,7 @@ every case as one generic JPEG/XMP comparison.
 ## Notes
 
 This decision does not require mutating existing XMP sidecars. In the
-current repo model, Lightroom-like rolling state lives in one mixed
-`data/stage1/live_workspace/` folder. Durable Stage 1 audit evidence is
+current repo model, Lightroom-like rolling state lives in the shared
+mixed `data/live_workspace/` folder. Durable Stage 1 audit evidence is
 captured as extracted metadata, validation, and manifest artifacts under
 `outputs/stage1/`.

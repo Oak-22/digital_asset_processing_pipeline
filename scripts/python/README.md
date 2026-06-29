@@ -39,17 +39,16 @@ bridge to mathematical or structured validation later.
 
 ```text
 data/
+├── live_workspace/       # mixed RAW/XMP rolling Lightroom-sidecar state
 ├── stage1/
-│   └── live_workspace/   # mixed RAW/XMP rolling Lightroom-sidecar state
 ├── stage2/
-│   ├── sidecars/
-│   ├── raws/        # optional curated subset, not necessarily committed
-│   ├── renders/     # optional rendered exports for comparison
-│   └── manifests/
+│   ├── reference_state/
+│   │   └── xmp_preconditioning/
+│   ├── conditioned_state/
+│   │   └── xmp_postconditioning/
+│   └── sidecar/
 └── stage3/
-    ├── sidecars/
-    ├── review_sheets/
-    └── manifests/
+    └── sidecar/
 
 scripts/python/
 ├── README.md
@@ -96,16 +95,16 @@ structure exists before implementation details are filled in.
   evidence used in the prose
 - `pipeline_stages/.../assets/diagrams/`: explanatory diagrams for
   documentation
-- `data/stage1/live_workspace/`: canonical Stage 1 input folder holding
-  mixed RAW and XMP files as one rolling Lightroom-sidecar workspace
+- `data/live_workspace/`: shared mutable Lightroom workspace holding
+  mixed RAW and XMP files; stages observe or checkpoint it, but no
+  single stage owns it
 - `outputs/stage1/`: durable Stage 1 analysis artifacts, including the
   extracted metadata report, validation report, and manifest
-- `data/stage2/sidecars/`: XMP sidecars used for develop-setting
-  extraction and auditing
-- `data/stage2/raws/`: optional RAW subset for source-signal or
-  normalization analysis
-- `data/stage2/renders/`: optional JPEG/TIFF exports for rendered
-  output comparison
+- `data/stage2/reference_state/xmp_preconditioning/`: frozen XMP
+  checkpoint captured before Stage 2 Develop edits
+- `data/stage2/conditioned_state/xmp_postconditioning/`: frozen XMP
+  checkpoint captured after Stage 2 baseline conditioning
+- `data/stage2/sidecar/`: optional ad hoc sidecar input location
 - `data/stage3/sidecars/`: XMP sidecars or exports related to mask
   propagation state when available
 - `data/stage3/review_sheets/`: human review inputs/outputs for
@@ -192,10 +191,12 @@ The cleanest current strategy is:
 1. **Stage 1:** mixed RAW+XMP live workspace first, with extracted
    metadata, validation, and manifest artifacts for auditability
 2. **Stage 2:** XMP sidecars plus an optional curated RAW subset.
-   Stage 2 extraction can run against any explicit XMP sidecar set,
-   including the Stage 1 `live_workspace/`. The input model label records
-   whether the extracted values represent an upstream reference state, a
-   conditioned Stage 2 state, or another workflow boundary.
+   Stage 2 extraction can run against any explicit XMP sidecar set, but
+   durable claims should use frozen preconditioning and postconditioning
+   checkpoints copied from the shared `data/live_workspace/`. The input
+   model label records whether the extracted values represent an
+   upstream reference state, a conditioned Stage 2 state, or another
+   workflow boundary.
 3. **Stage 3:** XMP sidecars plus review manifests, with optional
    rendered exports for side-by-side inspection
 
