@@ -43,6 +43,28 @@ def parse_args() -> argparse.Namespace:
         default=DEFAULT_OUTPUT,
         help="Destination JSON file for the Stage 3 mask-state comparison.",
     )
+    parser.add_argument(
+        "--comparison-model",
+        default="presegmentation_vs_postmasking_no_local_adjustment",
+        help="Machine-readable label for the compared Stage 3 states.",
+    )
+    parser.add_argument(
+        "--comparison-boundary",
+        default=(
+            "This artifact compares Stage 3 presegmentation Lightroom "
+            "sidecars against postmasking sidecars created before any "
+            "intentional masked local Develop adjustments."
+        ),
+        help="Human-readable boundary represented by this comparison.",
+    )
+    parser.add_argument(
+        "--observability-boundary",
+        default=(
+            "This separates mask creation/copying persistence from later "
+            "masked local adjustment parameter changes."
+        ),
+        help="Human-readable statement of what this comparison makes observable.",
+    )
     return parser.parse_args()
 
 
@@ -97,14 +119,22 @@ def mask_signature(record: dict[str, object]) -> list[dict[str, object]]:
     return signature
 
 
+def state_signature(record: dict[str, object]) -> dict[str, object]:
+    """Return the comparable Stage 3 state signature for one asset."""
+    return {
+        "global_point_color_state": record.get("global_point_color_state", {}),
+        "mask_signature": mask_signature(record),
+    }
+
+
 def compare_asset(
     asset_key: str,
     pre_record: dict[str, object],
     post_record: dict[str, object],
 ) -> dict[str, object]:
     """Compare one asset's pre/post Stage 3 mask state."""
-    pre_signature = mask_signature(pre_record)
-    post_signature = mask_signature(post_record)
+    pre_signature = state_signature(pre_record)
+    post_signature = state_signature(post_record)
     return {
         "asset_key": asset_key,
         "changed": pre_signature != post_signature,
@@ -115,7 +145,7 @@ def compare_asset(
             "acr_sha256": pre_record.get("acr_sha256"),
             "mask_group_count": pre_record.get("mask_group_count"),
             "mask_entry_count": pre_record.get("mask_entry_count"),
-            "mask_signature": pre_signature,
+            "state_signature": pre_signature,
         },
         "postmasking": {
             "xmp_path": post_record.get("xmp_path"),
@@ -124,7 +154,7 @@ def compare_asset(
             "acr_sha256": post_record.get("acr_sha256"),
             "mask_group_count": post_record.get("mask_group_count"),
             "mask_entry_count": post_record.get("mask_entry_count"),
-            "mask_signature": post_signature,
+            "state_signature": post_signature,
         },
     }
 
@@ -173,22 +203,15 @@ def build_comparison(args: argparse.Namespace) -> dict[str, object]:
     )
     return {
         "stage": "stage3_semantic_local_conditioning",
-        "comparison_model": "presegmentation_vs_postmasking_no_local_adjustment",
+        "comparison_model": args.comparison_model,
         "status": status,
         "inputs": {
             "presegmentation": args.presegmentation,
             "postmasking": args.postmasking,
         },
         "notes": {
-            "comparison_boundary": (
-                "This artifact compares Stage 3 presegmentation Lightroom "
-                "sidecars against postmasking sidecars created before any "
-                "intentional masked local Develop adjustments."
-            ),
-            "observability_boundary": (
-                "This separates mask creation/copying persistence from later "
-                "masked local adjustment parameter changes."
-            ),
+            "comparison_boundary": args.comparison_boundary,
+            "observability_boundary": args.observability_boundary,
         },
         "summary": build_summary(records, missing),
         "missing_assets": missing,

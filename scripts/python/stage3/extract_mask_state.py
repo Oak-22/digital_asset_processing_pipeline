@@ -138,6 +138,67 @@ def local_point_color_state(correction: ET.Element) -> dict[str, object]:
     }
 
 
+def parse_point_color_vector(values: list[str]) -> list[float] | None:
+    """Parse the first CRS point-color vector into numeric values."""
+    if not values:
+        return None
+    try:
+        return [float(part.strip()) for part in values[0].split(",")]
+    except ValueError:
+        return None
+
+
+def point_color_vector_analysis(values: list[str]) -> dict[str, object]:
+    """Return cautious candidate interpretation for CRS point-color vectors."""
+    vector = parse_point_color_vector(values)
+    if vector is None or len(vector) < 5:
+        return {
+            "interpretation_status": "unavailable",
+            "sat_shift_candidate_index": None,
+            "sat_shift_normalized_candidate": None,
+            "sat_shift_ui_estimate_candidate": None,
+        }
+    if all(value == -1.0 for value in vector):
+        return {
+            "interpretation_status": "inactive_default",
+            "sat_shift_candidate_index": None,
+            "sat_shift_normalized_candidate": None,
+            "sat_shift_ui_estimate_candidate": None,
+        }
+    normalized_value = vector[4]
+    return {
+        "interpretation_status": "candidate_mapping",
+        "sat_shift_candidate_index": 5,
+        "sat_shift_normalized_candidate": normalized_value,
+        "sat_shift_ui_estimate_candidate": round(normalized_value * 100, 6),
+    }
+
+
+def global_point_color_state(description: ET.Element | None) -> dict[str, object]:
+    """Return global point-color state persisted at the asset level."""
+    point_colors = (
+        child_sequence_values(description, "PointColors")
+        if description is not None
+        else []
+    )
+    color_variance = (
+        child_sequence_values(description, "ColorVariance")
+        if description is not None
+        else []
+    )
+    source_fields = []
+    if point_colors:
+        source_fields.append("crs:PointColors")
+    if color_variance:
+        source_fields.append("crs:ColorVariance")
+    return {
+        "crs_point_colors": point_colors,
+        "crs_color_variance": color_variance,
+        "source_fields": source_fields,
+        "point_color_vector_analysis": point_color_vector_analysis(point_colors),
+    }
+
+
 def geometry_integrity_flags(mask_attrs: dict[str, str]) -> list[str]:
     """Return missing geometry identity fields for one mask entry."""
     required_fields = {
@@ -171,6 +232,12 @@ def group_geometry_status(masks: list[dict[str, object]]) -> str:
     if statuses == {"unresolved"}:
         return "unresolved"
     return "partial"
+
+
+def xmp_description(xmp_path: Path) -> ET.Element | None:
+    """Return the primary rdf:Description element from an XMP sidecar."""
+    root = ET.parse(xmp_path).getroot()
+    return root.find(".//rdf:Description", NS)
 
 
 def extract_mask_groups(xmp_path: Path) -> list[dict[str, object]]:
@@ -248,6 +315,7 @@ def build_record(
         else []
     )
     mask_groups = extract_mask_groups(xmp_path)
+    description = xmp_description(xmp_path)
     mask_names = [
         str(mask["mask_name"])
         for group in mask_groups
@@ -280,6 +348,7 @@ def build_record(
                 int(group["mask_count"]) for group in reference_groups
             ),
         },
+        "global_point_color_state": global_point_color_state(description),
         "mask_group_count": len(mask_groups),
         "mask_entry_count": sum(int(group["mask_count"]) for group in mask_groups),
         "mask_names": mask_names,
@@ -309,6 +378,24 @@ def build_summary(records: list[dict[str, object]]) -> dict[str, object]:
         for group in record.get("mask_groups", [])
         if isinstance(group, dict)
     ]
+    global_point_color_asset_count = sum(
+        1
+        for record in records
+        if dict(record.get("global_point_color_state", {})).get("crs_point_colors")
+        or dict(record.get("global_point_color_state", {})).get(
+            "crs_color_variance"
+        )
+    )
+    active_global_point_color_asset_count = sum(
+        1
+        for record in records
+        if dict(
+            dict(record.get("global_point_color_state", {})).get(
+                "point_color_vector_analysis", {}
+            )
+        ).get("interpretation_status")
+        == "candidate_mapping"
+    )
     local_point_color_group_count = sum(
         1
         for group in mask_groups
@@ -359,6 +446,10 @@ def build_summary(records: list[dict[str, object]]) -> dict[str, object]:
         "mask_geometry_status_counts": mask_geometry_status_counts,
         "group_geometry_status_counts": group_geometry_status_counts,
         "geometry_integrity_flag_counts": geometry_integrity_flag_counts,
+        "global_point_color_asset_count": global_point_color_asset_count,
+        "active_global_point_color_asset_count": (
+            active_global_point_color_asset_count
+        ),
         "local_point_color_group_count": local_point_color_group_count,
         "mask_names": mask_names,
     }
@@ -409,6 +500,12 @@ def main() -> None:
                 "Local point-color state records CRS LocalPointColors and "
                 "LocalColorVariance child sequences attached to a mask "
                 "correction group."
+            ),
+            "global_point_color_state": (
+                "Global point-color state records CRS PointColors and "
+                "ColorVariance child sequences attached to the asset-level "
+                "Camera Raw description. Vector interpretation is marked as "
+                "a candidate mapping until calibrated more fully."
             ),
         },
         "summary": build_summary(records),

@@ -23,20 +23,20 @@
    exif:ExifVersion="0231"
    exif:ExposureTime="1/250"
    exif:ShutterSpeedValue="7965784/1000000"
-   exif:FNumber="35/10"
-   exif:ApertureValue="361471/100000"
+   exif:FNumber="32/10"
+   exif:ApertureValue="3356144/1000000"
    exif:ExposureProgram="1"
    exif:SensitivityType="2"
-   exif:RecommendedExposureIndex="250"
-   exif:BrightnessValue="12854/2560"
+   exif:RecommendedExposureIndex="500"
+   exif:BrightnessValue="17614/2560"
    exif:ExposureBiasValue="0/10"
-   exif:MaxApertureValue="676/256"
+   exif:MaxApertureValue="512/256"
    exif:MeteringMode="1"
    exif:LightSource="0"
-   exif:FocalLength="680/10"
+   exif:FocalLength="350/10"
    exif:FileSource="3"
    exif:SceneType="1"
-   exif:FocalLengthIn35mmFilm="68"
+   exif:FocalLengthIn35mmFilm="35"
    exif:CustomRendered="0"
    exif:ExposureMode="1"
    exif:WhiteBalance="0"
@@ -48,26 +48,26 @@
    exif:FocalPlaneXResolution="70924134/32768"
    exif:FocalPlaneYResolution="70924134/32768"
    exif:FocalPlaneResolutionUnit="3"
-   exif:DateTimeOriginal="2024-12-15T16:22:51-08:00"
+   exif:DateTimeOriginal="2024-12-15T16:32:25-08:00"
    exif:PixelXDimension="7952"
    exif:PixelYDimension="5304"
    xmp:CreatorTool="ILCE-7RM3 v3.10"
-   xmp:ModifyDate="2024-12-15T16:22:51-08:00"
-   xmp:CreateDate="2024-12-15T16:22:51-08:00"
-   xmp:MetadataDate="2026-06-30T15:40:10-07:00"
+   xmp:ModifyDate="2024-12-15T16:32:25-08:00"
+   xmp:CreateDate="2024-12-15T16:32:25-08:00"
+   xmp:MetadataDate="2026-06-30T14:58:39-07:00"
    aux:LensInfo="350/10 1500/10 20/10 28/10"
    aux:Lens="E 35-150mm F2.0-F2.8 A058"
-   aux:LensDistortInfo="1030724923/1073741824 35145762/1073741824 1722996/1073741824 6139508/1073741824"
+   aux:LensDistortInfo="32834/32768 -21720883/1073741824 -2550986/1073741824 22091530/1073741824"
    exifEX:LensModel="E 35-150mm F2.0-F2.8 A058"
-   photoshop:DateCreated="2024-12-15T16:22:51-08:00"
+   photoshop:DateCreated="2024-12-15T16:32:25-08:00"
    photoshop:AuthorsPosition="Photographer"
    photoshop:Credit="Photo © Julian Buccat"
    photoshop:SidecarForExtension="ARW"
    photoshop:EmbeddedXMPDigest="00000000000000000000000000000000"
-   xmpMM:DocumentID="52A698FD4CF9BC2AAE67F1F35B7FBB30"
-   xmpMM:PreservedFileName="JB107456.ARW"
-   xmpMM:OriginalDocumentID="52A698FD4CF9BC2AAE67F1F35B7FBB30"
-   xmpMM:InstanceID="xmp.iid:65c0bc12-06b5-4905-a716-86eb0ec07e1e"
+   xmpMM:DocumentID="E351A43FCC5F2CBC3FEB1C92F36EFAE5"
+   xmpMM:PreservedFileName="JB107504.ARW"
+   xmpMM:OriginalDocumentID="E351A43FCC5F2CBC3FEB1C92F36EFAE5"
+   xmpMM:InstanceID="xmp.iid:227497f1-e645-432f-bc23-5274ac78bc11"
    dc:format="image/x-sony-arw"
    crd:CameraProfile="Camera Standard"
    crd:LookName=""
@@ -77,19 +77,19 @@
    crs:CompatibleVersion="268435456"
    crs:ProcessVersion="15.4"
    crs:WhiteBalance="Custom"
-   crs:Temperature="5000"
-   crs:Tint="+9"
-   crs:Exposure2012="+1.48"
-   crs:Contrast2012="+18"
-   crs:Highlights2012="-63"
-   crs:Shadows2012="+53"
-   crs:Whites2012="+4"
-   crs:Blacks2012="+49"
+   crs:Temperature="7750"
+   crs:Tint="+12"
+   crs:Exposure2012="-0.24"
+   crs:Contrast2012="+4"
+   crs:Highlights2012="-76"
+   crs:Shadows2012="+52"
+   crs:Whites2012="-1"
+   crs:Blacks2012="-29"
    crs:Texture="0"
    crs:Clarity2012="0"
    crs:Dehaze="0"
    crs:Vibrance="+15"
-   crs:Saturation="+1"
+   crs:Saturation="+2"
    crs:ParametricShadows="0"
    crs:ParametricDarks="0"
    crs:ParametricLights="0"
@@ -115,8 +115,8 @@
    crs:HueAdjustmentMagenta="0"
    crs:SaturationAdjustmentRed="0"
    crs:SaturationAdjustmentOrange="0"
-   crs:SaturationAdjustmentYellow="0"
-   crs:SaturationAdjustmentGreen="-54"
+   crs:SaturationAdjustmentYellow="-13"
+   crs:SaturationAdjustmentGreen="-50"
    crs:SaturationAdjustmentAqua="0"
    crs:SaturationAdjustmentBlue="0"
    crs:SaturationAdjustmentPurple="0"
@@ -182,22 +182,14 @@
    crs:LensProfileIsEmbedded="False"
    crs:LensProfileDistortionScale="100"
    crs:LensProfileVignettingScale="100"
-   crs:AutoToneDigest="674D1592648CF3411A03FBEB2037623F"
-   crs:AutoToneDigestNoSat="968661786949673A4668A93F4A0283F5"
+   crs:AutoToneDigest="BD9A7AC612AA3069D7A54E0E29F50A7A"
+   crs:AutoToneDigestNoSat="85CE2661279CAFA951F7428600867025"
    crs:HasSettings="True"
-   crs:CropTop="0.013253"
-   crs:CropLeft="0"
-   crs:CropBottom="0.917317"
-   crs:CropRight="0.904063"
-   crs:CropAngle="0"
-   crs:CropConstrainToWarp="0"
-   crs:CropConstrainToUnitSquare="1"
-   crs:HasCrop="True"
    crs:AlreadyApplied="False"
-   crs:RawFileName="JB107456.ARW">
+   crs:RawFileName="JB107504.ARW">
    <exif:ISOSpeedRatings>
     <rdf:Seq>
-     <rdf:li>250</rdf:li>
+     <rdf:li>500</rdf:li>
     </rdf:Seq>
    </exif:ISOSpeedRatings>
    <exif:Flash
@@ -210,8 +202,8 @@
     <rdf:Seq>
      <rdf:li
       stEvt:action="saved"
-      stEvt:instanceID="xmp.iid:65c0bc12-06b5-4905-a716-86eb0ec07e1e"
-      stEvt:when="2026-06-30T15:40:10-07:00"
+      stEvt:instanceID="xmp.iid:227497f1-e645-432f-bc23-5274ac78bc11"
+      stEvt:when="2026-06-30T14:58:39-07:00"
       stEvt:softwareAgent="Adobe Photoshop Lightroom Classic 15.1 (Macintosh)"
       stEvt:changed="/metadata"/>
     </rdf:Seq>
@@ -257,12 +249,12 @@
    </crs:ToneCurvePV2012Blue>
    <crs:PointColors>
     <rdf:Seq>
-     <rdf:li>0.526294, 0.603428, 0.152408, 0.000000, -0.500000, 0.000000, 0.500000, 0.000000, 0.330000, 0.670000, 1.000000, 0.000000, 0.420000, 0.780000, 1.000000, 0.000000, 0.250000, 0.610000, 1.000000</rdf:li>
+     <rdf:li>-1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000</rdf:li>
     </rdf:Seq>
    </crs:PointColors>
    <crs:ColorVariance>
     <rdf:Seq>
-     <rdf:li>0.000000</rdf:li>
+     <rdf:li>-50.000000</rdf:li>
     </rdf:Seq>
    </crs:ColorVariance>
    <crs:MaskGroupBasedCorrections>
@@ -284,9 +276,9 @@
        crs:LocalToningHue="173.945007"
        crs:LocalToningSaturation="0"
        crs:LocalExposure2012="0"
-       crs:LocalContrast2012="0.08"
-       crs:LocalHighlights2012="-0.23"
-       crs:LocalShadows2012="-0.62"
+       crs:LocalContrast2012="0.11"
+       crs:LocalHighlights2012="0.23"
+       crs:LocalShadows2012="0"
        crs:LocalWhites2012="0"
        crs:LocalBlacks2012="0"
        crs:LocalClarity2012="0"
@@ -312,14 +304,14 @@
          crs:MaskVersion="1"
          crs:MaskSubType="0"
          crs:MaskSubCategoryID="20036"
-         crs:ReferencePoint="0.297907 0.502200"
+         crs:ReferencePoint="0.367469 0.464985"
          crs:InputDigest="C581ACE40A9F9977C0BD92E8158B54C9"
          crs:InputDigestVersion="2"
          crs:LocalInputDigest="0F69EC7191721A5DAEB9846B118CC3B4"
          crs:LocalInputDigestVersion="1"
-         crs:MaskDigest="60D3132FA550479B1D3F5278B0DA2042"
+         crs:MaskDigest="C7B9E2F675E64BE0FEF2550AD479C368"
          crs:WholeImageArea="0/1,0/1,1920/1,2879/1"
-         crs:Origin="0,456"
+         crs:Origin="0,152"
          crs:FullMaskSize="2879,1920"
          crs:ModelVersion="234881976"/>
        </rdf:Seq>
@@ -342,9 +334,9 @@
        crs:LocalBrightness="0"
        crs:LocalToningHue="173.945007"
        crs:LocalToningSaturation="0"
-       crs:LocalExposure2012="0"
+       crs:LocalExposure2012="-0.16"
        crs:LocalContrast2012="0"
-       crs:LocalHighlights2012="-0.63"
+       crs:LocalHighlights2012="-1"
        crs:LocalShadows2012="0"
        crs:LocalWhites2012="0"
        crs:LocalBlacks2012="0"
@@ -371,10 +363,10 @@
          crs:MaskVersion="1"
          crs:MaskSubType="0"
          crs:MaskSubCategoryID="22"
-         crs:ReferencePoint="0.755428 0.698673"
+         crs:ReferencePoint="0.850451 0.221745"
          crs:InputDigest="C581ACE40A9F9977C0BD92E8158B54C9"
          crs:InputDigestVersion="2"
-         crs:MaskDigest="9A9132DA9301151631D1E1BEAD42C1A2"
+         crs:MaskDigest="31E6F4D9F1631B3DD0465C498FD59E7A"
          crs:WholeImageArea="0/1073741824,0/1073741824,62914560/32768,94339072/32768"
          crs:Origin="0,0"
          crs:FullMaskSize="2879,1920"
@@ -400,7 +392,7 @@
        crs:LocalToningHue="173.945007"
        crs:LocalToningSaturation="0"
        crs:LocalExposure2012="0"
-       crs:LocalContrast2012="0"
+       crs:LocalContrast2012="0.15"
        crs:LocalHighlights2012="0"
        crs:LocalShadows2012="0"
        crs:LocalWhites2012="0"
@@ -428,14 +420,14 @@
          crs:MaskVersion="1"
          crs:MaskSubType="0"
          crs:MaskSubCategoryID="11"
-         crs:ReferencePoint="0.068026 0.393657"
+         crs:ReferencePoint="0.197591 0.262015"
          crs:InputDigest="C581ACE40A9F9977C0BD92E8158B54C9"
          crs:InputDigestVersion="2"
          crs:LocalInputDigest="0F69EC7191721A5DAEB9846B118CC3B4"
          crs:LocalInputDigestVersion="1"
-         crs:MaskDigest="F67AD4F8BA73D05791F14D7DB5DDB4B4"
+         crs:MaskDigest="9F8B79E0C8BED403CB3EED5BD8C5A1CD"
          crs:WholeImageArea="0/1,0/1,1920/1,2879/1"
-         crs:Origin="0,457"
+         crs:Origin="0,155"
          crs:FullMaskSize="2879,1920"
          crs:ModelVersion="234881976"/>
        </rdf:Seq>
@@ -460,8 +452,8 @@
        crs:LocalToningSaturation="0"
        crs:LocalExposure2012="0"
        crs:LocalContrast2012="0"
-       crs:LocalHighlights2012="0"
-       crs:LocalShadows2012="0"
+       crs:LocalHighlights2012="-0.11"
+       crs:LocalShadows2012="0.06"
        crs:LocalWhites2012="0"
        crs:LocalBlacks2012="0"
        crs:LocalClarity2012="0"
@@ -487,14 +479,14 @@
          crs:MaskVersion="1"
          crs:MaskSubType="0"
          crs:MaskSubCategoryID="4"
-         crs:ReferencePoint="0.320112 0.552953"
+         crs:ReferencePoint="0.554627 0.537968"
          crs:InputDigest="C581ACE40A9F9977C0BD92E8158B54C9"
          crs:InputDigestVersion="2"
          crs:LocalInputDigest="0F69EC7191721A5DAEB9846B118CC3B4"
          crs:LocalInputDigestVersion="1"
-         crs:MaskDigest="20FCA5CF64F07B06DE41BF8DAE314D55"
+         crs:MaskDigest="0E63801FA7C9139FDBCCBDD6E1033AEB"
          crs:WholeImageArea="0/1,0/1,1920/1,2879/1"
-         crs:Origin="795,607"
+         crs:Origin="649,746"
          crs:FullMaskSize="2879,1920"
          crs:ModelVersion="234881976"/>
        </rdf:Seq>
@@ -533,6 +525,16 @@
        crs:LocalTexture="0.01"
        crs:LocalGrain="0"
        crs:LocalCurveRefineSaturation="100">
+      <crs:LocalPointColors>
+       <rdf:Seq>
+        <rdf:li>0.520859, 0.612826, 0.608609, 0.000000, -0.185417, 0.000000, 0.500000, 0.000000, 0.330000, 0.670000, 1.000000, 0.000000, 0.430000, 0.790000, 1.000000, 0.070000, 0.620000, 0.980000, 1.000000</rdf:li>
+       </rdf:Seq>
+      </crs:LocalPointColors>
+      <crs:LocalColorVariance>
+       <rdf:Seq>
+        <rdf:li>0.000000</rdf:li>
+       </rdf:Seq>
+      </crs:LocalColorVariance>
       <crs:CorrectionMasks>
        <rdf:Seq>
         <rdf:li
@@ -546,14 +548,14 @@
          crs:MaskVersion="1"
          crs:MaskSubType="0"
          crs:MaskSubCategoryID="2"
-         crs:ReferencePoint="0.579252 0.411086"
+         crs:ReferencePoint="0.646158 0.462074"
          crs:InputDigest="C581ACE40A9F9977C0BD92E8158B54C9"
          crs:InputDigestVersion="2"
          crs:LocalInputDigest="0F69EC7191721A5DAEB9846B118CC3B4"
          crs:LocalInputDigestVersion="1"
-         crs:MaskDigest="17EE4203CCB5EEBFD6366BC516CB16DD"
+         crs:MaskDigest="383FEBFAB193429358489C8008BD9E40"
          crs:WholeImageArea="0/1,0/1,1920/1,2879/1"
-         crs:Origin="1480,687"
+         crs:Origin="1612,717"
          crs:FullMaskSize="2879,1920"
          crs:ModelVersion="234881976"/>
        </rdf:Seq>
@@ -605,15 +607,10 @@
          crs:MaskVersion="1"
          crs:MaskSubType="0"
          crs:MaskSubCategoryID="12"
-         crs:ReferencePoint="0.555552 0.454137"
+         crs:ReferencePoint="0.500000 0.500000"
          crs:InputDigest="C581ACE40A9F9977C0BD92E8158B54C9"
          crs:InputDigestVersion="2"
-         crs:LocalInputDigest="0F69EC7191721A5DAEB9846B118CC3B4"
-         crs:LocalInputDigestVersion="1"
-         crs:MaskDigest="E96E4DB8A7EE7F728E750F824BC51AE4"
-         crs:WholeImageArea="0/1,0/1,1920/1,2879/1"
-         crs:Origin="1590,850"
-         crs:FullMaskSize="2879,1920"
+         crs:ErrorReason="1"
          crs:ModelVersion="234881976"/>
         <rdf:li
          crs:What="Mask/Image"
@@ -626,14 +623,14 @@
          crs:MaskVersion="1"
          crs:MaskSubType="0"
          crs:MaskSubCategoryID="8"
-         crs:ReferencePoint="0.599555 0.441445"
+         crs:ReferencePoint="0.671392 0.572891"
          crs:InputDigest="C581ACE40A9F9977C0BD92E8158B54C9"
          crs:InputDigestVersion="2"
          crs:LocalInputDigest="0F69EC7191721A5DAEB9846B118CC3B4"
          crs:LocalInputDigestVersion="1"
-         crs:MaskDigest="4C8D0C4CC119BEFBF5E353117D13A62C"
+         crs:MaskDigest="D02865B722554588BAB24D5B6F9F3337"
          crs:WholeImageArea="0/1,0/1,1920/1,2879/1"
-         crs:Origin="1712,802"
+         crs:Origin="1918,890"
          crs:FullMaskSize="2879,1920"
          crs:ModelVersion="234881976"/>
        </rdf:Seq>

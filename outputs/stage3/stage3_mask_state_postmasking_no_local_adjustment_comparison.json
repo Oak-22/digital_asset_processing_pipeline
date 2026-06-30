@@ -21,100 +21,150 @@
         "acr_sha256": "a6b6ae3426e6fb154e4aa85cb8eeda2c8e8fe2ac1b7bd1d8fd619ab54c47f829",
         "mask_entry_count": 7,
         "mask_group_count": 6,
-        "mask_signature": [
-          {
-            "correction_name": "Mask 1",
-            "group_geometry_status": "resolved",
-            "mask_geometry_statuses": [
-              "resolved"
+        "state_signature": {
+          "global_point_color_state": {
+            "crs_color_variance": [
+              "-50.000000"
             ],
-            "mask_names": [
-              "Person 1"
+            "crs_point_colors": [
+              "-1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000"
             ],
-            "non_neutral_local_adjustments": {
-              "LocalCurveRefineSaturation": "100",
-              "LocalTexture": "0.01",
-              "LocalToningHue": "173.945007"
-            }
+            "point_color_vector_analysis": {
+              "interpretation_status": "inactive_default",
+              "sat_shift_candidate_index": null,
+              "sat_shift_normalized_candidate": null,
+              "sat_shift_ui_estimate_candidate": null
+            },
+            "source_fields": [
+              "crs:PointColors",
+              "crs:ColorVariance"
+            ]
           },
-          {
-            "correction_name": "Mask 2",
-            "group_geometry_status": "resolved",
-            "mask_geometry_statuses": [
-              "resolved"
-            ],
-            "mask_names": [
-              "Background 1"
-            ],
-            "non_neutral_local_adjustments": {
-              "LocalCurveRefineSaturation": "100",
-              "LocalTexture": "0.01",
-              "LocalToningHue": "173.945007"
+          "mask_signature": [
+            {
+              "correction_name": "Mask 1",
+              "group_geometry_status": "resolved",
+              "local_point_color_state": {
+                "crs_local_color_variance": [],
+                "crs_local_point_colors": [],
+                "source_fields": []
+              },
+              "mask_geometry_statuses": [
+                "resolved"
+              ],
+              "mask_names": [
+                "Person 1"
+              ],
+              "non_neutral_local_adjustments": {
+                "LocalCurveRefineSaturation": "100",
+                "LocalTexture": "0.01",
+                "LocalToningHue": "173.945007"
+              }
+            },
+            {
+              "correction_name": "Mask 2",
+              "group_geometry_status": "resolved",
+              "local_point_color_state": {
+                "crs_local_color_variance": [],
+                "crs_local_point_colors": [],
+                "source_fields": []
+              },
+              "mask_geometry_statuses": [
+                "resolved"
+              ],
+              "mask_names": [
+                "Background 1"
+              ],
+              "non_neutral_local_adjustments": {
+                "LocalCurveRefineSaturation": "100",
+                "LocalTexture": "0.01",
+                "LocalToningHue": "173.945007"
+              }
+            },
+            {
+              "correction_name": "Mask 3",
+              "group_geometry_status": "resolved",
+              "local_point_color_state": {
+                "crs_local_color_variance": [],
+                "crs_local_point_colors": [],
+                "source_fields": []
+              },
+              "mask_geometry_statuses": [
+                "resolved"
+              ],
+              "mask_names": [
+                "Person 1 - Clothes"
+              ],
+              "non_neutral_local_adjustments": {
+                "LocalCurveRefineSaturation": "100",
+                "LocalTexture": "0.01",
+                "LocalToningHue": "173.945007"
+              }
+            },
+            {
+              "correction_name": "Mask 4",
+              "group_geometry_status": "resolved",
+              "local_point_color_state": {
+                "crs_local_color_variance": [],
+                "crs_local_point_colors": [],
+                "source_fields": []
+              },
+              "mask_geometry_statuses": [
+                "resolved"
+              ],
+              "mask_names": [
+                "Person 1 - Body Skin"
+              ],
+              "non_neutral_local_adjustments": {
+                "LocalCurveRefineSaturation": "100",
+                "LocalTexture": "0.01",
+                "LocalToningHue": "173.945007"
+              }
+            },
+            {
+              "correction_name": "Mask 5",
+              "group_geometry_status": "resolved",
+              "local_point_color_state": {
+                "crs_local_color_variance": [],
+                "crs_local_point_colors": [],
+                "source_fields": []
+              },
+              "mask_geometry_statuses": [
+                "resolved"
+              ],
+              "mask_names": [
+                "Person 1 - Facial Skin"
+              ],
+              "non_neutral_local_adjustments": {
+                "LocalCurveRefineSaturation": "100",
+                "LocalTexture": "0.01",
+                "LocalToningHue": "173.945007"
+              }
+            },
+            {
+              "correction_name": "Mask 6",
+              "group_geometry_status": "resolved",
+              "local_point_color_state": {
+                "crs_local_color_variance": [],
+                "crs_local_point_colors": [],
+                "source_fields": []
+              },
+              "mask_geometry_statuses": [
+                "resolved",
+                "resolved"
+              ],
+              "mask_names": [
+                "Person 1 - Teeth",
+                "Person 1 - Eye Sclera"
+              ],
+              "non_neutral_local_adjustments": {
+                "LocalCurveRefineSaturation": "100",
+                "LocalTexture": "0.01",
+                "LocalToningHue": "173.945007"
+              }
             }
-          },
-          {
-            "correction_name": "Mask 3",
-            "group_geometry_status": "resolved",
-            "mask_geometry_statuses": [
-              "resolved"
-            ],
-            "mask_names": [
-              "Person 1 - Clothes"
-            ],
-            "non_neutral_local_adjustments": {
-              "LocalCurveRefineSaturation": "100",
-              "LocalTexture": "0.01",
-              "LocalToningHue": "173.945007"
-            }
-          },
-          {
-            "correction_name": "Mask 4",
-            "group_geometry_status": "resolved",
-            "mask_geometry_statuses": [
-              "resolved"
-            ],
-            "mask_names": [
-              "Person 1 - Body Skin"
-            ],
-            "non_neutral_local_adjustments": {
-              "LocalCurveRefineSaturation": "100",
-              "LocalTexture": "0.01",
-              "LocalToningHue": "173.945007"
-            }
-          },
-          {
-            "correction_name": "Mask 5",
-            "group_geometry_status": "resolved",
-            "mask_geometry_statuses": [
-              "resolved"
-            ],
-            "mask_names": [
-              "Person 1 - Facial Skin"
-            ],
-            "non_neutral_local_adjustments": {
-              "LocalCurveRefineSaturation": "100",
-              "LocalTexture": "0.01",
-              "LocalToningHue": "173.945007"
-            }
-          },
-          {
-            "correction_name": "Mask 6",
-            "group_geometry_status": "resolved",
-            "mask_geometry_statuses": [
-              "resolved",
-              "resolved"
-            ],
-            "mask_names": [
-              "Person 1 - Teeth",
-              "Person 1 - Eye Sclera"
-            ],
-            "non_neutral_local_adjustments": {
-              "LocalCurveRefineSaturation": "100",
-              "LocalTexture": "0.01",
-              "LocalToningHue": "173.945007"
-            }
-          }
-        ],
+          ]
+        },
         "xmp_path": "data/stage3/conditioned_state/lightroom_sidecars_postmasking_no_local_adjustment/JB107456.xmp",
         "xmp_sha256": "9291c9d137554cf4284e816a134abdf0649e82ce5f4df7ad491e8f50a2b30e58"
       },
@@ -123,7 +173,27 @@
         "acr_sha256": null,
         "mask_entry_count": 0,
         "mask_group_count": 0,
-        "mask_signature": [],
+        "state_signature": {
+          "global_point_color_state": {
+            "crs_color_variance": [
+              "-50.000000"
+            ],
+            "crs_point_colors": [
+              "-1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000"
+            ],
+            "point_color_vector_analysis": {
+              "interpretation_status": "inactive_default",
+              "sat_shift_candidate_index": null,
+              "sat_shift_normalized_candidate": null,
+              "sat_shift_ui_estimate_candidate": null
+            },
+            "source_fields": [
+              "crs:PointColors",
+              "crs:ColorVariance"
+            ]
+          },
+          "mask_signature": []
+        },
         "xmp_path": "data/stage3/reference_state/lightroom_sidecars_presegmentation/JB107456.xmp",
         "xmp_sha256": "684ddaba8cab973d40824e93502c4fa5d9fde2501c1bd3f4c6775ba09302dfb4"
       }
@@ -136,100 +206,150 @@
         "acr_sha256": "97d3182257835a03dc0025e4d7df225d85edeaada2627d7449ffdf5f0f6a45ba",
         "mask_entry_count": 7,
         "mask_group_count": 6,
-        "mask_signature": [
-          {
-            "correction_name": "Mask 1",
-            "group_geometry_status": "resolved",
-            "mask_geometry_statuses": [
-              "resolved"
+        "state_signature": {
+          "global_point_color_state": {
+            "crs_color_variance": [
+              "-50.000000"
             ],
-            "mask_names": [
-              "Person 1"
+            "crs_point_colors": [
+              "-1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000"
             ],
-            "non_neutral_local_adjustments": {
-              "LocalCurveRefineSaturation": "100",
-              "LocalTexture": "0.01",
-              "LocalToningHue": "173.945007"
-            }
+            "point_color_vector_analysis": {
+              "interpretation_status": "inactive_default",
+              "sat_shift_candidate_index": null,
+              "sat_shift_normalized_candidate": null,
+              "sat_shift_ui_estimate_candidate": null
+            },
+            "source_fields": [
+              "crs:PointColors",
+              "crs:ColorVariance"
+            ]
           },
-          {
-            "correction_name": "Mask 2",
-            "group_geometry_status": "resolved",
-            "mask_geometry_statuses": [
-              "resolved"
-            ],
-            "mask_names": [
-              "Background 1"
-            ],
-            "non_neutral_local_adjustments": {
-              "LocalCurveRefineSaturation": "100",
-              "LocalTexture": "0.01",
-              "LocalToningHue": "173.945007"
+          "mask_signature": [
+            {
+              "correction_name": "Mask 1",
+              "group_geometry_status": "resolved",
+              "local_point_color_state": {
+                "crs_local_color_variance": [],
+                "crs_local_point_colors": [],
+                "source_fields": []
+              },
+              "mask_geometry_statuses": [
+                "resolved"
+              ],
+              "mask_names": [
+                "Person 1"
+              ],
+              "non_neutral_local_adjustments": {
+                "LocalCurveRefineSaturation": "100",
+                "LocalTexture": "0.01",
+                "LocalToningHue": "173.945007"
+              }
+            },
+            {
+              "correction_name": "Mask 2",
+              "group_geometry_status": "resolved",
+              "local_point_color_state": {
+                "crs_local_color_variance": [],
+                "crs_local_point_colors": [],
+                "source_fields": []
+              },
+              "mask_geometry_statuses": [
+                "resolved"
+              ],
+              "mask_names": [
+                "Background 1"
+              ],
+              "non_neutral_local_adjustments": {
+                "LocalCurveRefineSaturation": "100",
+                "LocalTexture": "0.01",
+                "LocalToningHue": "173.945007"
+              }
+            },
+            {
+              "correction_name": "Mask 3",
+              "group_geometry_status": "resolved",
+              "local_point_color_state": {
+                "crs_local_color_variance": [],
+                "crs_local_point_colors": [],
+                "source_fields": []
+              },
+              "mask_geometry_statuses": [
+                "resolved"
+              ],
+              "mask_names": [
+                "Person 1 - Clothes"
+              ],
+              "non_neutral_local_adjustments": {
+                "LocalCurveRefineSaturation": "100",
+                "LocalTexture": "0.01",
+                "LocalToningHue": "173.945007"
+              }
+            },
+            {
+              "correction_name": "Mask 4",
+              "group_geometry_status": "resolved",
+              "local_point_color_state": {
+                "crs_local_color_variance": [],
+                "crs_local_point_colors": [],
+                "source_fields": []
+              },
+              "mask_geometry_statuses": [
+                "resolved"
+              ],
+              "mask_names": [
+                "Person 1 - Body Skin"
+              ],
+              "non_neutral_local_adjustments": {
+                "LocalCurveRefineSaturation": "100",
+                "LocalTexture": "0.01",
+                "LocalToningHue": "173.945007"
+              }
+            },
+            {
+              "correction_name": "Mask 5",
+              "group_geometry_status": "resolved",
+              "local_point_color_state": {
+                "crs_local_color_variance": [],
+                "crs_local_point_colors": [],
+                "source_fields": []
+              },
+              "mask_geometry_statuses": [
+                "resolved"
+              ],
+              "mask_names": [
+                "Person 1 - Facial Skin"
+              ],
+              "non_neutral_local_adjustments": {
+                "LocalCurveRefineSaturation": "100",
+                "LocalTexture": "0.01",
+                "LocalToningHue": "173.945007"
+              }
+            },
+            {
+              "correction_name": "Mask 6",
+              "group_geometry_status": "resolved",
+              "local_point_color_state": {
+                "crs_local_color_variance": [],
+                "crs_local_point_colors": [],
+                "source_fields": []
+              },
+              "mask_geometry_statuses": [
+                "resolved",
+                "resolved"
+              ],
+              "mask_names": [
+                "Person 1 - Teeth",
+                "Person 1 - Eye Sclera"
+              ],
+              "non_neutral_local_adjustments": {
+                "LocalCurveRefineSaturation": "100",
+                "LocalTexture": "0.01",
+                "LocalToningHue": "173.945007"
+              }
             }
-          },
-          {
-            "correction_name": "Mask 3",
-            "group_geometry_status": "resolved",
-            "mask_geometry_statuses": [
-              "resolved"
-            ],
-            "mask_names": [
-              "Person 1 - Clothes"
-            ],
-            "non_neutral_local_adjustments": {
-              "LocalCurveRefineSaturation": "100",
-              "LocalTexture": "0.01",
-              "LocalToningHue": "173.945007"
-            }
-          },
-          {
-            "correction_name": "Mask 4",
-            "group_geometry_status": "resolved",
-            "mask_geometry_statuses": [
-              "resolved"
-            ],
-            "mask_names": [
-              "Person 1 - Body Skin"
-            ],
-            "non_neutral_local_adjustments": {
-              "LocalCurveRefineSaturation": "100",
-              "LocalTexture": "0.01",
-              "LocalToningHue": "173.945007"
-            }
-          },
-          {
-            "correction_name": "Mask 5",
-            "group_geometry_status": "resolved",
-            "mask_geometry_statuses": [
-              "resolved"
-            ],
-            "mask_names": [
-              "Person 1 - Facial Skin"
-            ],
-            "non_neutral_local_adjustments": {
-              "LocalCurveRefineSaturation": "100",
-              "LocalTexture": "0.01",
-              "LocalToningHue": "173.945007"
-            }
-          },
-          {
-            "correction_name": "Mask 6",
-            "group_geometry_status": "resolved",
-            "mask_geometry_statuses": [
-              "resolved",
-              "resolved"
-            ],
-            "mask_names": [
-              "Person 1 - Teeth",
-              "Person 1 - Eye Sclera"
-            ],
-            "non_neutral_local_adjustments": {
-              "LocalCurveRefineSaturation": "100",
-              "LocalTexture": "0.01",
-              "LocalToningHue": "173.945007"
-            }
-          }
-        ],
+          ]
+        },
         "xmp_path": "data/stage3/conditioned_state/lightroom_sidecars_postmasking_no_local_adjustment/JB107468.xmp",
         "xmp_sha256": "c2cecc8315ede97f7f824e74ef11ce82f6dace2c7bf007c2e79fd56ade0cfe98"
       },
@@ -238,7 +358,27 @@
         "acr_sha256": null,
         "mask_entry_count": 0,
         "mask_group_count": 0,
-        "mask_signature": [],
+        "state_signature": {
+          "global_point_color_state": {
+            "crs_color_variance": [
+              "-50.000000"
+            ],
+            "crs_point_colors": [
+              "-1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000"
+            ],
+            "point_color_vector_analysis": {
+              "interpretation_status": "inactive_default",
+              "sat_shift_candidate_index": null,
+              "sat_shift_normalized_candidate": null,
+              "sat_shift_ui_estimate_candidate": null
+            },
+            "source_fields": [
+              "crs:PointColors",
+              "crs:ColorVariance"
+            ]
+          },
+          "mask_signature": []
+        },
         "xmp_path": "data/stage3/reference_state/lightroom_sidecars_presegmentation/JB107468.xmp",
         "xmp_sha256": "22bb5d49cef13406d7fec0fb81b4e081054f5250fecce058152bc27e7838682d"
       }
@@ -251,100 +391,150 @@
         "acr_sha256": "d09f2be0582c0583561b3cc5f53ac76e72169ad279ff605949f8f83ead662d6f",
         "mask_entry_count": 7,
         "mask_group_count": 6,
-        "mask_signature": [
-          {
-            "correction_name": "Mask 1",
-            "group_geometry_status": "resolved",
-            "mask_geometry_statuses": [
-              "resolved"
+        "state_signature": {
+          "global_point_color_state": {
+            "crs_color_variance": [
+              "-50.000000"
             ],
-            "mask_names": [
-              "Person 1"
+            "crs_point_colors": [
+              "-1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000"
             ],
-            "non_neutral_local_adjustments": {
-              "LocalCurveRefineSaturation": "100",
-              "LocalTexture": "0.01",
-              "LocalToningHue": "173.945007"
-            }
+            "point_color_vector_analysis": {
+              "interpretation_status": "inactive_default",
+              "sat_shift_candidate_index": null,
+              "sat_shift_normalized_candidate": null,
+              "sat_shift_ui_estimate_candidate": null
+            },
+            "source_fields": [
+              "crs:PointColors",
+              "crs:ColorVariance"
+            ]
           },
-          {
-            "correction_name": "Mask 2",
-            "group_geometry_status": "resolved",
-            "mask_geometry_statuses": [
-              "resolved"
-            ],
-            "mask_names": [
-              "Background 1"
-            ],
-            "non_neutral_local_adjustments": {
-              "LocalCurveRefineSaturation": "100",
-              "LocalTexture": "0.01",
-              "LocalToningHue": "173.945007"
+          "mask_signature": [
+            {
+              "correction_name": "Mask 1",
+              "group_geometry_status": "resolved",
+              "local_point_color_state": {
+                "crs_local_color_variance": [],
+                "crs_local_point_colors": [],
+                "source_fields": []
+              },
+              "mask_geometry_statuses": [
+                "resolved"
+              ],
+              "mask_names": [
+                "Person 1"
+              ],
+              "non_neutral_local_adjustments": {
+                "LocalCurveRefineSaturation": "100",
+                "LocalTexture": "0.01",
+                "LocalToningHue": "173.945007"
+              }
+            },
+            {
+              "correction_name": "Mask 2",
+              "group_geometry_status": "resolved",
+              "local_point_color_state": {
+                "crs_local_color_variance": [],
+                "crs_local_point_colors": [],
+                "source_fields": []
+              },
+              "mask_geometry_statuses": [
+                "resolved"
+              ],
+              "mask_names": [
+                "Background 1"
+              ],
+              "non_neutral_local_adjustments": {
+                "LocalCurveRefineSaturation": "100",
+                "LocalTexture": "0.01",
+                "LocalToningHue": "173.945007"
+              }
+            },
+            {
+              "correction_name": "Mask 3",
+              "group_geometry_status": "resolved",
+              "local_point_color_state": {
+                "crs_local_color_variance": [],
+                "crs_local_point_colors": [],
+                "source_fields": []
+              },
+              "mask_geometry_statuses": [
+                "resolved"
+              ],
+              "mask_names": [
+                "Person 1 - Clothes"
+              ],
+              "non_neutral_local_adjustments": {
+                "LocalCurveRefineSaturation": "100",
+                "LocalTexture": "0.01",
+                "LocalToningHue": "173.945007"
+              }
+            },
+            {
+              "correction_name": "Mask 4",
+              "group_geometry_status": "resolved",
+              "local_point_color_state": {
+                "crs_local_color_variance": [],
+                "crs_local_point_colors": [],
+                "source_fields": []
+              },
+              "mask_geometry_statuses": [
+                "resolved"
+              ],
+              "mask_names": [
+                "Person 1 - Body Skin"
+              ],
+              "non_neutral_local_adjustments": {
+                "LocalCurveRefineSaturation": "100",
+                "LocalTexture": "0.01",
+                "LocalToningHue": "173.945007"
+              }
+            },
+            {
+              "correction_name": "Mask 5",
+              "group_geometry_status": "resolved",
+              "local_point_color_state": {
+                "crs_local_color_variance": [],
+                "crs_local_point_colors": [],
+                "source_fields": []
+              },
+              "mask_geometry_statuses": [
+                "resolved"
+              ],
+              "mask_names": [
+                "Person 1 - Facial Skin"
+              ],
+              "non_neutral_local_adjustments": {
+                "LocalCurveRefineSaturation": "100",
+                "LocalTexture": "0.01",
+                "LocalToningHue": "173.945007"
+              }
+            },
+            {
+              "correction_name": "Mask 6",
+              "group_geometry_status": "partial",
+              "local_point_color_state": {
+                "crs_local_color_variance": [],
+                "crs_local_point_colors": [],
+                "source_fields": []
+              },
+              "mask_geometry_statuses": [
+                "unresolved",
+                "resolved"
+              ],
+              "mask_names": [
+                "Person 1 - Teeth",
+                "Person 1 - Eye Sclera"
+              ],
+              "non_neutral_local_adjustments": {
+                "LocalCurveRefineSaturation": "100",
+                "LocalTexture": "0.01",
+                "LocalToningHue": "173.945007"
+              }
             }
-          },
-          {
-            "correction_name": "Mask 3",
-            "group_geometry_status": "resolved",
-            "mask_geometry_statuses": [
-              "resolved"
-            ],
-            "mask_names": [
-              "Person 1 - Clothes"
-            ],
-            "non_neutral_local_adjustments": {
-              "LocalCurveRefineSaturation": "100",
-              "LocalTexture": "0.01",
-              "LocalToningHue": "173.945007"
-            }
-          },
-          {
-            "correction_name": "Mask 4",
-            "group_geometry_status": "resolved",
-            "mask_geometry_statuses": [
-              "resolved"
-            ],
-            "mask_names": [
-              "Person 1 - Body Skin"
-            ],
-            "non_neutral_local_adjustments": {
-              "LocalCurveRefineSaturation": "100",
-              "LocalTexture": "0.01",
-              "LocalToningHue": "173.945007"
-            }
-          },
-          {
-            "correction_name": "Mask 5",
-            "group_geometry_status": "resolved",
-            "mask_geometry_statuses": [
-              "resolved"
-            ],
-            "mask_names": [
-              "Person 1 - Facial Skin"
-            ],
-            "non_neutral_local_adjustments": {
-              "LocalCurveRefineSaturation": "100",
-              "LocalTexture": "0.01",
-              "LocalToningHue": "173.945007"
-            }
-          },
-          {
-            "correction_name": "Mask 6",
-            "group_geometry_status": "partial",
-            "mask_geometry_statuses": [
-              "unresolved",
-              "resolved"
-            ],
-            "mask_names": [
-              "Person 1 - Teeth",
-              "Person 1 - Eye Sclera"
-            ],
-            "non_neutral_local_adjustments": {
-              "LocalCurveRefineSaturation": "100",
-              "LocalTexture": "0.01",
-              "LocalToningHue": "173.945007"
-            }
-          }
-        ],
+          ]
+        },
         "xmp_path": "data/stage3/conditioned_state/lightroom_sidecars_postmasking_no_local_adjustment/JB107504.xmp",
         "xmp_sha256": "7a662878378646fbd5ca3c43bde56f17da4b3548f32799ff4ae3b873c3c79a6b"
       },
@@ -353,7 +543,27 @@
         "acr_sha256": null,
         "mask_entry_count": 0,
         "mask_group_count": 0,
-        "mask_signature": [],
+        "state_signature": {
+          "global_point_color_state": {
+            "crs_color_variance": [
+              "-50.000000"
+            ],
+            "crs_point_colors": [
+              "-1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000"
+            ],
+            "point_color_vector_analysis": {
+              "interpretation_status": "inactive_default",
+              "sat_shift_candidate_index": null,
+              "sat_shift_normalized_candidate": null,
+              "sat_shift_ui_estimate_candidate": null
+            },
+            "source_fields": [
+              "crs:PointColors",
+              "crs:ColorVariance"
+            ]
+          },
+          "mask_signature": []
+        },
         "xmp_path": "data/stage3/reference_state/lightroom_sidecars_presegmentation/JB107504.xmp",
         "xmp_sha256": "33b5367456c3a6518574f5582231f67b124db80aa6d47a2537deebadabaec12a"
       }

@@ -2,6 +2,7 @@
   "input_model": "stage3_postlocal_adjustment_state",
   "input_root": "data/stage3/conditioned_state/lightroom_sidecars_postlocal_adjustment",
   "notes": {
+    "global_point_color_state": "Global point-color state records CRS PointColors and ColorVariance child sequences attached to the asset-level Camera Raw description. Vector interpretation is marked as a candidate mapping until calibrated more fully.",
     "local_point_color_state": "Local point-color state records CRS LocalPointColors and LocalColorVariance child sequences attached to a mask correction group.",
     "mask_geometry_status": "A resolved mask entry has mask digest, origin, and full-mask-size metadata. An unresolved mask keeps the semantic mask entry but lacks one or more geometry/payload identity fields. A partially resolved group has mixed resolved and unresolved child masks.",
     "scope": "One-image proof-of-capability spike for parsing Lightroom mask group state after GUI-assisted AI segmentation.",
@@ -12,6 +13,24 @@
       "acr_path": "data/stage3/conditioned_state/lightroom_sidecars_postlocal_adjustment/JB107456.acr",
       "acr_sha256": "a6b6ae3426e6fb154e4aa85cb8eeda2c8e8fe2ac1b7bd1d8fd619ab54c47f829",
       "asset_key": "JB107456",
+      "global_point_color_state": {
+        "crs_color_variance": [
+          "-50.000000"
+        ],
+        "crs_point_colors": [
+          "-1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000"
+        ],
+        "point_color_vector_analysis": {
+          "interpretation_status": "inactive_default",
+          "sat_shift_candidate_index": null,
+          "sat_shift_normalized_candidate": null,
+          "sat_shift_ui_estimate_candidate": null
+        },
+        "source_fields": [
+          "crs:PointColors",
+          "crs:ColorVariance"
+        ]
+      },
       "input_model": "stage3_postlocal_adjustment_state",
       "input_root": "data/stage3/conditioned_state/lightroom_sidecars_postlocal_adjustment",
       "mask_entry_count": 7,
@@ -440,6 +459,24 @@
       "acr_path": "data/stage3/conditioned_state/lightroom_sidecars_postlocal_adjustment/JB107468.acr",
       "acr_sha256": "97d3182257835a03dc0025e4d7df225d85edeaada2627d7449ffdf5f0f6a45ba",
       "asset_key": "JB107468",
+      "global_point_color_state": {
+        "crs_color_variance": [
+          "-50.000000"
+        ],
+        "crs_point_colors": [
+          "-1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000"
+        ],
+        "point_color_vector_analysis": {
+          "interpretation_status": "inactive_default",
+          "sat_shift_candidate_index": null,
+          "sat_shift_normalized_candidate": null,
+          "sat_shift_ui_estimate_candidate": null
+        },
+        "source_fields": [
+          "crs:PointColors",
+          "crs:ColorVariance"
+        ]
+      },
       "input_model": "stage3_postlocal_adjustment_state",
       "input_root": "data/stage3/conditioned_state/lightroom_sidecars_postlocal_adjustment",
       "mask_entry_count": 7,
@@ -869,6 +906,24 @@
       "acr_path": "data/stage3/conditioned_state/lightroom_sidecars_postlocal_adjustment/JB107504.acr",
       "acr_sha256": "d09f2be0582c0583561b3cc5f53ac76e72169ad279ff605949f8f83ead662d6f",
       "asset_key": "JB107504",
+      "global_point_color_state": {
+        "crs_color_variance": [
+          "-50.000000"
+        ],
+        "crs_point_colors": [
+          "-1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000, -1.000000"
+        ],
+        "point_color_vector_analysis": {
+          "interpretation_status": "inactive_default",
+          "sat_shift_candidate_index": null,
+          "sat_shift_normalized_candidate": null,
+          "sat_shift_ui_estimate_candidate": null
+        },
+        "source_fields": [
+          "crs:PointColors",
+          "crs:ColorVariance"
+        ]
+      },
       "input_model": "stage3_postlocal_adjustment_state",
       "input_root": "data/stage3/conditioned_state/lightroom_sidecars_postlocal_adjustment",
       "mask_entry_count": 7,
@@ -1315,6 +1370,7 @@
   "status": "complete",
   "summary": {
     "acr_sidecar_count": 3,
+    "active_global_point_color_asset_count": 0,
     "asset_count": 3,
     "assets_with_mask_groups": 3,
     "geometry_integrity_flag_counts": {
@@ -1322,6 +1378,7 @@
       "missing_mask_digest": 1,
       "missing_origin": 1
     },
+    "global_point_color_asset_count": 3,
     "group_geometry_status_counts": {
       "partial": 1,
       "resolved": 17,
