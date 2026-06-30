@@ -1,0 +1,94 @@
+{
+  "input_model": "stage3_presegmentation_reference",
+  "input_root": "data/stage3/reference_state/lightroom_sidecars_presegmentation",
+  "notes": {
+    "mask_geometry_status": "A resolved mask entry has mask digest, origin, and full-mask-size metadata. An unresolved mask keeps the semantic mask entry but lacks one or more geometry/payload identity fields. A partially resolved group has mixed resolved and unresolved child masks.",
+    "scope": "One-image proof-of-capability spike for parsing Lightroom mask group state after GUI-assisted AI segmentation.",
+    "sidecar_boundary": "The XMP records mask group metadata, semantic mask names, local adjustment values, digests, and model versions. The ACR sidecar is preserved as heavier binary Lightroom mask state referenced by the XMP."
+  },
+  "records": [
+    {
+      "acr_path": null,
+      "acr_sha256": null,
+      "asset_key": "JB107456",
+      "input_model": "stage3_presegmentation_reference",
+      "input_root": "data/stage3/reference_state/lightroom_sidecars_presegmentation",
+      "mask_entry_count": 0,
+      "mask_group_count": 0,
+      "mask_groups": [],
+      "mask_names": [],
+      "reference": {
+        "reference_mask_entry_count": 0,
+        "reference_mask_group_count": 0,
+        "reference_model": "stage2_postconditioning_state",
+        "reference_xmp_path": "data/stage2/conditioned_state/xmp_postconditioning/JB107456.xmp",
+        "reference_xmp_sha256": "684ddaba8cab973d40824e93502c4fa5d9fde2501c1bd3f4c6775ba09302dfb4"
+      },
+      "xmp_path": "data/stage3/reference_state/lightroom_sidecars_presegmentation/JB107456.xmp",
+      "xmp_sha256": "684ddaba8cab973d40824e93502c4fa5d9fde2501c1bd3f4c6775ba09302dfb4"
+    },
+    {
+      "acr_path": null,
+      "acr_sha256": null,
+      "asset_key": "JB107468",
+      "input_model": "stage3_presegmentation_reference",
+      "input_root": "data/stage3/reference_state/lightroom_sidecars_presegmentation",
+      "mask_entry_count": 0,
+      "mask_group_count": 0,
+      "mask_groups": [],
+      "mask_names": [],
+      "reference": {
+        "reference_mask_entry_count": 0,
+        "reference_mask_group_count": 0,
+        "reference_model": "stage2_postconditioning_state",
+        "reference_xmp_path": "data/stage2/conditioned_state/xmp_postconditioning/JB107468.xmp",
+        "reference_xmp_sha256": "22bb5d49cef13406d7fec0fb81b4e081054f5250fecce058152bc27e7838682d"
+      },
+      "xmp_path": "data/stage3/reference_state/lightroom_sidecars_presegmentation/JB107468.xmp",
+      "xmp_sha256": "22bb5d49cef13406d7fec0fb81b4e081054f5250fecce058152bc27e7838682d"
+    },
+    {
+      "acr_path": null,
+      "acr_sha256": null,
+      "asset_key": "JB107504",
+      "input_model": "stage3_presegmentation_reference",
+      "input_root": "data/stage3/reference_state/lightroom_sidecars_presegmentation",
+      "mask_entry_count": 0,
+      "mask_group_count": 0,
+      "mask_groups": [],
+      "mask_names": [],
+      "reference": {
+        "reference_mask_entry_count": 0,
+        "reference_mask_group_count": 0,
+        "reference_model": "stage2_postconditioning_state",
+        "reference_xmp_path": "data/stage2/conditioned_state/xmp_postconditioning/JB107504.xmp",
+        "reference_xmp_sha256": "33b5367456c3a6518574f5582231f67b124db80aa6d47a2537deebadabaec12a"
+      },
+      "xmp_path": "data/stage3/reference_state/lightroom_sidecars_presegmentation/JB107504.xmp",
+      "xmp_sha256": "33b5367456c3a6518574f5582231f67b124db80aa6d47a2537deebadabaec12a"
+    }
+  ],
+  "reference_model": "stage2_postconditioning_state",
+  "reference_root": "data/stage2/conditioned_state/xmp_postconditioning",
+  "spike_name": "proof_of_capability_mask_sidecar_parsing",
+  "stage": "stage3_semantic_local_conditioning",
+  "status": "complete",
+  "summary": {
+    "acr_sidecar_count": 0,
+    "asset_count": 3,
+    "assets_with_mask_groups": 0,
+    "geometry_integrity_flag_counts": {},
+    "group_geometry_status_counts": {
+      "partial": 0,
+      "resolved": 0,
+      "unresolved": 0
+    },
+    "mask_entry_count": 0,
+    "mask_geometry_status_counts": {
+      "resolved": 0,
+      "unresolved": 0
+    },
+    "mask_group_count": 0,
+    "mask_names": []
+  }
+}

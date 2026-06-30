@@ -110,6 +110,41 @@ def meaningful_local_adjustments(attrs: dict[str, str]) -> dict[str, str]:
     }
 
 
+def geometry_integrity_flags(mask_attrs: dict[str, str]) -> list[str]:
+    """Return missing geometry identity fields for one mask entry."""
+    required_fields = {
+        "MaskDigest": "missing_mask_digest",
+        "Origin": "missing_origin",
+        "FullMaskSize": "missing_full_mask_size",
+    }
+    return [
+        flag
+        for field, flag in required_fields.items()
+        if not mask_attrs.get(field)
+    ]
+
+
+def mask_geometry_status(mask_attrs: dict[str, str]) -> str:
+    """Classify whether one mask entry has materialized geometry."""
+    return "unresolved" if geometry_integrity_flags(mask_attrs) else "resolved"
+
+
+def group_geometry_status(masks: list[dict[str, object]]) -> str:
+    """Classify whether a correction group's child masks materialized."""
+    statuses = {
+        str(mask.get("mask_geometry_status"))
+        for mask in masks
+        if mask.get("mask_geometry_status")
+    }
+    if not statuses:
+        return "unresolved"
+    if statuses == {"resolved"}:
+        return "resolved"
+    if statuses == {"unresolved"}:
+        return "unresolved"
+    return "partial"
+
+
 def extract_mask_groups(xmp_path: Path) -> list[dict[str, object]]:
     """Extract Lightroom mask correction groups from one XMP file."""
     root = ET.parse(xmp_path).getroot()
@@ -123,11 +158,16 @@ def extract_mask_groups(xmp_path: Path) -> list[dict[str, object]]:
         masks = []
         for mask in correction.findall("./crs:CorrectionMasks/rdf:Seq/rdf:li", NS):
             mask_attrs = crs_attrs(mask)
+            integrity_flags = geometry_integrity_flags(mask_attrs)
             masks.append(
                 {
                     "mask_name": mask_attrs.get("MaskName"),
                     "mask_active": mask_attrs.get("MaskActive"),
                     "mask_inverted": mask_attrs.get("MaskInverted"),
+                    "mask_geometry_status": (
+                        "unresolved" if integrity_flags else "resolved"
+                    ),
+                    "geometry_integrity_flags": integrity_flags,
                     "mask_sync_id": mask_attrs.get("MaskSyncID"),
                     "mask_digest": mask_attrs.get("MaskDigest"),
                     "mask_subcategory_id": mask_attrs.get("MaskSubCategoryID"),
@@ -146,6 +186,7 @@ def extract_mask_groups(xmp_path: Path) -> list[dict[str, object]]:
                 "correction_name": correction_attrs.get("CorrectionName"),
                 "correction_active": correction_attrs.get("CorrectionActive"),
                 "correction_sync_id": correction_attrs.get("CorrectionSyncID"),
+                "group_geometry_status": group_geometry_status(masks),
                 "local_adjustments": {
                     key: value
                     for key, value in correction_attrs.items()
@@ -226,6 +267,48 @@ def build_summary(records: list[dict[str, object]]) -> dict[str, object]:
             for mask_name in record.get("mask_names", [])
         }
     )
+    mask_entries = [
+        mask
+        for record in records
+        for group in record.get("mask_groups", [])
+        for mask in group.get("masks", [])
+        if isinstance(mask, dict)
+    ]
+    mask_groups = [
+        group
+        for record in records
+        for group in record.get("mask_groups", [])
+        if isinstance(group, dict)
+    ]
+    mask_geometry_status_counts = {
+        status: sum(
+            1 for mask in mask_entries if mask.get("mask_geometry_status") == status
+        )
+        for status in ("resolved", "unresolved")
+    }
+    group_geometry_status_counts = {
+        status: sum(
+            1
+            for group in mask_groups
+            if group.get("group_geometry_status") == status
+        )
+        for status in ("resolved", "partial", "unresolved")
+    }
+    geometry_integrity_flag_counts = {
+        flag: sum(
+            1
+            for mask in mask_entries
+            for mask_flag in mask.get("geometry_integrity_flags", [])
+            if mask_flag == flag
+        )
+        for flag in sorted(
+            {
+                str(flag)
+                for mask in mask_entries
+                for flag in mask.get("geometry_integrity_flags", [])
+            }
+        )
+    }
     return {
         "asset_count": len(records),
         "assets_with_mask_groups": sum(
@@ -234,6 +317,9 @@ def build_summary(records: list[dict[str, object]]) -> dict[str, object]:
         "mask_group_count": sum(int(record["mask_group_count"]) for record in records),
         "mask_entry_count": sum(int(record["mask_entry_count"]) for record in records),
         "acr_sidecar_count": sum(1 for record in records if record["acr_path"]),
+        "mask_geometry_status_counts": mask_geometry_status_counts,
+        "group_geometry_status_counts": group_geometry_status_counts,
+        "geometry_integrity_flag_counts": geometry_integrity_flag_counts,
         "mask_names": mask_names,
     }
 
@@ -271,6 +357,13 @@ def main() -> None:
                 "local adjustment values, digests, and model versions. The "
                 "ACR sidecar is preserved as heavier binary Lightroom mask "
                 "state referenced by the XMP."
+            ),
+            "mask_geometry_status": (
+                "A resolved mask entry has mask digest, origin, and "
+                "full-mask-size metadata. An unresolved mask keeps the "
+                "semantic mask entry but lacks one or more geometry/payload "
+                "identity fields. A partially resolved group has mixed "
+                "resolved and unresolved child masks."
             ),
         },
         "summary": build_summary(records),
