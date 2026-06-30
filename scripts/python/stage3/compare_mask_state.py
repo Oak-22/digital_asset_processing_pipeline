@@ -89,6 +89,9 @@ def mask_signature(record: dict[str, object]) -> list[dict[str, object]]:
                 "non_neutral_local_adjustments": group.get(
                     "non_neutral_local_adjustments", {}
                 ),
+                "local_point_color_state": group.get(
+                    "local_point_color_state", {}
+                ),
             }
         )
     return signature

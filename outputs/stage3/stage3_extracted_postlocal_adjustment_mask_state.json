@@ -1,0 +1,1347 @@
+{
+  "input_model": "stage3_postlocal_adjustment_state",
+  "input_root": "data/stage3/conditioned_state/lightroom_sidecars_postlocal_adjustment",
+  "notes": {
+    "local_point_color_state": "Local point-color state records CRS LocalPointColors and LocalColorVariance child sequences attached to a mask correction group.",
+    "mask_geometry_status": "A resolved mask entry has mask digest, origin, and full-mask-size metadata. An unresolved mask keeps the semantic mask entry but lacks one or more geometry/payload identity fields. A partially resolved group has mixed resolved and unresolved child masks.",
+    "scope": "One-image proof-of-capability spike for parsing Lightroom mask group state after GUI-assisted AI segmentation.",
+    "sidecar_boundary": "The XMP records mask group metadata, semantic mask names, local adjustment values, digests, and model versions. The ACR sidecar is preserved as heavier binary Lightroom mask state referenced by the XMP."
+  },
+  "records": [
+    {
+      "acr_path": "data/stage3/conditioned_state/lightroom_sidecars_postlocal_adjustment/JB107456.acr",
+      "acr_sha256": "a6b6ae3426e6fb154e4aa85cb8eeda2c8e8fe2ac1b7bd1d8fd619ab54c47f829",
+      "asset_key": "JB107456",
+      "input_model": "stage3_postlocal_adjustment_state",
+      "input_root": "data/stage3/conditioned_state/lightroom_sidecars_postlocal_adjustment",
+      "mask_entry_count": 7,
+      "mask_group_count": 6,
+      "mask_groups": [
+        {
+          "correction_active": "true",
+          "correction_index": 1,
+          "correction_name": "Mask 1",
+          "correction_sync_id": "365FC08EAD254EA59B7B36B59804C54D",
+          "group_geometry_status": "resolved",
+          "local_adjustments": {
+            "LocalBlacks2012": "0",
+            "LocalBrightness": "0",
+            "LocalClarity": "0",
+            "LocalClarity2012": "0",
+            "LocalContrast": "0",
+            "LocalContrast2012": "0.08",
+            "LocalCurveRefineSaturation": "100",
+            "LocalDefringe": "0",
+            "LocalDehaze": "0",
+            "LocalExposure": "0",
+            "LocalExposure2012": "0",
+            "LocalGrain": "0",
+            "LocalHighlights2012": "-0.23",
+            "LocalHue": "0",
+            "LocalLuminanceNoise": "0",
+            "LocalMoire": "0",
+            "LocalSaturation": "0",
+            "LocalShadows2012": "-0.62",
+            "LocalSharpness": "0",
+            "LocalTemperature": "0",
+            "LocalTexture": "0.01",
+            "LocalTint": "0",
+            "LocalToningHue": "173.945007",
+            "LocalToningSaturation": "0",
+            "LocalWhites2012": "0"
+          },
+          "local_point_color_state": {
+            "crs_local_color_variance": [],
+            "crs_local_point_colors": [],
+            "source_fields": []
+          },
+          "mask_count": 1,
+          "masks": [
+            {
+              "full_mask_size": "2879,1920",
+              "geometry_integrity_flags": [],
+              "input_digest": "C581ACE40A9F9977C0BD92E8158B54C9",
+              "local_input_digest": "0F69EC7191721A5DAEB9846B118CC3B4",
+              "mask_active": "true",
+              "mask_digest": "60D3132FA550479B1D3F5278B0DA2042",
+              "mask_geometry_status": "resolved",
+              "mask_inverted": "false",
+              "mask_name": "Person 1",
+              "mask_subcategory_id": "20036",
+              "mask_sync_id": "D784D255908443549EFE3A62C182B80B",
+              "model_version": "234881976",
+              "origin": "0,456",
+              "reference_point": "0.297907 0.502200"
+            }
+          ],
+          "non_neutral_local_adjustments": {
+            "LocalContrast2012": "0.08",
+            "LocalCurveRefineSaturation": "100",
+            "LocalHighlights2012": "-0.23",
+            "LocalShadows2012": "-0.62",
+            "LocalTexture": "0.01",
+            "LocalToningHue": "173.945007"
+          }
+        },
+        {
+          "correction_active": "true",
+          "correction_index": 2,
+          "correction_name": "Mask 2",
+          "correction_sync_id": "851EBD3FC5A4440696D472C3AEF5BD3B",
+          "group_geometry_status": "resolved",
+          "local_adjustments": {
+            "LocalBlacks2012": "0",
+            "LocalBrightness": "0",
+            "LocalClarity": "0",
+            "LocalClarity2012": "0",
+            "LocalContrast": "0",
+            "LocalContrast2012": "0",
+            "LocalCurveRefineSaturation": "100",
+            "LocalDefringe": "0",
+            "LocalDehaze": "0",
+            "LocalExposure": "0",
+            "LocalExposure2012": "0",
+            "LocalGrain": "0",
+            "LocalHighlights2012": "-0.63",
+            "LocalHue": "0",
+            "LocalLuminanceNoise": "0",
+            "LocalMoire": "0",
+            "LocalSaturation": "0",
+            "LocalShadows2012": "0",
+            "LocalSharpness": "0",
+            "LocalTemperature": "0",
+            "LocalTexture": "0.01",
+            "LocalTint": "0",
+            "LocalToningHue": "173.945007",
+            "LocalToningSaturation": "0",
+            "LocalWhites2012": "0"
+          },
+          "local_point_color_state": {
+            "crs_local_color_variance": [],
+            "crs_local_point_colors": [],
+            "source_fields": []
+          },
+          "mask_count": 1,
+          "masks": [
+            {
+              "full_mask_size": "2879,1920",
+              "geometry_integrity_flags": [],
+              "input_digest": "C581ACE40A9F9977C0BD92E8158B54C9",
+              "local_input_digest": null,
+              "mask_active": "true",
+              "mask_digest": "9A9132DA9301151631D1E1BEAD42C1A2",
+              "mask_geometry_status": "resolved",
+              "mask_inverted": "false",
+              "mask_name": "Background 1",
+              "mask_subcategory_id": "22",
+              "mask_sync_id": "CAEFE61A5B794CABA2B921C939E7BA2C",
+              "model_version": "251659306",
+              "origin": "0,0",
+              "reference_point": "0.755428 0.698673"
+            }
+          ],
+          "non_neutral_local_adjustments": {
+            "LocalCurveRefineSaturation": "100",
+            "LocalHighlights2012": "-0.63",
+            "LocalTexture": "0.01",
+            "LocalToningHue": "173.945007"
+          }
+        },
+        {
+          "correction_active": "true",
+          "correction_index": 3,
+          "correction_name": "Mask 3",
+          "correction_sync_id": "484A6CB346C1406FABD933990077F786",
+          "group_geometry_status": "resolved",
+          "local_adjustments": {
+            "LocalBlacks2012": "0",
+            "LocalBrightness": "0",
+            "LocalClarity": "0",
+            "LocalClarity2012": "0",
+            "LocalContrast": "0",
+            "LocalContrast2012": "0",
+            "LocalCurveRefineSaturation": "100",
+            "LocalDefringe": "0",
+            "LocalDehaze": "0",
+            "LocalExposure": "0",
+            "LocalExposure2012": "0",
+            "LocalGrain": "0",
+            "LocalHighlights2012": "0",
+            "LocalHue": "0",
+            "LocalLuminanceNoise": "0",
+            "LocalMoire": "0",
+            "LocalSaturation": "0",
+            "LocalShadows2012": "0",
+            "LocalSharpness": "0",
+            "LocalTemperature": "0",
+            "LocalTexture": "0.01",
+            "LocalTint": "0",
+            "LocalToningHue": "173.945007",
+            "LocalToningSaturation": "0",
+            "LocalWhites2012": "0"
+          },
+          "local_point_color_state": {
+            "crs_local_color_variance": [],
+            "crs_local_point_colors": [],
+            "source_fields": []
+          },
+          "mask_count": 1,
+          "masks": [
+            {
+              "full_mask_size": "2879,1920",
+              "geometry_integrity_flags": [],
+              "input_digest": "C581ACE40A9F9977C0BD92E8158B54C9",
+              "local_input_digest": "0F69EC7191721A5DAEB9846B118CC3B4",
+              "mask_active": "true",
+              "mask_digest": "F67AD4F8BA73D05791F14D7DB5DDB4B4",
+              "mask_geometry_status": "resolved",
+              "mask_inverted": "false",
+              "mask_name": "Person 1 - Clothes",
+              "mask_subcategory_id": "11",
+              "mask_sync_id": "BBFBF9C95DA54B109A580C8644C279F9",
+              "model_version": "234881976",
+              "origin": "0,457",
+              "reference_point": "0.068026 0.393657"
+            }
+          ],
+          "non_neutral_local_adjustments": {
+            "LocalCurveRefineSaturation": "100",
+            "LocalTexture": "0.01",
+            "LocalToningHue": "173.945007"
+          }
+        },
+        {
+          "correction_active": "true",
+          "correction_index": 4,
+          "correction_name": "Mask 4",
+          "correction_sync_id": "05D4854D165E4729A16D871D63276E37",
+          "group_geometry_status": "resolved",
+          "local_adjustments": {
+            "LocalBlacks2012": "0",
+            "LocalBrightness": "0",
+            "LocalClarity": "0",
+            "LocalClarity2012": "0",
+            "LocalContrast": "0",
+            "LocalContrast2012": "0",
+            "LocalCurveRefineSaturation": "100",
+            "LocalDefringe": "0",
+            "LocalDehaze": "0",
+            "LocalExposure": "0",
+            "LocalExposure2012": "0",
+            "LocalGrain": "0",
+            "LocalHighlights2012": "0",
+            "LocalHue": "0",
+            "LocalLuminanceNoise": "0",
+            "LocalMoire": "0",
+            "LocalSaturation": "0",
+            "LocalShadows2012": "0",
+            "LocalSharpness": "0",
+            "LocalTemperature": "0",
+            "LocalTexture": "0.01",
+            "LocalTint": "0",
+            "LocalToningHue": "173.945007",
+            "LocalToningSaturation": "0",
+            "LocalWhites2012": "0"
+          },
+          "local_point_color_state": {
+            "crs_local_color_variance": [],
+            "crs_local_point_colors": [],
+            "source_fields": []
+          },
+          "mask_count": 1,
+          "masks": [
+            {
+              "full_mask_size": "2879,1920",
+              "geometry_integrity_flags": [],
+              "input_digest": "C581ACE40A9F9977C0BD92E8158B54C9",
+              "local_input_digest": "0F69EC7191721A5DAEB9846B118CC3B4",
+              "mask_active": "true",
+              "mask_digest": "20FCA5CF64F07B06DE41BF8DAE314D55",
+              "mask_geometry_status": "resolved",
+              "mask_inverted": "false",
+              "mask_name": "Person 1 - Body Skin",
+              "mask_subcategory_id": "4",
+              "mask_sync_id": "ECE0C615957A4E6D8F5CF240421D4F4E",
+              "model_version": "234881976",
+              "origin": "795,607",
+              "reference_point": "0.320112 0.552953"
+            }
+          ],
+          "non_neutral_local_adjustments": {
+            "LocalCurveRefineSaturation": "100",
+            "LocalTexture": "0.01",
+            "LocalToningHue": "173.945007"
+          }
+        },
+        {
+          "correction_active": "true",
+          "correction_index": 5,
+          "correction_name": "Mask 5",
+          "correction_sync_id": "42A23F92EECB4715A592806E768345DF",
+          "group_geometry_status": "resolved",
+          "local_adjustments": {
+            "LocalBlacks2012": "0",
+            "LocalBrightness": "0",
+            "LocalClarity": "0",
+            "LocalClarity2012": "0",
+            "LocalContrast": "0",
+            "LocalContrast2012": "0",
+            "LocalCurveRefineSaturation": "100",
+            "LocalDefringe": "0",
+            "LocalDehaze": "0",
+            "LocalExposure": "0",
+            "LocalExposure2012": "0",
+            "LocalGrain": "0",
+            "LocalHighlights2012": "0",
+            "LocalHue": "0",
+            "LocalLuminanceNoise": "0",
+            "LocalMoire": "0",
+            "LocalSaturation": "0",
+            "LocalShadows2012": "0",
+            "LocalSharpness": "0",
+            "LocalTemperature": "0",
+            "LocalTexture": "0.01",
+            "LocalTint": "0",
+            "LocalToningHue": "173.945007",
+            "LocalToningSaturation": "0",
+            "LocalWhites2012": "0"
+          },
+          "local_point_color_state": {
+            "crs_local_color_variance": [],
+            "crs_local_point_colors": [],
+            "source_fields": []
+          },
+          "mask_count": 1,
+          "masks": [
+            {
+              "full_mask_size": "2879,1920",
+              "geometry_integrity_flags": [],
+              "input_digest": "C581ACE40A9F9977C0BD92E8158B54C9",
+              "local_input_digest": "0F69EC7191721A5DAEB9846B118CC3B4",
+              "mask_active": "true",
+              "mask_digest": "17EE4203CCB5EEBFD6366BC516CB16DD",
+              "mask_geometry_status": "resolved",
+              "mask_inverted": "false",
+              "mask_name": "Person 1 - Facial Skin",
+              "mask_subcategory_id": "2",
+              "mask_sync_id": "48A9280393504303B9E2C77F8B4BDEE1",
+              "model_version": "234881976",
+              "origin": "1480,687",
+              "reference_point": "0.579252 0.411086"
+            }
+          ],
+          "non_neutral_local_adjustments": {
+            "LocalCurveRefineSaturation": "100",
+            "LocalTexture": "0.01",
+            "LocalToningHue": "173.945007"
+          }
+        },
+        {
+          "correction_active": "true",
+          "correction_index": 6,
+          "correction_name": "Mask 6",
+          "correction_sync_id": "AE937AF217644B6CB2D4F5AEDA592E11",
+          "group_geometry_status": "resolved",
+          "local_adjustments": {
+            "LocalBlacks2012": "0",
+            "LocalBrightness": "0",
+            "LocalClarity": "0",
+            "LocalClarity2012": "0",
+            "LocalContrast": "0",
+            "LocalContrast2012": "0",
+            "LocalCurveRefineSaturation": "100",
+            "LocalDefringe": "0",
+            "LocalDehaze": "0",
+            "LocalExposure": "0",
+            "LocalExposure2012": "0",
+            "LocalGrain": "0",
+            "LocalHighlights2012": "0",
+            "LocalHue": "0",
+            "LocalLuminanceNoise": "0",
+            "LocalMoire": "0",
+            "LocalSaturation": "-0.71",
+            "LocalShadows2012": "0",
+            "LocalSharpness": "0",
+            "LocalTemperature": "0",
+            "LocalTexture": "0.01",
+            "LocalTint": "0",
+            "LocalToningHue": "173.945007",
+            "LocalToningSaturation": "0",
+            "LocalWhites2012": "0"
+          },
+          "local_point_color_state": {
+            "crs_local_color_variance": [],
+            "crs_local_point_colors": [],
+            "source_fields": []
+          },
+          "mask_count": 2,
+          "masks": [
+            {
+              "full_mask_size": "2879,1920",
+              "geometry_integrity_flags": [],
+              "input_digest": "C581ACE40A9F9977C0BD92E8158B54C9",
+              "local_input_digest": "0F69EC7191721A5DAEB9846B118CC3B4",
+              "mask_active": "true",
+              "mask_digest": "E96E4DB8A7EE7F728E750F824BC51AE4",
+              "mask_geometry_status": "resolved",
+              "mask_inverted": "false",
+              "mask_name": "Person 1 - Teeth",
+              "mask_subcategory_id": "12",
+              "mask_sync_id": "99BEAB389EDD4930A611668CB75E8312",
+              "model_version": "234881976",
+              "origin": "1590,850",
+              "reference_point": "0.555552 0.454137"
+            },
+            {
+              "full_mask_size": "2879,1920",
+              "geometry_integrity_flags": [],
+              "input_digest": "C581ACE40A9F9977C0BD92E8158B54C9",
+              "local_input_digest": "0F69EC7191721A5DAEB9846B118CC3B4",
+              "mask_active": "true",
+              "mask_digest": "4C8D0C4CC119BEFBF5E353117D13A62C",
+              "mask_geometry_status": "resolved",
+              "mask_inverted": "false",
+              "mask_name": "Person 1 - Eye Sclera",
+              "mask_subcategory_id": "8",
+              "mask_sync_id": "FF391CA859A14155BBF2D728B637144F",
+              "model_version": "234881976",
+              "origin": "1712,802",
+              "reference_point": "0.599555 0.441445"
+            }
+          ],
+          "non_neutral_local_adjustments": {
+            "LocalCurveRefineSaturation": "100",
+            "LocalSaturation": "-0.71",
+            "LocalTexture": "0.01",
+            "LocalToningHue": "173.945007"
+          }
+        }
+      ],
+      "mask_names": [
+        "Person 1",
+        "Background 1",
+        "Person 1 - Clothes",
+        "Person 1 - Body Skin",
+        "Person 1 - Facial Skin",
+        "Person 1 - Teeth",
+        "Person 1 - Eye Sclera"
+      ],
+      "reference": {
+        "reference_mask_entry_count": 7,
+        "reference_mask_group_count": 6,
+        "reference_model": "stage3_postmasking_no_local_adjustment_state",
+        "reference_xmp_path": "data/stage3/conditioned_state/lightroom_sidecars_postmasking_no_local_adjustment/JB107456.xmp",
+        "reference_xmp_sha256": "9291c9d137554cf4284e816a134abdf0649e82ce5f4df7ad491e8f50a2b30e58"
+      },
+      "xmp_path": "data/stage3/conditioned_state/lightroom_sidecars_postlocal_adjustment/JB107456.xmp",
+      "xmp_sha256": "a06091efb444d73ee58c4e3d8dbc744dd763d2dbe70bc19d55574e423502dd89"
+    },
+    {
+      "acr_path": "data/stage3/conditioned_state/lightroom_sidecars_postlocal_adjustment/JB107468.acr",
+      "acr_sha256": "97d3182257835a03dc0025e4d7df225d85edeaada2627d7449ffdf5f0f6a45ba",
+      "asset_key": "JB107468",
+      "input_model": "stage3_postlocal_adjustment_state",
+      "input_root": "data/stage3/conditioned_state/lightroom_sidecars_postlocal_adjustment",
+      "mask_entry_count": 7,
+      "mask_group_count": 6,
+      "mask_groups": [
+        {
+          "correction_active": "true",
+          "correction_index": 1,
+          "correction_name": "Mask 1",
+          "correction_sync_id": "365FC08EAD254EA59B7B36B59804C54D",
+          "group_geometry_status": "resolved",
+          "local_adjustments": {
+            "LocalBlacks2012": "0",
+            "LocalBrightness": "0",
+            "LocalClarity": "0",
+            "LocalClarity2012": "0",
+            "LocalContrast": "0",
+            "LocalContrast2012": "0",
+            "LocalCurveRefineSaturation": "100",
+            "LocalDefringe": "0",
+            "LocalDehaze": "0",
+            "LocalExposure": "0",
+            "LocalExposure2012": "0",
+            "LocalGrain": "0",
+            "LocalHighlights2012": "0",
+            "LocalHue": "0",
+            "LocalLuminanceNoise": "0",
+            "LocalMoire": "0",
+            "LocalSaturation": "0",
+            "LocalShadows2012": "0",
+            "LocalSharpness": "0",
+            "LocalTemperature": "0",
+            "LocalTexture": "0.01",
+            "LocalTint": "0",
+            "LocalToningHue": "173.945007",
+            "LocalToningSaturation": "0",
+            "LocalWhites2012": "0"
+          },
+          "local_point_color_state": {
+            "crs_local_color_variance": [],
+            "crs_local_point_colors": [],
+            "source_fields": []
+          },
+          "mask_count": 1,
+          "masks": [
+            {
+              "full_mask_size": "2879,1920",
+              "geometry_integrity_flags": [],
+              "input_digest": "C581ACE40A9F9977C0BD92E8158B54C9",
+              "local_input_digest": "0F69EC7191721A5DAEB9846B118CC3B4",
+              "mask_active": "true",
+              "mask_digest": "28FA65D40F0D5BBF6DDF5C0C9F27EA05",
+              "mask_geometry_status": "resolved",
+              "mask_inverted": "false",
+              "mask_name": "Person 1",
+              "mask_subcategory_id": "20036",
+              "mask_sync_id": "D784D255908443549EFE3A62C182B80B",
+              "model_version": "234881976",
+              "origin": "0,462",
+              "reference_point": "0.357200 0.499308"
+            }
+          ],
+          "non_neutral_local_adjustments": {
+            "LocalCurveRefineSaturation": "100",
+            "LocalTexture": "0.01",
+            "LocalToningHue": "173.945007"
+          }
+        },
+        {
+          "correction_active": "true",
+          "correction_index": 2,
+          "correction_name": "Mask 2",
+          "correction_sync_id": "851EBD3FC5A4440696D472C3AEF5BD3B",
+          "group_geometry_status": "resolved",
+          "local_adjustments": {
+            "LocalBlacks2012": "0",
+            "LocalBrightness": "0",
+            "LocalClarity": "0",
+            "LocalClarity2012": "0",
+            "LocalContrast": "0",
+            "LocalContrast2012": "0",
+            "LocalCurveRefineSaturation": "100",
+            "LocalDefringe": "0",
+            "LocalDehaze": "0",
+            "LocalExposure": "0",
+            "LocalExposure2012": "0",
+            "LocalGrain": "0",
+            "LocalHighlights2012": "-0.39",
+            "LocalHue": "0",
+            "LocalLuminanceNoise": "0",
+            "LocalMoire": "0",
+            "LocalSaturation": "0",
+            "LocalShadows2012": "0.25",
+            "LocalSharpness": "0",
+            "LocalTemperature": "0",
+            "LocalTexture": "0.01",
+            "LocalTint": "0",
+            "LocalToningHue": "173.945007",
+            "LocalToningSaturation": "0",
+            "LocalWhites2012": "0"
+          },
+          "local_point_color_state": {
+            "crs_local_color_variance": [],
+            "crs_local_point_colors": [],
+            "source_fields": []
+          },
+          "mask_count": 1,
+          "masks": [
+            {
+              "full_mask_size": "2879,1920",
+              "geometry_integrity_flags": [],
+              "input_digest": "C581ACE40A9F9977C0BD92E8158B54C9",
+              "local_input_digest": null,
+              "mask_active": "true",
+              "mask_digest": "91E36DA095D908E71631C7DC66C8AA10",
+              "mask_geometry_status": "resolved",
+              "mask_inverted": "false",
+              "mask_name": "Background 1",
+              "mask_subcategory_id": "22",
+              "mask_sync_id": "CAEFE61A5B794CABA2B921C939E7BA2C",
+              "model_version": "251659306",
+              "origin": "0,0",
+              "reference_point": "0.753646 0.724993"
+            }
+          ],
+          "non_neutral_local_adjustments": {
+            "LocalCurveRefineSaturation": "100",
+            "LocalHighlights2012": "-0.39",
+            "LocalShadows2012": "0.25",
+            "LocalTexture": "0.01",
+            "LocalToningHue": "173.945007"
+          }
+        },
+        {
+          "correction_active": "true",
+          "correction_index": 3,
+          "correction_name": "Mask 3",
+          "correction_sync_id": "484A6CB346C1406FABD933990077F786",
+          "group_geometry_status": "resolved",
+          "local_adjustments": {
+            "LocalBlacks2012": "0",
+            "LocalBrightness": "0",
+            "LocalClarity": "0",
+            "LocalClarity2012": "0",
+            "LocalContrast": "0",
+            "LocalContrast2012": "0",
+            "LocalCurveRefineSaturation": "100",
+            "LocalDefringe": "0",
+            "LocalDehaze": "0",
+            "LocalExposure": "0",
+            "LocalExposure2012": "0",
+            "LocalGrain": "0",
+            "LocalHighlights2012": "0",
+            "LocalHue": "0",
+            "LocalLuminanceNoise": "0",
+            "LocalMoire": "0",
+            "LocalSaturation": "0",
+            "LocalShadows2012": "0",
+            "LocalSharpness": "0",
+            "LocalTemperature": "0",
+            "LocalTexture": "0.01",
+            "LocalTint": "0",
+            "LocalToningHue": "173.945007",
+            "LocalToningSaturation": "0",
+            "LocalWhites2012": "0"
+          },
+          "local_point_color_state": {
+            "crs_local_color_variance": [],
+            "crs_local_point_colors": [],
+            "source_fields": []
+          },
+          "mask_count": 1,
+          "masks": [
+            {
+              "full_mask_size": "2879,1920",
+              "geometry_integrity_flags": [],
+              "input_digest": "C581ACE40A9F9977C0BD92E8158B54C9",
+              "local_input_digest": "0F69EC7191721A5DAEB9846B118CC3B4",
+              "mask_active": "true",
+              "mask_digest": "777851FE824A73F9B8384EEF397CE0E8",
+              "mask_geometry_status": "resolved",
+              "mask_inverted": "false",
+              "mask_name": "Person 1 - Clothes",
+              "mask_subcategory_id": "11",
+              "mask_sync_id": "BBFBF9C95DA54B109A580C8644C279F9",
+              "model_version": "234881976",
+              "origin": "0,457",
+              "reference_point": "0.219934 0.446226"
+            }
+          ],
+          "non_neutral_local_adjustments": {
+            "LocalCurveRefineSaturation": "100",
+            "LocalTexture": "0.01",
+            "LocalToningHue": "173.945007"
+          }
+        },
+        {
+          "correction_active": "true",
+          "correction_index": 4,
+          "correction_name": "Mask 4",
+          "correction_sync_id": "05D4854D165E4729A16D871D63276E37",
+          "group_geometry_status": "resolved",
+          "local_adjustments": {
+            "LocalBlacks2012": "0",
+            "LocalBrightness": "0",
+            "LocalClarity": "0",
+            "LocalClarity2012": "0",
+            "LocalContrast": "0",
+            "LocalContrast2012": "0",
+            "LocalCurveRefineSaturation": "100",
+            "LocalDefringe": "0",
+            "LocalDehaze": "0",
+            "LocalExposure": "0",
+            "LocalExposure2012": "0",
+            "LocalGrain": "0",
+            "LocalHighlights2012": "0",
+            "LocalHue": "0",
+            "LocalLuminanceNoise": "0",
+            "LocalMoire": "0",
+            "LocalSaturation": "0",
+            "LocalShadows2012": "0.13",
+            "LocalSharpness": "0",
+            "LocalTemperature": "0",
+            "LocalTexture": "0.01",
+            "LocalTint": "0",
+            "LocalToningHue": "173.945007",
+            "LocalToningSaturation": "0",
+            "LocalWhites2012": "0"
+          },
+          "local_point_color_state": {
+            "crs_local_color_variance": [],
+            "crs_local_point_colors": [],
+            "source_fields": []
+          },
+          "mask_count": 1,
+          "masks": [
+            {
+              "full_mask_size": "2879,1920",
+              "geometry_integrity_flags": [],
+              "input_digest": "C581ACE40A9F9977C0BD92E8158B54C9",
+              "local_input_digest": "0F69EC7191721A5DAEB9846B118CC3B4",
+              "mask_active": "true",
+              "mask_digest": "F3406409876B25F3A2BECB53884BF0EB",
+              "mask_geometry_status": "resolved",
+              "mask_inverted": "false",
+              "mask_name": "Person 1 - Body Skin",
+              "mask_subcategory_id": "4",
+              "mask_sync_id": "ECE0C615957A4E6D8F5CF240421D4F4E",
+              "model_version": "234881976",
+              "origin": "801,706",
+              "reference_point": "0.325299 0.478168"
+            }
+          ],
+          "non_neutral_local_adjustments": {
+            "LocalCurveRefineSaturation": "100",
+            "LocalShadows2012": "0.13",
+            "LocalTexture": "0.01",
+            "LocalToningHue": "173.945007"
+          }
+        },
+        {
+          "correction_active": "true",
+          "correction_index": 5,
+          "correction_name": "Mask 5",
+          "correction_sync_id": "42A23F92EECB4715A592806E768345DF",
+          "group_geometry_status": "resolved",
+          "local_adjustments": {
+            "LocalBlacks2012": "0",
+            "LocalBrightness": "0",
+            "LocalClarity": "0",
+            "LocalClarity2012": "0",
+            "LocalContrast": "0",
+            "LocalContrast2012": "0",
+            "LocalCurveRefineSaturation": "100",
+            "LocalDefringe": "0",
+            "LocalDehaze": "0",
+            "LocalExposure": "0",
+            "LocalExposure2012": "0",
+            "LocalGrain": "0",
+            "LocalHighlights2012": "0.11",
+            "LocalHue": "0",
+            "LocalLuminanceNoise": "0",
+            "LocalMoire": "0",
+            "LocalSaturation": "0",
+            "LocalShadows2012": "0.51",
+            "LocalSharpness": "0",
+            "LocalTemperature": "0",
+            "LocalTexture": "0.01",
+            "LocalTint": "0",
+            "LocalToningHue": "173.945007",
+            "LocalToningSaturation": "0",
+            "LocalWhites2012": "0"
+          },
+          "local_point_color_state": {
+            "crs_local_color_variance": [],
+            "crs_local_point_colors": [],
+            "source_fields": []
+          },
+          "mask_count": 1,
+          "masks": [
+            {
+              "full_mask_size": "2879,1920",
+              "geometry_integrity_flags": [],
+              "input_digest": "C581ACE40A9F9977C0BD92E8158B54C9",
+              "local_input_digest": "0F69EC7191721A5DAEB9846B118CC3B4",
+              "mask_active": "true",
+              "mask_digest": "8B908EE5C1CFAC0508E9E3C113312B4E",
+              "mask_geometry_status": "resolved",
+              "mask_inverted": "false",
+              "mask_name": "Person 1 - Facial Skin",
+              "mask_subcategory_id": "2",
+              "mask_sync_id": "48A9280393504303B9E2C77F8B4BDEE1",
+              "model_version": "234881976",
+              "origin": "1623,775",
+              "reference_point": "0.658795 0.496667"
+            }
+          ],
+          "non_neutral_local_adjustments": {
+            "LocalCurveRefineSaturation": "100",
+            "LocalHighlights2012": "0.11",
+            "LocalShadows2012": "0.51",
+            "LocalTexture": "0.01",
+            "LocalToningHue": "173.945007"
+          }
+        },
+        {
+          "correction_active": "true",
+          "correction_index": 6,
+          "correction_name": "Mask 6",
+          "correction_sync_id": "AE937AF217644B6CB2D4F5AEDA592E11",
+          "group_geometry_status": "resolved",
+          "local_adjustments": {
+            "LocalBlacks2012": "0",
+            "LocalBrightness": "0",
+            "LocalClarity": "0",
+            "LocalClarity2012": "0",
+            "LocalContrast": "0",
+            "LocalContrast2012": "0",
+            "LocalCurveRefineSaturation": "100",
+            "LocalDefringe": "0",
+            "LocalDehaze": "0",
+            "LocalExposure": "0",
+            "LocalExposure2012": "0",
+            "LocalGrain": "0",
+            "LocalHighlights2012": "0",
+            "LocalHue": "0",
+            "LocalLuminanceNoise": "0",
+            "LocalMoire": "0",
+            "LocalSaturation": "-0.71",
+            "LocalShadows2012": "0",
+            "LocalSharpness": "0",
+            "LocalTemperature": "0",
+            "LocalTexture": "0.01",
+            "LocalTint": "0",
+            "LocalToningHue": "173.945007",
+            "LocalToningSaturation": "0",
+            "LocalWhites2012": "0"
+          },
+          "local_point_color_state": {
+            "crs_local_color_variance": [],
+            "crs_local_point_colors": [],
+            "source_fields": []
+          },
+          "mask_count": 2,
+          "masks": [
+            {
+              "full_mask_size": "2879,1920",
+              "geometry_integrity_flags": [],
+              "input_digest": "C581ACE40A9F9977C0BD92E8158B54C9",
+              "local_input_digest": "0F69EC7191721A5DAEB9846B118CC3B4",
+              "mask_active": "true",
+              "mask_digest": "F4A4F235B710CBC1BDDC6649CAE5D6CF",
+              "mask_geometry_status": "resolved",
+              "mask_inverted": "false",
+              "mask_name": "Person 1 - Teeth",
+              "mask_subcategory_id": "12",
+              "mask_sync_id": "99BEAB389EDD4930A611668CB75E8312",
+              "model_version": "234881976",
+              "origin": "1707,934",
+              "reference_point": "0.596929 0.504583"
+            },
+            {
+              "full_mask_size": "2879,1920",
+              "geometry_integrity_flags": [],
+              "input_digest": "C581ACE40A9F9977C0BD92E8158B54C9",
+              "local_input_digest": "0F69EC7191721A5DAEB9846B118CC3B4",
+              "mask_active": "true",
+              "mask_digest": "276B33351210208FF874F8CCDA3010D0",
+              "mask_geometry_status": "resolved",
+              "mask_inverted": "false",
+              "mask_name": "Person 1 - Eye Sclera",
+              "mask_subcategory_id": "8",
+              "mask_sync_id": "FF391CA859A14155BBF2D728B637144F",
+              "model_version": "234881976",
+              "origin": "1809,879",
+              "reference_point": "0.632251 0.515143"
+            }
+          ],
+          "non_neutral_local_adjustments": {
+            "LocalCurveRefineSaturation": "100",
+            "LocalSaturation": "-0.71",
+            "LocalTexture": "0.01",
+            "LocalToningHue": "173.945007"
+          }
+        }
+      ],
+      "mask_names": [
+        "Person 1",
+        "Background 1",
+        "Person 1 - Clothes",
+        "Person 1 - Body Skin",
+        "Person 1 - Facial Skin",
+        "Person 1 - Teeth",
+        "Person 1 - Eye Sclera"
+      ],
+      "reference": {
+        "reference_mask_entry_count": 7,
+        "reference_mask_group_count": 6,
+        "reference_model": "stage3_postmasking_no_local_adjustment_state",
+        "reference_xmp_path": "data/stage3/conditioned_state/lightroom_sidecars_postmasking_no_local_adjustment/JB107468.xmp",
+        "reference_xmp_sha256": "c2cecc8315ede97f7f824e74ef11ce82f6dace2c7bf007c2e79fd56ade0cfe98"
+      },
+      "xmp_path": "data/stage3/conditioned_state/lightroom_sidecars_postlocal_adjustment/JB107468.xmp",
+      "xmp_sha256": "194c64f8ec0a82421c3a9548b8b19a71a8f3d6c02948d242856bba568e2e7074"
+    },
+    {
+      "acr_path": "data/stage3/conditioned_state/lightroom_sidecars_postlocal_adjustment/JB107504.acr",
+      "acr_sha256": "d09f2be0582c0583561b3cc5f53ac76e72169ad279ff605949f8f83ead662d6f",
+      "asset_key": "JB107504",
+      "input_model": "stage3_postlocal_adjustment_state",
+      "input_root": "data/stage3/conditioned_state/lightroom_sidecars_postlocal_adjustment",
+      "mask_entry_count": 7,
+      "mask_group_count": 6,
+      "mask_groups": [
+        {
+          "correction_active": "true",
+          "correction_index": 1,
+          "correction_name": "Mask 1",
+          "correction_sync_id": "365FC08EAD254EA59B7B36B59804C54D",
+          "group_geometry_status": "resolved",
+          "local_adjustments": {
+            "LocalBlacks2012": "0",
+            "LocalBrightness": "0",
+            "LocalClarity": "0",
+            "LocalClarity2012": "0",
+            "LocalContrast": "0",
+            "LocalContrast2012": "0.11",
+            "LocalCurveRefineSaturation": "100",
+            "LocalDefringe": "0",
+            "LocalDehaze": "0",
+            "LocalExposure": "0",
+            "LocalExposure2012": "0",
+            "LocalGrain": "0",
+            "LocalHighlights2012": "0.23",
+            "LocalHue": "0",
+            "LocalLuminanceNoise": "0",
+            "LocalMoire": "0",
+            "LocalSaturation": "0",
+            "LocalShadows2012": "0",
+            "LocalSharpness": "0",
+            "LocalTemperature": "0",
+            "LocalTexture": "0.01",
+            "LocalTint": "0",
+            "LocalToningHue": "173.945007",
+            "LocalToningSaturation": "0",
+            "LocalWhites2012": "0"
+          },
+          "local_point_color_state": {
+            "crs_local_color_variance": [],
+            "crs_local_point_colors": [],
+            "source_fields": []
+          },
+          "mask_count": 1,
+          "masks": [
+            {
+              "full_mask_size": "2879,1920",
+              "geometry_integrity_flags": [],
+              "input_digest": "C581ACE40A9F9977C0BD92E8158B54C9",
+              "local_input_digest": "0F69EC7191721A5DAEB9846B118CC3B4",
+              "mask_active": "true",
+              "mask_digest": "C7B9E2F675E64BE0FEF2550AD479C368",
+              "mask_geometry_status": "resolved",
+              "mask_inverted": "false",
+              "mask_name": "Person 1",
+              "mask_subcategory_id": "20036",
+              "mask_sync_id": "D784D255908443549EFE3A62C182B80B",
+              "model_version": "234881976",
+              "origin": "0,152",
+              "reference_point": "0.367469 0.464985"
+            }
+          ],
+          "non_neutral_local_adjustments": {
+            "LocalContrast2012": "0.11",
+            "LocalCurveRefineSaturation": "100",
+            "LocalHighlights2012": "0.23",
+            "LocalTexture": "0.01",
+            "LocalToningHue": "173.945007"
+          }
+        },
+        {
+          "correction_active": "true",
+          "correction_index": 2,
+          "correction_name": "Mask 2",
+          "correction_sync_id": "851EBD3FC5A4440696D472C3AEF5BD3B",
+          "group_geometry_status": "resolved",
+          "local_adjustments": {
+            "LocalBlacks2012": "0",
+            "LocalBrightness": "0",
+            "LocalClarity": "0",
+            "LocalClarity2012": "0",
+            "LocalContrast": "0",
+            "LocalContrast2012": "0",
+            "LocalCurveRefineSaturation": "100",
+            "LocalDefringe": "0",
+            "LocalDehaze": "0",
+            "LocalExposure": "0",
+            "LocalExposure2012": "-0.16",
+            "LocalGrain": "0",
+            "LocalHighlights2012": "-1",
+            "LocalHue": "0",
+            "LocalLuminanceNoise": "0",
+            "LocalMoire": "0",
+            "LocalSaturation": "0",
+            "LocalShadows2012": "0",
+            "LocalSharpness": "0",
+            "LocalTemperature": "0",
+            "LocalTexture": "0.01",
+            "LocalTint": "0",
+            "LocalToningHue": "173.945007",
+            "LocalToningSaturation": "0",
+            "LocalWhites2012": "0"
+          },
+          "local_point_color_state": {
+            "crs_local_color_variance": [],
+            "crs_local_point_colors": [],
+            "source_fields": []
+          },
+          "mask_count": 1,
+          "masks": [
+            {
+              "full_mask_size": "2879,1920",
+              "geometry_integrity_flags": [],
+              "input_digest": "C581ACE40A9F9977C0BD92E8158B54C9",
+              "local_input_digest": null,
+              "mask_active": "true",
+              "mask_digest": "31E6F4D9F1631B3DD0465C498FD59E7A",
+              "mask_geometry_status": "resolved",
+              "mask_inverted": "false",
+              "mask_name": "Background 1",
+              "mask_subcategory_id": "22",
+              "mask_sync_id": "CAEFE61A5B794CABA2B921C939E7BA2C",
+              "model_version": "251659306",
+              "origin": "0,0",
+              "reference_point": "0.850451 0.221745"
+            }
+          ],
+          "non_neutral_local_adjustments": {
+            "LocalCurveRefineSaturation": "100",
+            "LocalExposure2012": "-0.16",
+            "LocalHighlights2012": "-1",
+            "LocalTexture": "0.01",
+            "LocalToningHue": "173.945007"
+          }
+        },
+        {
+          "correction_active": "true",
+          "correction_index": 3,
+          "correction_name": "Mask 3",
+          "correction_sync_id": "484A6CB346C1406FABD933990077F786",
+          "group_geometry_status": "resolved",
+          "local_adjustments": {
+            "LocalBlacks2012": "0",
+            "LocalBrightness": "0",
+            "LocalClarity": "0",
+            "LocalClarity2012": "0",
+            "LocalContrast": "0",
+            "LocalContrast2012": "0.15",
+            "LocalCurveRefineSaturation": "100",
+            "LocalDefringe": "0",
+            "LocalDehaze": "0",
+            "LocalExposure": "0",
+            "LocalExposure2012": "0",
+            "LocalGrain": "0",
+            "LocalHighlights2012": "0",
+            "LocalHue": "0",
+            "LocalLuminanceNoise": "0",
+            "LocalMoire": "0",
+            "LocalSaturation": "0",
+            "LocalShadows2012": "0",
+            "LocalSharpness": "0",
+            "LocalTemperature": "0",
+            "LocalTexture": "0.01",
+            "LocalTint": "0",
+            "LocalToningHue": "173.945007",
+            "LocalToningSaturation": "0",
+            "LocalWhites2012": "0"
+          },
+          "local_point_color_state": {
+            "crs_local_color_variance": [],
+            "crs_local_point_colors": [],
+            "source_fields": []
+          },
+          "mask_count": 1,
+          "masks": [
+            {
+              "full_mask_size": "2879,1920",
+              "geometry_integrity_flags": [],
+              "input_digest": "C581ACE40A9F9977C0BD92E8158B54C9",
+              "local_input_digest": "0F69EC7191721A5DAEB9846B118CC3B4",
+              "mask_active": "true",
+              "mask_digest": "9F8B79E0C8BED403CB3EED5BD8C5A1CD",
+              "mask_geometry_status": "resolved",
+              "mask_inverted": "false",
+              "mask_name": "Person 1 - Clothes",
+              "mask_subcategory_id": "11",
+              "mask_sync_id": "BBFBF9C95DA54B109A580C8644C279F9",
+              "model_version": "234881976",
+              "origin": "0,155",
+              "reference_point": "0.197591 0.262015"
+            }
+          ],
+          "non_neutral_local_adjustments": {
+            "LocalContrast2012": "0.15",
+            "LocalCurveRefineSaturation": "100",
+            "LocalTexture": "0.01",
+            "LocalToningHue": "173.945007"
+          }
+        },
+        {
+          "correction_active": "true",
+          "correction_index": 4,
+          "correction_name": "Mask 4",
+          "correction_sync_id": "05D4854D165E4729A16D871D63276E37",
+          "group_geometry_status": "resolved",
+          "local_adjustments": {
+            "LocalBlacks2012": "0",
+            "LocalBrightness": "0",
+            "LocalClarity": "0",
+            "LocalClarity2012": "0",
+            "LocalContrast": "0",
+            "LocalContrast2012": "0",
+            "LocalCurveRefineSaturation": "100",
+            "LocalDefringe": "0",
+            "LocalDehaze": "0",
+            "LocalExposure": "0",
+            "LocalExposure2012": "0",
+            "LocalGrain": "0",
+            "LocalHighlights2012": "-0.11",
+            "LocalHue": "0",
+            "LocalLuminanceNoise": "0",
+            "LocalMoire": "0",
+            "LocalSaturation": "0",
+            "LocalShadows2012": "0.06",
+            "LocalSharpness": "0",
+            "LocalTemperature": "0",
+            "LocalTexture": "0.01",
+            "LocalTint": "0",
+            "LocalToningHue": "173.945007",
+            "LocalToningSaturation": "0",
+            "LocalWhites2012": "0"
+          },
+          "local_point_color_state": {
+            "crs_local_color_variance": [],
+            "crs_local_point_colors": [],
+            "source_fields": []
+          },
+          "mask_count": 1,
+          "masks": [
+            {
+              "full_mask_size": "2879,1920",
+              "geometry_integrity_flags": [],
+              "input_digest": "C581ACE40A9F9977C0BD92E8158B54C9",
+              "local_input_digest": "0F69EC7191721A5DAEB9846B118CC3B4",
+              "mask_active": "true",
+              "mask_digest": "0E63801FA7C9139FDBCCBDD6E1033AEB",
+              "mask_geometry_status": "resolved",
+              "mask_inverted": "false",
+              "mask_name": "Person 1 - Body Skin",
+              "mask_subcategory_id": "4",
+              "mask_sync_id": "ECE0C615957A4E6D8F5CF240421D4F4E",
+              "model_version": "234881976",
+              "origin": "649,746",
+              "reference_point": "0.554627 0.537968"
+            }
+          ],
+          "non_neutral_local_adjustments": {
+            "LocalCurveRefineSaturation": "100",
+            "LocalHighlights2012": "-0.11",
+            "LocalShadows2012": "0.06",
+            "LocalTexture": "0.01",
+            "LocalToningHue": "173.945007"
+          }
+        },
+        {
+          "correction_active": "true",
+          "correction_index": 5,
+          "correction_name": "Mask 5",
+          "correction_sync_id": "42A23F92EECB4715A592806E768345DF",
+          "group_geometry_status": "resolved",
+          "local_adjustments": {
+            "LocalBlacks2012": "0",
+            "LocalBrightness": "0",
+            "LocalClarity": "0",
+            "LocalClarity2012": "0",
+            "LocalContrast": "0",
+            "LocalContrast2012": "0",
+            "LocalCurveRefineSaturation": "100",
+            "LocalDefringe": "0",
+            "LocalDehaze": "0",
+            "LocalExposure": "0",
+            "LocalExposure2012": "0",
+            "LocalGrain": "0",
+            "LocalHighlights2012": "0",
+            "LocalHue": "0",
+            "LocalLuminanceNoise": "0",
+            "LocalMoire": "0",
+            "LocalSaturation": "0",
+            "LocalShadows2012": "0",
+            "LocalSharpness": "0",
+            "LocalTemperature": "0",
+            "LocalTexture": "0.01",
+            "LocalTint": "0",
+            "LocalToningHue": "173.945007",
+            "LocalToningSaturation": "0",
+            "LocalWhites2012": "0"
+          },
+          "local_point_color_state": {
+            "crs_local_color_variance": [
+              "0.000000"
+            ],
+            "crs_local_point_colors": [
+              "0.520859, 0.612826, 0.608609, 0.000000, -0.185417, 0.000000, 0.500000, 0.000000, 0.330000, 0.670000, 1.000000, 0.000000, 0.430000, 0.790000, 1.000000, 0.070000, 0.620000, 0.980000, 1.000000"
+            ],
+            "source_fields": [
+              "crs:LocalPointColors",
+              "crs:LocalColorVariance"
+            ]
+          },
+          "mask_count": 1,
+          "masks": [
+            {
+              "full_mask_size": "2879,1920",
+              "geometry_integrity_flags": [],
+              "input_digest": "C581ACE40A9F9977C0BD92E8158B54C9",
+              "local_input_digest": "0F69EC7191721A5DAEB9846B118CC3B4",
+              "mask_active": "true",
+              "mask_digest": "383FEBFAB193429358489C8008BD9E40",
+              "mask_geometry_status": "resolved",
+              "mask_inverted": "false",
+              "mask_name": "Person 1 - Facial Skin",
+              "mask_subcategory_id": "2",
+              "mask_sync_id": "48A9280393504303B9E2C77F8B4BDEE1",
+              "model_version": "234881976",
+              "origin": "1612,717",
+              "reference_point": "0.646158 0.462074"
+            }
+          ],
+          "non_neutral_local_adjustments": {
+            "LocalCurveRefineSaturation": "100",
+            "LocalTexture": "0.01",
+            "LocalToningHue": "173.945007"
+          }
+        },
+        {
+          "correction_active": "true",
+          "correction_index": 6,
+          "correction_name": "Mask 6",
+          "correction_sync_id": "AE937AF217644B6CB2D4F5AEDA592E11",
+          "group_geometry_status": "partial",
+          "local_adjustments": {
+            "LocalBlacks2012": "0",
+            "LocalBrightness": "0",
+            "LocalClarity": "0",
+            "LocalClarity2012": "0",
+            "LocalContrast": "0",
+            "LocalContrast2012": "0",
+            "LocalCurveRefineSaturation": "100",
+            "LocalDefringe": "0",
+            "LocalDehaze": "0",
+            "LocalExposure": "0",
+            "LocalExposure2012": "0",
+            "LocalGrain": "0",
+            "LocalHighlights2012": "0",
+            "LocalHue": "0",
+            "LocalLuminanceNoise": "0",
+            "LocalMoire": "0",
+            "LocalSaturation": "-0.71",
+            "LocalShadows2012": "0",
+            "LocalSharpness": "0",
+            "LocalTemperature": "0",
+            "LocalTexture": "0.01",
+            "LocalTint": "0",
+            "LocalToningHue": "173.945007",
+            "LocalToningSaturation": "0",
+            "LocalWhites2012": "0"
+          },
+          "local_point_color_state": {
+            "crs_local_color_variance": [],
+            "crs_local_point_colors": [],
+            "source_fields": []
+          },
+          "mask_count": 2,
+          "masks": [
+            {
+              "full_mask_size": null,
+              "geometry_integrity_flags": [
+                "missing_mask_digest",
+                "missing_origin",
+                "missing_full_mask_size"
+              ],
+              "input_digest": "C581ACE40A9F9977C0BD92E8158B54C9",
+              "local_input_digest": null,
+              "mask_active": "true",
+              "mask_digest": null,
+              "mask_geometry_status": "unresolved",
+              "mask_inverted": "false",
+              "mask_name": "Person 1 - Teeth",
+              "mask_subcategory_id": "12",
+              "mask_sync_id": "99BEAB389EDD4930A611668CB75E8312",
+              "model_version": "234881976",
+              "origin": null,
+              "reference_point": "0.500000 0.500000"
+            },
+            {
+              "full_mask_size": "2879,1920",
+              "geometry_integrity_flags": [],
+              "input_digest": "C581ACE40A9F9977C0BD92E8158B54C9",
+              "local_input_digest": "0F69EC7191721A5DAEB9846B118CC3B4",
+              "mask_active": "true",
+              "mask_digest": "D02865B722554588BAB24D5B6F9F3337",
+              "mask_geometry_status": "resolved",
+              "mask_inverted": "false",
+              "mask_name": "Person 1 - Eye Sclera",
+              "mask_subcategory_id": "8",
+              "mask_sync_id": "FF391CA859A14155BBF2D728B637144F",
+              "model_version": "234881976",
+              "origin": "1918,890",
+              "reference_point": "0.671392 0.572891"
+            }
+          ],
+          "non_neutral_local_adjustments": {
+            "LocalCurveRefineSaturation": "100",
+            "LocalSaturation": "-0.71",
+            "LocalTexture": "0.01",
+            "LocalToningHue": "173.945007"
+          }
+        }
+      ],
+      "mask_names": [
+        "Person 1",
+        "Background 1",
+        "Person 1 - Clothes",
+        "Person 1 - Body Skin",
+        "Person 1 - Facial Skin",
+        "Person 1 - Teeth",
+        "Person 1 - Eye Sclera"
+      ],
+      "reference": {
+        "reference_mask_entry_count": 7,
+        "reference_mask_group_count": 6,
+        "reference_model": "stage3_postmasking_no_local_adjustment_state",
+        "reference_xmp_path": "data/stage3/conditioned_state/lightroom_sidecars_postmasking_no_local_adjustment/JB107504.xmp",
+        "reference_xmp_sha256": "7a662878378646fbd5ca3c43bde56f17da4b3548f32799ff4ae3b873c3c79a6b"
+      },
+      "xmp_path": "data/stage3/conditioned_state/lightroom_sidecars_postlocal_adjustment/JB107504.xmp",
+      "xmp_sha256": "22c3c91140e113611838be53d25a385f082b7b15e47bdce5f34cb32cd6ed422f"
+    }
+  ],
+  "reference_model": "stage3_postmasking_no_local_adjustment_state",
+  "reference_root": "data/stage3/conditioned_state/lightroom_sidecars_postmasking_no_local_adjustment",
+  "spike_name": "proof_of_capability_mask_sidecar_parsing",
+  "stage": "stage3_semantic_local_conditioning",
+  "status": "complete",
+  "summary": {
+    "acr_sidecar_count": 3,
+    "asset_count": 3,
+    "assets_with_mask_groups": 3,
+    "geometry_integrity_flag_counts": {
+      "missing_full_mask_size": 1,
+      "missing_mask_digest": 1,
+      "missing_origin": 1
+    },
+    "group_geometry_status_counts": {
+      "partial": 1,
+      "resolved": 17,
+      "unresolved": 0
+    },
+    "local_point_color_group_count": 1,
+    "mask_entry_count": 21,
+    "mask_geometry_status_counts": {
+      "resolved": 20,
+      "unresolved": 1
+    },
+    "mask_group_count": 18,
+    "mask_names": [
+      "Background 1",
+      "Person 1",
+      "Person 1 - Body Skin",
+      "Person 1 - Clothes",
+      "Person 1 - Eye Sclera",
+      "Person 1 - Facial Skin",
+      "Person 1 - Teeth"
+    ]
+  }
+}

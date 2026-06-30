@@ -110,6 +110,34 @@ def meaningful_local_adjustments(attrs: dict[str, str]) -> dict[str, str]:
     }
 
 
+def child_sequence_values(element: ET.Element, child_name: str) -> list[str]:
+    """Return rdf:li text values from a named CRS child sequence."""
+    child = element.find(f"./crs:{child_name}", NS)
+    if child is None:
+        return []
+    return [
+        str(item.text)
+        for item in child.findall(".//rdf:li", NS)
+        if item.text is not None
+    ]
+
+
+def local_point_color_state(correction: ET.Element) -> dict[str, object]:
+    """Return local point-color state persisted inside one correction group."""
+    point_colors = child_sequence_values(correction, "LocalPointColors")
+    color_variance = child_sequence_values(correction, "LocalColorVariance")
+    source_fields = []
+    if point_colors:
+        source_fields.append("crs:LocalPointColors")
+    if color_variance:
+        source_fields.append("crs:LocalColorVariance")
+    return {
+        "crs_local_point_colors": point_colors,
+        "crs_local_color_variance": color_variance,
+        "source_fields": source_fields,
+    }
+
+
 def geometry_integrity_flags(mask_attrs: dict[str, str]) -> list[str]:
     """Return missing geometry identity fields for one mask entry."""
     required_fields = {
@@ -192,6 +220,7 @@ def extract_mask_groups(xmp_path: Path) -> list[dict[str, object]]:
                     for key, value in correction_attrs.items()
                     if key.startswith("Local")
                 },
+                "local_point_color_state": local_point_color_state(correction),
                 "non_neutral_local_adjustments": meaningful_local_adjustments(
                     correction_attrs
                 ),
@@ -280,6 +309,16 @@ def build_summary(records: list[dict[str, object]]) -> dict[str, object]:
         for group in record.get("mask_groups", [])
         if isinstance(group, dict)
     ]
+    local_point_color_group_count = sum(
+        1
+        for group in mask_groups
+        if dict(group.get("local_point_color_state", {})).get(
+            "crs_local_point_colors"
+        )
+        or dict(group.get("local_point_color_state", {})).get(
+            "crs_local_color_variance"
+        )
+    )
     mask_geometry_status_counts = {
         status: sum(
             1 for mask in mask_entries if mask.get("mask_geometry_status") == status
@@ -320,6 +359,7 @@ def build_summary(records: list[dict[str, object]]) -> dict[str, object]:
         "mask_geometry_status_counts": mask_geometry_status_counts,
         "group_geometry_status_counts": group_geometry_status_counts,
         "geometry_integrity_flag_counts": geometry_integrity_flag_counts,
+        "local_point_color_group_count": local_point_color_group_count,
         "mask_names": mask_names,
     }
 
@@ -364,6 +404,11 @@ def main() -> None:
                 "semantic mask entry but lacks one or more geometry/payload "
                 "identity fields. A partially resolved group has mixed "
                 "resolved and unresolved child masks."
+            ),
+            "local_point_color_state": (
+                "Local point-color state records CRS LocalPointColors and "
+                "LocalColorVariance child sequences attached to a mask "
+                "correction group."
             ),
         },
         "summary": build_summary(records),
